@@ -15,25 +15,28 @@
         position: relative;
         width: 100vw;
         height: 100vh;
-        background: #000;
-        overflow: hidden;
+        background: #fff;
       }
 
-        .slide h2 {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font: 600 2.5em/1.5em Arial, sans-erif;
-          width: 55%;
-          color: #444;
-          text-shadow: 0 0 50px #000;
-          text-align: center;
-          z-index: 100;
+      .bio {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 585px;
+      }
+
+        .bio img, .bio .info {
+          float: left;
+          width: 270px;
+          margin: 10px;
         }
 
-        .slide img {
-          z-index: 0;
+        .bio .info {
+          width: 250px;
+          height: 248px;
+          padding: 10px;
+          border: 1px dashed #b9c1b1;
         }
 
     </style>
@@ -42,7 +45,17 @@
   <body>
 
     <div class="slide">
-      <h2>The <span style="color: white">diamonds</span> of a habitually <span style="color: #62ffa4">jaded</span> individual will live here soon</h2>
+      <div class="bio">
+        <img src="jenny8.jpg" alt="">
+        <div class="info">
+          Jenny is a youngster who likes to make others happy.
+        </div>
+        
+        <div class="info">
+          Jenny is also a 20 year-old.
+        </div>
+        <img src="jenny20.jpg" alt="">
+      </div>
     </div>
 
   </body>
