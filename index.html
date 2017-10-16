@@ -7,50 +7,224 @@
     <title>Worlds away... but coming soon.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href="https://fonts.googleapis.com/css?family=Spectral:400,700" rel="stylesheet">
+
     <style>
 
       *, body { margin: 0; }
 
-      .slide {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        background: #fff;
+      a, a:visited { color: #54594c; }
+
+      #pink, .pink { background: #e87fa4; }
+      #yellow, .yellow { background: #eaca0c; }
+      #green, .green { background: #69c695; }
+
+      .blink {
+        animation: blink-ani 1.5s linear infinite;
+        -webkit-animation: blink-ani 1.5s linear infinite;
       }
 
-      .bio {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 585px;
+      @keyframes blink-ani {
+        0% { opacity: 0.0; }
+        30% { opacity: 0.0; }
+        35% { opacity: 1.0; }
+        65% { opacity: 1.0; }
+        70% { opacity: 0.0; }
+        100% { opacity: 0.0; }
       }
 
-        .bio img, .bio .info {
-          float: left;
-          width: 270px;
-          margin: 10px;
-        }
+      @-webkit-keyframes blink-ani {
+        0% { opacity: 0.0; }
+        30% { opacity: 0.0; }
+        35% { opacity: 1.0; }
+        65% { opacity: 1.0; }
+        70% { opacity: 0.0; }
+        100% { opacity: 0.0; }
+      }
 
-        .bio .info {
-          width: 250px;
-          height: 248px;
-          padding: 10px;
-          border: 1px dashed #b9c1b1;
+      #screen {
+        width: 100vw; height: 100vh;
+        position: fixed;
+      }
+
+      .absolute { position: absolute; }
+
+      .flower { width: 120px; top: 150px; left: 340px; }
+      .moon { width: 80px; top: 30px; left: 670px; }
+      .earth { width: 140px; top: 340px; left: 630px; }
+
+      .thing {
+        border-radius: 10px 10px 15px 15px;
+        overflow: hidden;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      }
+
+        .thing img { margin: 0 0 -5px 0; }
+
+      .thing-top {
+        padding: 14px;
+        background: #ededed;
+        border-bottom: 1px solid #ddd;
+
+      }
+
+      .circle-small, .circle-med {
+        display: inline-block;
+        width: 12px; height: 12px;
+        margin-right: 5px;
+        border-radius: 12px;
+      }
+
+      .circle-med { 
+        width: 30px; height: 30px; 
+        margin-right: 18px;
+        border-radius: 30px;
+      }
+
+      #jenny-info {
+        font: 400 1em/1.5em "Spectral", serif;
+        color: #54594c;
+      }
+
+        #jenny-info h2 {
+          margin-top: 10px;
+          font: 700 2.2em/1.3em "Spectral", serif;
         }
 
     </style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.rawgit.com/konvajs/konva/1.7.2/konva.min.js"></script>
     
   </head>
   <body>
 
-    <div class="slide">
-      <div class="bio">
-        <a href="http://jennytypes.com" target="_blank"><img src="jenny8.jpg" alt=""></a>
+    <div id="screen"></div>
 
-        <a href="http://jennyzhang.me" target="_blank"><img src="jenny20.jpg" alt=""></a>
-      </div>
+    <div class="absolute" id="jenny-info" style="top: 160px; left: 770px;">
+      Portfolio: <a href="http://jennyzhang.me" target="_blank">www.jennyzhang.me</a><br>
+      Blog: <a href="http://jennytypes.com" target="_blank">www.jennytypes.com</a><br>
+      <h2>Jenny Liu<br>Zhang</h2>
+      <div class="blink" style="position: absolute; bottom: 0; right: 107px; width: 1px; height: 40px; background: #54594c;"></div>
     </div>
+
+    <img class="absolute emoji moon" src="img/moon.png" alt="">
+
+    <div class="absolute thing" style="top: -4px; left: 170px;">
+      <div class="thing-top">
+        <div class="circle-small pink"></div>
+        <div class="circle-small yellow"></div>
+        <div class="circle-small green"></div>
+      </div>
+      <a href="http://instagram.com/jennyliuzhang" target="_blank"><img src="img/drawing.jpg" width="260" alt=""></a>
+    </div>
+
+    <div class="absolute thing" style="top: 240px; left: 240px;">
+      <div class="thing-top">
+        <div class="circle-small pink"></div>
+        <div class="circle-small yellow"></div>
+        <div class="circle-small green"></div>
+      </div>
+      <a href="http://medium.com/@jennyliuzhang" target="_blank"><img src="img/pluto.jpg" width="360" alt=""></a>
+    </div>
+
+    <div class="absolute thing" style="top: 70px; left: 400px;">
+      <div class="thing-top">
+        <div class="circle-small pink"></div>
+        <div class="circle-small yellow"></div>
+        <div class="circle-small green"></div>
+      </div>
+      <img src="jenny20.jpg" width="300" alt="">
+    </div>
+
+    <img class="absolute emoji flower" src="img/flower.png" alt="">
+
+    <img class="absolute emoji earth" src="img/earth.png" alt="">
+
+    <div class="absolute circles" style="top: 400px; left: 800px;">
+      <div class="circle-med" id="pink"></div>
+      <div class="circle-med" id="yellow"></div>
+      <div class="circle-med" id="green"></div>
+    </div>
+
+    <script>
+    $( function() {
+      $( ".thing" ).draggable();
+      $( ".emoji" ).draggable();
+    } );
+
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+
+    var stage = new Konva.Stage({
+      container: 'screen',
+      width: width,
+      height: height
+    });
+    var layer = new Konva.Layer();
+    stage.add(layer);
+
+    var canvas = document.createElement('canvas');
+    canvas.width = stage.width();
+    canvas.height = stage.height();
+
+    var image = new Konva.Image({
+        image: canvas,
+        x : 0,
+        y : 0
+    });
+    layer.add(image);
+    stage.draw();
+
+    // conditionals
+    var isPaint = false;
+    var lastPointerPosition;
+    var mode = 'brush';
+
+    // the brush
+    var context = canvas.getContext('2d');
+    context.strokeStyle = "#444";
+    context.lineJoin = "round";
+    context.lineWidth = 1;
+
+    // allows for drawing
+    stage.on('contentMousedown.proto', function() {
+      isPaint = true;
+      lastPointerPosition = stage.getPointerPosition();
+    });
+    stage.on('contentMouseup.proto', function() {
+        isPaint = false;
+    });
+    stage.on('contentMousemove.proto', function() {
+      if (!isPaint) {
+        return;
+      }
+
+      // creates brush path based on mouse. Thanks Konva
+      context.beginPath();
+      var localPos = {
+        x: lastPointerPosition.x - image.x(),
+        y: lastPointerPosition.y - image.y()
+      };
+
+      context.moveTo(localPos.x, localPos.y);
+      var pos = stage.getPointerPosition();
+      localPos = {
+        x: pos.x - image.x(),
+        y: pos.y - image.y()
+      };
+      context.lineTo(localPos.x, localPos.y);
+      context.closePath();
+      context.stroke();
+      lastPointerPosition = pos;
+
+      layer.draw();
+    });
+    $('.circle-med').click(function() {
+        context.strokeStyle = $(this).css('backgroundColor');
+      });
+    </script>
 
   </body>
 </html>
