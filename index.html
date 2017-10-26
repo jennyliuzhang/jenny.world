@@ -101,17 +101,19 @@
 
       #second-fold {
         text-align: center;
+        padding: 30px 0;
       }
 
         #second-fold p.foot, #second-fold p.foot a {
-          margin: 20px 0;
-          font: normal 1em/1.9em "Roboto Mono", monospace;
+          margin: 20px auto 10px;
+          width: 300px;
+          font: normal 0.9em/1.9em "Roboto Mono", monospace;
           color: #444;
         }
 
         .blocky {
           position: relative;
-          width: 82%;
+          width: 83%;
           margin: 0 auto 30px auto;
           padding: 20px;
           background: #fff;
@@ -165,10 +167,16 @@
         and (min-device-width: 600px) 
         and (min-width: 600px) {
 
-      #window { 
+      .slide {
+        background: #fafafa;
+        padding: 0;
+      }
+
+      #window {
+        position: relative;
+        margin: auto;
         width: 540px;
-        min-height: 640px;
-        height: 80vh;
+        height: 700px;
       }
 
       /*
@@ -253,15 +261,20 @@
       }
 
       #second-fold {
-        border-top: 2px solid #f2f2f2;
         background: url('img/sky2.gif');
         background-size: 100% 100%;
         padding: 10px 0;
+        box-shadow: 0 -5px 50px rgba(0,0,0,0.05);
       }
+
+        #second-fold p.foot, #second-fold p.foot a {
+          margin: 40px auto;
+          width: auto;
+        }
 
         .blocky {
           width: 65vw;
-          margin: 30px auto 70px;
+          margin: 30px auto 60px;
           padding: 50px 60px;
           box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
         }
@@ -298,72 +311,70 @@
 
     <!-- <div id="screen"></div> -->
 
-    <div class="slide" id="window">
+    <div class="slide">
+      <div id="window">
+        <img class="absolute emoji moon" src="img/moon.png" alt="">
 
-      <img class="absolute emoji moon" src="img/moon.png" alt="">
-
-      <div class="absolute thing media" style="top: -7px; left: 0;">
-        <div class="thing-top">
-          <div class="circle-small pink"></div>
-          <div class="circle-small yellow"></div>
-          <div class="circle-small green"></div>
-        </div>
-        <a href="http://instagram.com/jennyliuzhang" target="_blank">
-          <img src="img/drawing.jpg" width="260" alt="">
-          <div class="thing-desc">
-            <p>Check out my Instagram for digital art!</p>
+        <div class="absolute thing media" style="top: -7px; left: 0;">
+          <div class="thing-top">
+            <div class="circle-small pink"></div>
+            <div class="circle-small yellow"></div>
+            <div class="circle-small green"></div>
           </div>
-        </a>
-      </div>
-
-      <div class="absolute thing media" style="top: 240px; left: 60px;">
-        <div class="thing-top">
-          <div class="circle-small pink"></div>
-          <div class="circle-small yellow"></div>
-          <div class="circle-small green"></div>
+          <a href="http://instagram.com/jennyliuzhang" target="_blank">
+            <img src="img/drawing.jpg" width="260" alt="">
+            <div class="thing-desc">
+              <p>Check out my Instagram for digital art!</p>
+            </div>
+          </a>
         </div>
-        <a href="http://medium.com/@jennyliuzhang" target="_blank">
-          <img src="img/pluto.jpg" width="360" alt="">
-          <div class="thing-desc">
-            <p>Visit my Medium account for some written musings!</p>
+
+        <div class="absolute thing media" style="top: 240px; left: 60px;">
+          <div class="thing-top">
+            <div class="circle-small pink"></div>
+            <div class="circle-small yellow"></div>
+            <div class="circle-small green"></div>
           </div>
-        </a>
-      </div>
-
-      <div class="absolute thing info-window">
-        <div class="thing-top">
-          <div class="circle-small pink"></div>
-          <div class="circle-small yellow"></div>
-          <div class="circle-small green"></div>
+          <a href="http://medium.com/@jennyliuzhang" target="_blank">
+            <img src="img/pluto.jpg" width="360" alt="">
+            <div class="thing-desc">
+              <p>Visit my Medium account for some written musings!</p>
+            </div>
+          </a>
         </div>
-        <div>
-          <div id="jenny-info">
-            <h2>Jenny Liu Zhang</h2>
-            <!-- <div class="blink" style="position: absolute; top: 75px; right: 30px; width: 1px; height: 40px; background: #54594c;"></div> -->
-            <p>One of 100 students in the <a href="http://iovine-young.usc.edu" target="_blank">USC Iovine and Young Academy</a> for The Arts, Technology and Business of Innovation.</p>
-            <p>Excited about design, tech, people, and space.</p>
-            <p style="font-weight: bold; color: #000">Portfolio: <a href="http://www.jennyzhang.me" target="_blank">jennyzhang.me</a><br>
-            Blog: <a href="http://jennytypes.com" target="_blank">jennytypes.com</a></p>
+
+        <div class="absolute thing info-window">
+          <div class="thing-top">
+            <div class="circle-small pink"></div>
+            <div class="circle-small yellow"></div>
+            <div class="circle-small green"></div>
           </div>
-          
+          <div>
+            <div id="jenny-info">
+              <h2>Jenny Liu Zhang</h2>
+              <!-- <div class="blink" style="position: absolute; top: 75px; right: 30px; width: 1px; height: 40px; background: #54594c;"></div> -->
+              <p>One of 100 students in the <a href="http://iovine-young.usc.edu" target="_blank">USC Iovine and Young Academy</a> for The Arts, Technology and Business of Innovation.</p>
+              <p>Excited about design, tech, people, and space.</p>
+              <p style="font-weight: bold; color: #000">Portfolio: <a href="http://www.jennyzhang.me" target="_blank">jennyzhang.me</a><br>
+              Blog: <a href="http://jennytypes.com" target="_blank">jennytypes.com</a></p>
+            </div>
+            
+          </div>
         </div>
+
+        <img class="absolute emoji flower" src="img/flower.png" alt="">
+
+        <img class="absolute emoji earth" src="img/earth.png" alt="">
+
+        <!-- <div class="absolute circles" style="width: 160px; top: 400px; left: 630px;">
+          <div class="circle-med" id="pink"></div>
+          <div class="circle-med" id="yellow"></div>
+          <div class="circle-med" id="green"></div>
+        </div> -->
       </div>
-
-      <img class="absolute emoji flower" src="img/flower.png" alt="">
-
-      <img class="absolute emoji earth" src="img/earth.png" alt="">
-
-      <!-- <div class="absolute circles" style="width: 160px; top: 400px; left: 630px;">
-        <div class="circle-med" id="pink"></div>
-        <div class="circle-med" id="yellow"></div>
-        <div class="circle-med" id="green"></div>
-      </div> -->
-
     </div>
 
     <script src="konva.js"></script>
-
-    <div class="slide" id="sky-border"></div>
 
     <div class="slide" id="second-fold">
       <div class="blocky" id="manifesto">
