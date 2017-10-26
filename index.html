@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>World in Progress</title>
+    <link rel='shortcut icon' type='image/x-icon' href='img/fav.png'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Spectral:400,700|Roboto+Mono" rel="stylesheet">
@@ -18,20 +19,15 @@
         src: url('mud/slides/ArnhemPro-SemiBold.ttf'); 
       }
 
+      @font-face { 
+        font-family: 'Noe Display';
+        src: url('noe-display-bold.otf'); 
+      }
+
       *, body { margin: 0; }
 
-      .slide {
-        position: relative;
-        margin: auto;
-        width: 100vw;
-      }
-
-      #window { 
-        width: 40%;
-        height: 92vh;
-      }
-
       a, a:visited { color: #000; }
+      p a:hover { background: #fff; }
 
       p {
         margin: 0 0 20px;
@@ -41,6 +37,139 @@
       #pink, .pink { background: #e87fa4; }
       #yellow, .yellow { background: #eaca0c; }
       #green, .green { background: #69c695; }
+
+      .absolute { position: relative; }
+
+      .slide {
+        position: relative;
+        margin: auto;
+        width: 100vw;
+        padding: 20px 0 0;
+      }
+
+      .flower, .moon, .earth, .media { display: none; }
+
+      .thing {
+        width: 92%;
+        margin: auto;
+        border-radius: 10px 10px 15px 15px;
+        overflow: hidden;
+        opacity: 0.9;
+      }
+
+        .thing-top {
+          padding: 14px;
+          background: #ededed;
+          border-bottom: 1px solid #ddd;
+        }
+
+        .circle-small, .circle-med {
+          display: inline-block;
+          width: 12px; height: 12px;
+          margin-right: 5px;
+          border-radius: 12px;
+        }
+
+        .circle-med {
+          width: 30px; height: 30px; 
+          margin-right: 18px;
+          border-radius: 30px;
+        }
+
+      .info-window, .info-window:hover {
+        background: url('img/sky.gif');
+        background-size: 100% 100%;
+        opacity: 1;
+      }
+
+        #jenny-info {
+        display: block;
+        margin: auto;
+        width: auto;
+        padding: 20px 30px;
+        color: #54594c;
+        text-align: center;
+      }
+
+        #jenny-info h2 {
+          margin: 15px 0;
+          font: 700 2.05em/1.4em "Noe Display", serif;
+          color: #333;
+          text-align: center;
+          letter-spacing: 0.01em;
+        }
+
+      #second-fold {
+        text-align: center;
+      }
+
+        #second-fold p.foot, #second-fold p.foot a {
+          margin: 20px 0;
+          font: normal 1em/1.9em "Roboto Mono", monospace;
+          color: #444;
+        }
+
+        .blocky {
+          position: relative;
+          width: 82%;
+          margin: 0 auto 30px auto;
+          padding: 20px;
+          background: #fff;
+          text-align: left;
+          border-radius: 8px;
+          box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+
+          .blocky h1 {
+            margin-bottom: 30px;
+            font: normal 1em/3em "Roboto Mono", monospace;
+            color: #000;
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ddd;
+          }
+
+          .blocky p {
+            font: normal 0.85em/1.9em "Roboto Mono", monospace;
+            color: #444;
+          }
+
+          #mud {
+            height: auto;
+            margin: 10px 0;
+            background: #000;
+            border-radius: 10px;
+            opacity: 0.88;
+          }
+
+            #mud:hover { opacity: 1; }
+
+            #mud #mud-content {
+              padding: 40px 20px 0;
+              color: #fff;
+              text-align: center;
+            }
+
+            #mud #mud-content h1 {
+              margin: 0 0 10px;
+              font: 600 2.5em/1.5em "Arnhem Pro", serif;
+              color: #fff;
+              text-transform: none;
+              border: none;
+            }
+
+            #mud #mud-content p { color: #aaa; }
+
+      /* MID SCREENS */
+      @media screen 
+        and (min-device-width: 600px) 
+        and (min-width: 600px) {
+
+      #window { 
+        width: 540px;
+        min-height: 640px;
+        height: 80vh;
+      }
 
       /*
       .blink {
@@ -64,23 +193,26 @@
         65% { opacity: 1.0; }
         70% { opacity: 0.0; }
         100% { opacity: 0.0; }
-      }*/
+      }
 
       #screen {
         width: 100vw; height: 100vh;
         position: fixed;
       }
+      */
 
       .absolute { position: absolute; }
+      .flower, .moon, .earth, .media { display: block; }
 
       .flower { width: 120px; top: 150px; left: -70px; }
       .moon { width: 80px; top: 30px; left: 500px; }
       .earth { width: 140px; top: 360px; left: 460px; }
 
       .thing {
+        width: auto;
         border-radius: 10px 10px 15px 15px;
         overflow: hidden;
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
         opacity: 0.9;
       }
 
@@ -105,119 +237,56 @@
           opacity: 1;
         }
 
-      .thing-top {
-        padding: 14px;
-        background: #ededed;
-        border-bottom: 1px solid #ddd;
-      }
-
-      .circle-small, .circle-med {
-        display: inline-block;
-        width: 12px; height: 12px;
-        margin-right: 5px;
-        border-radius: 12px;
-      }
-
-      .circle-med {
-        width: 30px; height: 30px; 
-        margin-right: 18px;
-        border-radius: 30px;
-      }
-
       .info-window, .info-window:hover {
+        top: 70px;
+        left: 230px;
         background: url('img/sky.gif');
         background-size: 100% 100%;
         opacity: 1;
+        cursor: default;
+        box-shadow: 2px 2px 60px rgba(0,0,0,0.2);
       }
 
       #jenny-info {
-        display: block;
         width: 250px;
-        height: 300px;
-        padding: 20px 30px;
-        color: #54594c;
-      }
-
-        #jenny-info h2 {
-          margin: 10px 0 15px;
-          font: 700 2em/1.7em "Cedarville Cursive", serif;
-          color: #333;
-          text-align: center;
-        }
-
-      #sky-border {
-        height: 200px;
-        background: url('img/sky.gif');
-        background-size: 100% 300%;
+        text-align: left;
       }
 
       #second-fold {
-        background: #333;
-        padding-bottom: 60px;
-        text-align: center;
+        border-top: 2px solid #f2f2f2;
+        background: url('img/sky2.gif');
+        background-size: 100% 100%;
+        padding: 10px 0;
       }
 
-        #second-fold p.foot {
-          margin: -70px 0 0;
-          font: normal 1em/1em "Roboto Mono", monospace;
-          color: #aaa;
-        }
-
         .blocky {
-          position: relative;
-          top: -120px;
-          width: 45vw;
-          margin: 0 auto 70px;
+          width: 65vw;
+          margin: 30px auto 70px;
           padding: 50px 60px;
-          background: #fff;
-          text-align: left;
-          border-radius: 8px;
           box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
         }
 
-          .blocky h1 {
-            margin-bottom: 30px;
-            font: normal 1em/3em "Roboto Mono", monospace;
-            color: #000;
-            text-align: center;
-            text-transform: uppercase;
-            border-bottom: 1px solid #ddd;
+          #manifesto {
+            margin-top: -70px;
           }
 
-          .blocky p {
-            font: normal 0.85em/1.9em "Roboto Mono", monospace;
-            color: #444;
+          #mud #mud-content p {
+            margin: auto;
+            max-width: 310px;
           }
 
-        #mud {
-          height: 520px;
-          margin: 10px 0;
-          background: #000;
-          border-radius: 10px;
-          opacity: 0.88;
+      }
+
+        /* LARGE SCREENS */
+        @media screen 
+          and (min-device-width: 1200px) 
+          and (min-width: 1200px) {
+
+            .blocky {
+              width: 45vw;
+            }
+
         }
-
-          #mud:hover { opacity: 1; }
-
-          #mud #mud-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            text-align: center;
-          }
-
-          #mud #mud-content h1 {
-            margin: 0 0 10px;
-            font: 600 2.5em/1.5em "Arnhem Pro", serif;
-            color: #fff;
-            text-transform: none;
-            border: none;
-          }
-
-          #mud #mud-content p { color: #aaa; }
-
     </style>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -233,7 +302,7 @@
 
       <img class="absolute emoji moon" src="img/moon.png" alt="">
 
-      <div class="absolute thing" style="top: -4px; left: 0;">
+      <div class="absolute thing media" style="top: -7px; left: 0;">
         <div class="thing-top">
           <div class="circle-small pink"></div>
           <div class="circle-small yellow"></div>
@@ -247,7 +316,7 @@
         </a>
       </div>
 
-      <div class="absolute thing" style="top: 240px; left: 70px;">
+      <div class="absolute thing media" style="top: 240px; left: 60px;">
         <div class="thing-top">
           <div class="circle-small pink"></div>
           <div class="circle-small yellow"></div>
@@ -261,7 +330,7 @@
         </a>
       </div>
 
-      <div class="absolute thing info-window" style="top: 70px; left: 230px;">
+      <div class="absolute thing info-window">
         <div class="thing-top">
           <div class="circle-small pink"></div>
           <div class="circle-small yellow"></div>
@@ -297,28 +366,33 @@
     <div class="slide" id="sky-border"></div>
 
     <div class="slide" id="second-fold">
-      <div class="blocky">
-        <h1>Jenny's Manifesto: A World in Progress</h1>
-        <p>I'm passionate about multimedia journalism. I want to use my design, entrepreneurship, and writing skills to "popularize," or break down concepts for everyone to understand, from space exploration to international crises—especially for youth. The future moves forward because people are 1) exposed to topics early on and 2) encouraged to learn more about them.</p>
+      <div class="blocky" id="manifesto">
+        <h1>My Manifesto: A World in Progress</h1>
+        <p>I'm passionate about multimedia journalism. I want to use my design, entrepreneurship, and writing skills to "popularize," or break down concepts for everyone to understand, from space exploration to international crises&mdash;&mdash;especially for youth. The future moves forward because people are 1) exposed to topics early on and 2) encouraged to learn more about them.</p>
 
         <!-- <p>By trade, I'm a graphic and UI/UX designer, front-end web developer, and writer. By interest, I'm an activist and people-watcher. I believe in the </p>
         <p>I really want a job where the title does not yet exist. I want to be a sort of digital journalist-teacher hybrid, dedicating my </p>
         <p>By trade, I'm a sort of teacher. By interest, I will always be a student.</p> -->
       </div>
 
-      <div class="blocky" style="margin-bottom: 0">
+      <div class="blocky">
         <a href="mud">
           <div id="mud">
             <div id="mud-content">
               <h1>God made mud.</h1>
-              <p style="text-align: center;">A visual essay on how I put things into perspective and motivate myself, especially when I struggle.</p> 
+              <p style="text-align: center;">A visual essay on a perspective that inspires me, especially when I struggle or feel lost.</p> 
               <img src="mud/slides/juliendouvier12.gif" alt="" style="width: 120px">
             </div>
           </div>
         </a>
       </div>
 
-      <p class="foot">Made by a real down to Mars girl!</p>
+      <p class="foot">
+        <a href="jennylzh@usc.edu">jennylzh@usc.edu</a>
+        &middot; <a href="http://twitter.com/jennyliuzhang" target="_blank">Twitter</a>
+        &middot; <a href="http://linkedin.com/in/jennyliuzhang" target="_blank">LinkedIn</a>
+        &middot; Los Angeles, CA
+      </p>
 
     </div>
 
