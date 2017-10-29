@@ -4,13 +4,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>World in Progress</title>
+    <title>Worlds to Imagine</title>
     <link rel='shortcut icon' type='image/x-icon' href='img/fav.png'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://fonts.googleapis.com/css?family=Spectral:400,700|Roboto+Mono" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Serif+Pro" rel="stylesheet">
 
     <style>
 
@@ -136,7 +134,14 @@
             color: #444;
           }
 
-          #mud {
+          #lyric p {
+            font: normal 1em/2em "Source Serif Pro", serif;
+          }
+
+          #toggle-more { display: none; }
+
+          #mud, .blocky img {
+            width: 100%;
             height: auto;
             margin: 10px 0;
             background: #000;
@@ -283,6 +288,17 @@
             margin-top: -70px;
           }
 
+          p#toggle-more {
+            display: inline-block;
+            width: 110px;
+            padding: 5px 15px;
+            font: normal 1.2em/2em "Roboto Mono", monospace;
+            border-radius: 10px;
+            text-decoration: underline;
+          }
+
+          #lyric #lyric-more { display: none; }
+
           #mud #mud-content p {
             margin: auto;
             max-width: 310px;
@@ -297,6 +313,7 @@
 
             .blocky {
               width: 45vw;
+              max-width: 640px;
             }
 
         }
@@ -305,6 +322,20 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.rawgit.com/konvajs/konva/1.7.2/konva.min.js"></script>
+
+    <script>
+    $( document ).ready(function() {
+      $( "#toggle-more" ).click(function() {
+        $( "#lyric-more" ).slideToggle(500);
+        if ($( "#toggle-more" ).text() == "Read less" ) {
+          $( "#toggle-more" ).text("Read more");
+        }
+        else {
+          $( "#toggle-more" ).text("Read less");
+        }
+      });
+    });
+    </script>
     
   </head>
   <body>
@@ -378,20 +409,45 @@
 
     <div class="slide" id="second-fold">
       <div class="blocky" id="manifesto">
-        <h1>My Manifesto: A World in Progress</h1>
-        <p>I'm passionate about multimedia journalism. I want to use my design, entrepreneurship, and writing skills to "popularize," or break down concepts for everyone to understand, from space exploration to international crises&mdash;&mdash;especially for youth. The future moves forward because people are 1) exposed to topics early on and 2) encouraged to learn more about them.</p>
+        <h1>My Manifesto: Worlds to Imagine</h1>
+        <p>One of my favorite books is the children's novel, <em>The Phantom Tollbooth</em> by Norton Juster. Milo was an average kid with plenty of time, as we all were, until a random turnpike tollbooth, an unfamiliar map, and a car appeared in his bedroom. He paid the fare and I flipped the page. Together, we soon found ourselves  buying synonyms at the Dictionopolis Word Market, jumping to the Island of Conclusions, and meeting all sorts of new characters and concepts.</p>
+        <img style="margin: 5px 0 25px" src="img/phantom.jpg" alt="">
+        <p>Today, I want to make my own tollbooths. I'm a busy misfit interested in product strategy and multimedia journalism. I want to use design, entrepreneurship, UX, and writing to popularize and break down concepts for everyone to understand. The future moves forward because people are exposed to topics and encouraged to learn more about them. There are so many worlds to imagine. From space exploration to international crises, anyone could be the next Milo. All they need is a car, map, and tollbooth.</p>
+      </div>
 
-        <!-- <p>By trade, I'm a graphic and UI/UX designer, front-end web developer, and writer. By interest, I'm an activist and people-watcher. I believe in the </p>
-        <p>I really want a job where the title does not yet exist. I want to be a sort of digital journalist-teacher hybrid, dedicating my </p>
-        <p>By trade, I'm a sort of teacher. By interest, I will always be a student.</p> -->
+      <div class="blocky" id="lyric">
+        <h1>Lyric Essay: Future Vignettes</h1>
+        <p style="width: 85%; margin: 0 auto 15px; text-align:center">"What do you do when confronted by a person who doesn’t get why you are so excited about aerospace?"</p>
+        <p>I think,<br>
+        Tell them about the future!</p>
+        <br>
+        <p>I see a future where Earth is one big city.</p>
+        <div id="lyric-more">
+        <p>I see a future where your sky is my sky. You’ll never need to tell me what the sky looks like in India. I’ll be seeing it, because it’s my sky too. I just take the subway and I’m there in a few minutes. A connected world, post-boundaries. Lines don’t mean anything anymore. We forgot division even existed. People aren’t defined by what God gave them on the outside, or where God placed our lives when we were born. We’re all just People. Known for our choices, tastes, and opinions.</p>
+        <p>Today, Space is the empty space around us. Tomorrow, Space will be filled. Have you noticed how People build tall things up from the ground, to fill vertical space? Or how we pad ourselves with cloth-things that sit over our bodies, taking up the space around us? We transport ourselves in cars, machines bigger than we are, shuttling us in bulk through space. Space will be filled by the few belongings we always carry so everywhere can be Home, just in case we didn’t feel like catching a plane from Italy to Indiana that time of night. Space will be filled by our moving bodies, signs for every place, skyscrapers per square foot, subways, things, and us. The other people around us. We’ll know or recognize most of them, like on a college campus. We’ll know them from physical life, or maybe online life.</p>
+        <p>We’ll fill Space with our knowledge. We’ll know what “dark matter” is, we’ll know how air really behaves. In the future, the periodic table of elements will be an insanely colorful document, given to first graders as homework, that iconic, kaleidoscope textbook handout. First graders will be as smart as high school freshmen today, every year getting smarter, earlier. We will all know a bit of everything. Everyone will be multi-literate, no exceptions, by age seven.</p>
+        <p>Every kid’s birth certificate will be a Wi-Fi certificate, and their parents will log them on as soon as they’re home from the hospital. We’ll call it a “baptism,” a word so antiquated we’ll forget the old meaning. It’ll just mean slipping on their first pair of augmented-reality glasses as they lie in their crib. We’ll celebrate! Parents will invite relatives to watch their baby open their eyes to the world.</p>
+        <p>Everyone will wear augmented glasses or contacts. They’ll borrow stylistically from every era of history. Today, those 1960s, tortoise-colored Andy Warhol glasses are back in style. Tomorrow, everything will be back in style. I see a future where everyone’s dressed like time doesn’t exist. Every decade will be found in the now, in our clothes and our attitude. They’ll become genres we associate with, no longer a product of time.</p>
+        <p>And we’ll know more about Time, too. We’ll know that Space and Time are kind of the same thing. Parallel. As Time increases, so does our understanding of Space. And each other. We’ll know so much about the world that we’ll be comfortable, no matter where we go or who we’re with. This is what education does. I hear a future that sings in harmony. Observant, grateful, and happy. A world of mutual understanding.</p>
+        <p>Have you noticed how the paleness of the sky is sometimes the same shade as how you feel? Tired, a little somber, but still bright? Yes. How about how a guitar can sound as wistful as an autumn breeze feels? Do you understand? Yes. We’ll all understand. We will all have beautiful thoughts, together.</p>
+        <p>For now, we’re still piecing together our thoughts about space. We know what Space is, we just haven’t figured it all out. We’re still filling it, studying it, and trying to understand. Reaching, as surely as Time, toward a future where we know better.</p>
+        <p>Knowing it, well. That’s the future.</p>
+        <p>I know we just had an earthquake a few days ago. I know we have them almost every hour here in California. I still have faith. I’m a little scared, but just for myself. For People? Not really. We don’t belong here. Earth raised us, but Space is our Home. We’ll fill it up with our knowledge and newfound empathy for the stars.</p>
+        <p>We’ll think in atoms. Quarks. Even smaller. Whatever’s next. We’ll also think even bigger. Home will be every corner, with friends at every intersection. I see a future where Earth is one big city. Jupiter will be a city, too. Talk about expanding world views! Maybe we’ll study abroad in Andromeda. The Universe is our university. I see a future where Earth is one big city, big enough for everyone to have opportunity, their own space. We’ll know all the different ways Space is. How Time, Today, and Tomorrow exist. How People can be, and how we love and have fun.</p>
+        <p>I see a future where Earth is one big city. City will mean Earth, and Country will mean Solar System. We’ll pledge allegiance to the whole wide world, to the nearest star we came from. In this future, where International will mean a trip to another star, what will Galaxy mean? And what will Cluster mean? Supercluster? Universe? World?</p>
+        <p>World will mean Knowledge.</p>
+        <p>And Knowledge means Future.</p>
+        </div>
+        <p id="toggle-more" class="yellow">Read more</p>
       </div>
 
       <div class="blocky">
+        <h1>Visual Essay: God Made Mud.</h1>
         <a href="mud">
           <div id="mud">
             <div id="mud-content">
               <h1>God made mud.</h1>
-              <p style="text-align: center;">A visual essay on a perspective that inspires me, especially when I struggle or feel lost.</p> 
+              <p style="text-align: center;">A one-page website on a perspective that inspires me, especially when I struggle or feel lost.</p> 
               <img src="mud/slides/juliendouvier12.gif" alt="" style="width: 120px">
             </div>
           </div>
