@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+	<head>
+		<title>ACAD 490</title>
+		<link href="https://fonts.googleapis.com/css?family=Heebo|Poppins:400,500" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav>
+			<a href="#original">Original Plan</a>
+			<a href="#research">Research</a>
+			<a href="#studies">Studies</a>
+			<a href="#pivot">The Pivot</a>
+		</nav>
+
+		<div class="slide intro">
+			<div class="wrap">
+				<h1>Jenny Zhang<br>
+					ACAD 490 with Patrick Dent<br>
+					Fall 2017 Summary</h1>
+				<h2>Jenny's Directed Research Project, featuring all her pitfalls, pivots, and progress.</h2>
+				<p>I began the semester with the goal to create a fully functioning CMS platform, but soon realized just how ambitious such a project was. As someone who has had splotchy experience developing a full-stack program, I was an eager, naive child.</p>
+				<p>I determined a goal without being completely aware of all of its moving parts. Thus, this story of my Fall 2017 research outlines my web development attempts and experiences this semester, and how they contribute to my product moving forward.</p>
+				<h2>Table of Contents</h2>
+				<ol>
+					<li><a href="#original">Original Plan</a></li>
+					<li><a href="http://github.com/jennyliuzhang/silogram" target="_blank">Link to Silogram testbed (abandoned)</a></li>
+					<li><a href="#research">Dashboard Research Takeaways</a>
+						<ul>
+							<li><a href="#screen">Design for different screen sizes</a></li>
+							<li><a href="#settings">Element style and settings</a></li>
+							<li><a href="#collections">Collection items</a></li>
+						</ul>
+					</li>
+					<li><a href="#studies">One Pager Studies</a></li>
+					<li><a href="#pivot">The Pivot</a>
+						<ul>
+							<li><a href="#modular">Modular Design</a></li>
+							<li><a href="#flow">Product Flow Outline</a></li>
+						</ul>
+					</li>
+				</ol>
+			</div>
+		</div>
+
+		<div id="original" class="slide original">
+			<div class="wrap">
+				<h1>Original Plan</h1>
+				<h2>My old concept way back when... ah, what a different, nostalgic time.</h2>
+				<p>The genesis of my content management platform was the desire to create a platform <span class="highlight">more robust than a static site generator, but less clunky than WordPress</span>. The idea was to target the niche audience seeking to exercise some control over their website layout and content matter, but keep a fixed content structure. Some tools include too many moving parts, and the dashboards are overwhelming. I wanted to create a tool that reduced this complexity for the user. I visualized two functionalities:</p>
+				<ol>
+					<li>On the admin side, a clear interface for creating an <em>entry module</em> in a database and editing an entry's appearance and content</li>
+					<li>On the visitor side, a simple structure for displaying these entries</li>
+				</ol>
+				<p>As I began to plan out this product, I outlined what research, development work, and quality assurance measures would need to be determined. This first semester was dominantly research work, so for the purposes of this summary, I will just recap what my intentions were in this step of my process, and which ones I satisfied:</p>
+				<ul>
+					<li><img src="img/checkbox-checked.png" alt="">Research similar platforms (Webflow, WordPress, Tumblr, etc.) to understand how a dashboard might look</li>
+					<li><img src="img/checkbox-checked.png" alt="">Study how the visitor-facing UI might look</li>
+					<li><img src="img/checkbox-checked.png" alt="">Detail possible use cases</li>
+					<li><img src="img/checkbox-open.png" alt="">Outline the endpoints and important object components of a “project” module</li>
+					<li><img src="img/checkbox-open.png" alt="">Finalize which JavaScript framework(s) I wanted to utilize</li>
+				</ul>
+				<p>At the end of the Research stage, I planned to submit a paper to Professor Dent to explain my research on software infrastructure, why I chose my specific frameworks, and beta product specifications. However, after beginning this process, I realized my research did not necessarily fit this mold. Instead, my research and studies are <em>quite circuitous</em> and jump around in directions I didn't foresee.</p>
+
+				<h2>The Mistake of Making a Product Spec Too Soon: Silogram</h2>
+				<p>After doing light research, I drafted a product spec for my CMS, which I over-eagerly created UI for and named:</p>
+				<p><strong>Silogram</strong> is a CMS that allows you to create <em>entries</em>, much like how you would write in a journal, but for different categories of your life. Here's an example of what I picture you could do:</p>
+				<img src="img/silo1.jpg" alt="">
+				<p>In this mockup, I created my own metrics and my own categories and goals. I imagine a user could click on a silo in their histogram and be prompted with a dialog to enter some notes on progress in that domain. For example, if I successfully prepared a really cool recipe, I could add an entry under Cuisine. That silo would increase based on the number of entries; perhaps entries could also have a field that includes weight, or how much of a milestone it is.</p>
+				<img src="img/silo2.jpg" alt="">
+				<p>Thus, this project involves developing the following:</p>
+				<ol>
+					<li>A full-stack application that stores entries in a database and allows for editing through a dashboard.</li>
+					<li>Design of an algorithm to calculate weight of an entry.</li>
+					<li>A fleshed out UI to make a Silogram an interesting and easily understood tool.</li>
+					<li>Allowance for metrics, categories, etc. to be modular and highly customizable.</li>
+				</ol>
+				<p>After some research and follow-up with a few developer friends, I decided I wanted to use the MERN stack (Mongo, Express, React, and Node) to create my application. I intended to borrow the structure from Webflow's CMS (largely based on "collections", which I believed my "entries" could be modeled off of), and TinyMCE's editing interface.</p>
+				<p>On October 1, I made headway on setting up the environment, which is now <a href="http://github.com/jennyliuzhang/silogram" target="_blank">an abandoned testbed on my GitHub.</a> I made the mistake of going into development too soon. I set up the React frontend and MongoDB backend, and started to create "Silo" components, until I hit a wall.</p>
+				<h2>Confusion about Functionality</h2>
+				<p>The Silogram specifications were very different from my original intentions. Though they did follow similar structures, Silogram pinholed the functionalities of the program, and it was difficult for me to come up with a program architecture that still satisfied my original goal. It was too specific.</p>
+				<p>Eventually, after more thorough research into different dashboard editors and my web design observations, I circled back to my original concept with of an entry-based, simple website creator and simplified the flow involved. The next two sections detail where I went this semester.</p>
+			</div>
+		</div>
+
+		<div id="research" class="slide research">
+			<div class="wrap">
+				<h1>Dashboard Research</h1>
+				<h2>My interactions with the existing web design tools of Webflow, WordPress, and Tumblr.</h2>
+				<p>I wanted to research Webflow, WordPress, and Tumblr to pinpoint specific dashboard interface insights. These three platforms allow users to edit their front-facing website designs and are renowned for the robustness of these editor interfaces. Their interfaces will inform any dashboard I design.</p>
+				<p><a href="http://webflow.com" target="_blank">Webflow</a> is a website creator with WYSIWYG functionality but more detailed than a normal WYSIWYG editor because it reveals a second level that is often hidden from view. Because it allows editing of a second level of abstraction&mdash;specific positioning styles and media queries&mdash;the end product is behaviorally more sound. Websites made in Webflow actually perform like semantically correct websites.</p>
+				<p>I secondarily researched <a href="http://wordpress.org" target="_blank">WordPress</a> and <a href="http://tumblr.com/" target="_blank">Tumblr</a>. These tools are content-based, much like how my original plan relied on entries. Webflow has a friendlier interface for theme/website design creation, so on WordPress and Tumblr, I mainly examine how content can be edited on these tools, not design.</p>
+				<p>For two of my personal web design projects, I decided to use the Webflow framework instead of designing and developing manually. As I learned to design with Webflow, I compared it with how I design from scratch, or if I were to use WordPress or Tumblr to manage content. I noted three key features that I felt crafted the seamless user experience on the editor side across these three platforms:</p>
+				<ol>
+					<li>Mobile, mid-sized, and desktop screen design</li>
+					<li>Styles, Settings, and Interactions as editable entry characteristics</li>
+					<li>"Collections" on Webflow, or "Posts" on WordPress/Tumblr</li>
+				</ol>
+				<p></p>
+				<p>Considering the interfaces of these three programs helped me think about how I might organize the characteristics of an entry. Webflow excels at merging the language of manual web design with WYSIWYG functionality without being a directly drag-and-drop program.</p>
+
+				<h2 id="screen">Mobile, mid-sized, and desktop screen design</h2>
+				<img src="img/mobile-mid-desktop.gif" alt="">
+				<p>This particular web design needed to be responsive, and I typically subscribe to <span class="highlight">mobile-first</span> web development. Webflow has the option to develop for these different screen sizes easily, which is a unique function I find necessary: most of my CSS work, after I've determined the appearance characteristics, revolves around making elements work for different media queries.</p>
+				<p>Webflow allows for design within each of these media queries, but focuses on desktop-first. This caused me many problems as I went from editing the versions for larger screen sizes first to editing the smallest, mobile version. Any appearance changes made on the mobile version would not translate to the desktop version, but all appearance changes on desktop would apply to mobile. This made toggling between the settings while editing the appearances of objects highly inconsistent.</p>
+				<h3>The Takeaway</h3>
+				<p class="big">The tiered screen size editor is terrific. However, I would make it mobile-first, and make the first interface the smallest, mobile screen. This way, the editor must decide the most important components, basics of their appearance, and their hierarchy <em>before</em> worrying about the complexities that come with increased screen size.</p>
+
+				<h2 id="settings">Styles, Settings, and Interactions as editable entry characteristics</h2>
+				<img src="img/styles-settings-interactions.gif" alt="" style="margin: auto; display: block; width: 100%; max-width: 600px;">
+				<p>Webflow allows editing of objects through these three abstractions. In the <span class="highlight">Styles</span> panel, you can edit the appearance of the object, which includes superficial qualities like:</p>
+					<ol>
+						<li>Size, Position, Transforms</li>
+						<li>Margin and Padding</li>
+						<li>Background, Opacity, and Border</li>
+						<li>Text Styles within the object</li>
+					</ol>
+				<p>Below is the appearance editor on Tumblr. Tumblr themes control dominantly the visual frontend of the website, but the code of many themes allow for customization of superficial qualities.</p>
+				<img src="img/tumblr-editor2.gif" alt="">
+				<p>While Tumblr only allows for this style editing (of color, font, background, etc.), Webflow also allows the editor to control other settings. In Webflow, the <span class="highlight">Settings</span> panel allows for anchoring, visibility on different screen sizes, and linking. Basically, this panel controls the purpose of the object on the page.</p>
+				<p>The <span class="highlight">Interactions</span> panel controls the behavior of the element on hover, when scrolled past, and on click or tap. The abilities included animation, and changing appearance qualities like opacity.</p>
+
+				<h3>The Takeaway</h3>
+				<p class="big">Webflow appropriately divides the attributes and functions of an element. These panels run the gamut of what can be edited in CSS for a given web object. My entry objects will be editable in similar form: appearance, object settings, and interactions.</p>
+
+				<h2 id="collections">"Collections" on Webflow, or "Posts" on WordPress/Tumblr</h2>
+				<p>In this example of Webflow "Collections", I've created a "Podcast" collection object, with fields that I determined like title, description, and SoundCloud link.</p>
+				<img src="img/cms-collections1.jpg" alt="">
+				<p>The "Collections" feature on Webflow is the nearest function I have found to how I imagine my entries object to be organized. Collections is very similar to how WordPress or Tumblr might store and edit "posts." However, it is lacking because I can only input a collection item through this interface, which is overwhelming to access if you are just a content editor.</p>
+				<img src="img/cms-collections2.gif" alt="">
+				<img src="img/cms-collections3.gif" alt="">
+				<p>Once I populate my collection fields with the content I want, I can control which elements display these fields. It's a great system to make the collection design on the frontend match your content seamlessly.</p>
+				<p>Both WordPress and Tumblr platforms organize their posts (the equivalent of a Webflow collection item) on the backend, separate visually from frontend. It's seamless, but more disconnected than Webflow because it's not immediately clear where the content fields display on the frontend. Below is the editor interface for WordPress, and how it translates to the frontend.</p>
+				<img src="img/wordpress-editor.gif" alt="">
+				<img src="img/wordpress-frontend.jpg" alt="">
+				<p>This frontend is structured through a WordPress theme where all of the content fields are translated into these variables through code. Therefore, WordPress is not as seamless of an interface. Tumblr similarly displays posts through a Tumblr theme.</p>
+				<img src="img/tumblr-editor1.gif" alt="">
+				<p>These platforms clearly translate a collection item's/post's content fields into a frontend interface, but the editing of these fields are not straightfoward. In Webflow, you have to go into the Collections drop down on the admin editor; in WordPress and Tumblr, you need to access your feed dashboard and create a new post in a different interface.</p>
+				<h3>The Takeaway</h3>
+				<p class="big">A collection item should consist of fields that you can choose to populate your website design with. Populating these fields should be much easier than how Webflow, WordPress, or Tumblr allow content editing. This could be directly on the website design in a <span class="highlight">WYSIWYG</span> fashion.</p>
+			</div>
+		</div>
+
+		<div id="studies" class="slide studies">
+			<div class="wrap">
+				<h1>One Pager Studies</h1>
+				<h2>My takeaways from exposure to hundreds of one page/simple websites.</h2>
+				<p>I actively look at websites on my favorite websites, <a href="http://onepagelove.com/" target="_blank">One Page Love</a> and <a href="http://typewolf.com/" target="_blank">Typewolf</a>. I study the sites on these blogs in particular because they typically showcase lightweight, simple websites. By simple, I mean that the website has only <span class="highlight">one or two types of content to communicate</span>&mdash;one kind of collection, such as static information about a restaurant, or a series of podcasts.</p>
+				<p>The designs are communicative of a single purpose, typically, and have a few very basic elements because they're so simple. These websites are often <span class="highlight">thesis statement websites</span>, boiled down to their most necessary elements, rid of any sidebar, content, and widget fluff.</p>
+				<p>Based on my large exposure to website design and specifically these more simple, less content-heavy websites, I realized that most of the websites followed a natural grain. They all adhered to a few key qualities and components:</p>
+				<ol>
+					<li>Background</li>
+					<li>Container</li>
+					<li>Navigation</li>
+					<li>Header</li>
+					<li>Content</li>
+					<li>Footer</li>
+				</ol>
+				<p>These patterns replicated across different website genres and aesthetics. I reflected that because many websites exist to communicate basic information about an entity, they must&mdash;at very least&mdash;include a <span class="highlight">header</span> and <span class="highlight">content</span>. These items are usually wrapped in a shared space via a <span class="highlight">container</span>, and placed on a page with a <span class="highlight">background</span>. There is often a <span class="highlight">navigation</span> menu that allows you to toggle between the other content on the website, and there's a <span class="highlight">footer</span> for ancillary information. These qualities are present in the following:</p>
+				<img src="img/study1.jpg" alt="">
+				<img src="img/study2.jpg" alt="">
+				<img src="img/study3.gif" alt="">
+				<p>The look of the content varies between these sites: some display paragraphs, some display, some display paragraphs with graphic elements and photos, and some display graphic elements only. The header (section with the name/title of the website) is typically always grouped with the navigation, however, and both are found at the top of the page.</p>
+				<img src="img/study5.jpg" alt="">
+				<img src="img/study6.jpg" alt="">
+				<img src="img/study4.gif" alt="">
+				<p>Most elements on these websites are contained within a wrapper of some sort to limit the width of the inner content. <span class="highlight">Dynamic content</span>, or collection items, are contained within these wrappers.</p>
+				<img src="img/study7.jpg" alt="">
+				<img src="img/study8.jpg" alt="">
+				<p>Footers are always at the bottom and contain static content.</p>
+				<h2>Perhaps a CMS with a full dashboard separate from the frontend was too complex.</h2>
+				<p>I realized that these designs represented one or two collection item structures at most. All of these websites have the same repeating structures, so they could easily be templates. Webflow, WordPress, and Tumblr's dashboard editors were overkill for such websites. Although the content is dynamic, going into a complex backend interface to populate/update exposes too many unnecessary web design nuances. These websites were all use cases for a templated, easy-to-use editing tool that didn't exist yet.</p>
+				<h3>What if...</h3>
+				<p class="big">...the frontend could be easily populated in an "edit mode"? How can you create simple website with one or two collection items at most in a <span class="highlight">templated platform</span>?</p>
+			</div>
+		</div>
+
+
+		<div id="pivot" class="slide pivot">
+			<div class="wrap">
+				<h1>The Pivot</h1>
+				<p>Through my research and studies, I began to identify the key components of an effective editor interface, and a simple website with a collection item. <span class="highlight">These apply across all website genres and aesthetic styles.</span></p>
+				<h3>Effective editor interfaces have:</h3>
+				<ol>
+					<li>Design for different screen sizes</li>
+					<li>Styles and settings per element</li>
+					<li>Management of collection items</li>
+				</ol>
+				<h3>"Simple Websites" (1-2 collection items) have:</h3>
+				<ol>
+					<li>Background</li>
+					<li>Container</li>
+					<li>Navigation</li>
+					<li>Header</li>
+					<li>Content</li>
+					<li>Footer</li>
+				</ol>
+
+				<h2 id="modular">Modular Design</h2>
+				<p>To describe this tool, I will describe a larger concept of <em>modular design</em> to create interfaces.</p>
+				<p class="big"><span class="highlight">Modules</span> are standardized, independent objects that can be used to make up a more complex object. <span class="highlight">Interfaces</span> are an example of an object that modules can make up.</p>
+				<p class="big">Built in jQuery, this is a website tool to allow users to design and style a fixed set of modules for a given interface.</p>
+				<p>For a v0 example, users can apply this tool to build websites. As I detailed, many "simple websites" share some bare minimum elements, like a header and navigation menu. A header is a module. A navigation menu is also a module.</p>
+				<p>This tool will present to users a <span class="highlight">website template</span> that contains plain versions of these modules. It will allow them to drag-and-drop and stylize the modules for mobile, mid-sized, and large screens. After the user is done designing their modules how they want, they can export the what they've made as a static website with a Sass stylesheet.</p>
+				<p>In the future, this tool will allow designs to be open-source. When someone creates a website design, it can be saved to a database and available for anyone to use. This is similar to how Thingiverse or Tumblr themes can be shared.</p>
+				<h2 id="flow">Product Flow Outline</h2>
+				<ol>
+					<li>Upon load, the page presents you with a workspace containing a very basic website template with a series of modules (except text styles).</li>
+					<li>The user may click on these elements and edit its shape, size, positioning, and the text styles within each of these elements.</li>
+					<li>Modules can be locked; this will symbolize relative or absolute positioning.</li>
+					<li>Padding and margins will be drag-and-drop.</li>
+					<li>Colors will be picked from a color picker.</li>
+					<li>Text styles will be edited like WYSIWYG editors (e.g. <a href="https://www.tinymce.com/" target="_blank">tinyMCE</a>).</li>
+					<li>In a panel adjacent to this, you can toggle between the setting the website template in Mobile, Mid-Size, or Desktop mode.</li>
+					<li>You can also create a collection of entries and manage these in another ancillary panel. You determine and populate the content fields for entries.</li>
+					<li>Once collection items are created, they are saved to a database. You can populate elements with a collection item's fields and design its modules, as detailed above.</li>
+					<li>After the user is done designing, they can save their pages and export their entire website, including the database, HTML files, and Sass stylesheet.</li>
+				</ol>
+			</div>
+		</div>
+	</body>
+</html>
