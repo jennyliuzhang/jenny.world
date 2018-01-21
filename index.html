@@ -39,7 +39,7 @@
 
       h1 {
         margin: 0 0 10px;
-        font: bold 2.5em/1.65em "Grad", serif;
+        font: bold 2.2em/1.65em "Grad", serif;
       }
 
       h2 {
@@ -54,14 +54,11 @@
       .slide {
         position: relative;
         margin: auto;
-        height: 100vh;
-        padding: 20px;
       }
 
         .paragraph {
           margin: 0 auto;
-          padding: 25vh 0;
-          max-width: 460px;
+          padding: 5vh;
           text-align: center;
         }
 
@@ -70,10 +67,21 @@
         and (min-device-width: 600px) 
         and (min-width: 600px) {
 
+          h1 {
+            font: bold 2.7em/1.65em "Grad", serif;
+          }
+
           .slide {
             background: #fafafa;
-            padding: 0;
+            height: 100vh;
+            padding: 20px;
           }
+
+            .paragraph {
+              padding: 25vh 0;
+              max-width: 460px;
+              text-align: center;
+            }
 
           .absolute { position: absolute; }
 
