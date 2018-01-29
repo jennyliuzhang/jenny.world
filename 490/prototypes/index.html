@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+	<head>
+		<title>Jan 27 Test</title>
+		<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+		<script src="js/jqueryUI/jquery-ui.js"></script>
+		<link href="contextmenu/contextMenu.css" rel="stylesheet">
+		<script src="contextmenu/contextMenu.js"></script>
+
+		<script src="js/currentSlide.js"></script>
+		<script src="js/addText.js"></script>
+	</head>
+	<body>
+		<h2 id="editor-slides-h2">Slides</h2>
+    <div id="editor-slides">
+      <div class="slide" style="background: lightpink"></div>
+      <div class="slide" style="background: salmon"></div>
+      <div class="slide" style="background: lightsteelblue"></div>
+      <div class="slide" style="background: steelblue"></div>
+    </div>
+
+		<h2 id="editor-object-h2">Editor</h2>
+    <div id="editor-object">
+    </div>
+
+    <div id="content">
+      <div class="slide" style="background: lightpink"></div>
+      <div class="slide" style="background: salmon"></div>
+      <div class="slide" style="background: lightsteelblue"></div>
+      <div class="slide" style="background: steelblue"></div>
+    </div>
+
+
+		<script>
+		var menu = [{
+        name: 'Add a text box',
+        title: 'Add a text box',
+        fun: function () {
+					console.log($('.highlight'));
+            addText($('.highlight'));
+        }
+    }, {
+        name: 'Add an image',
+        title: 'Add an image',
+        fun: function () {
+            alert('Under construction')
+        }
+    }];
+
+		//Calling context menu
+ 		$('.slide').contextMenu(menu);
+		</script>
+  </body>
+</html>
