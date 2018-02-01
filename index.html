@@ -4,11 +4,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Worlds to Imagine</title>
+    <title>Student of the Universe</title>
     <link rel='shortcut icon' type='image/x-icon' href='img/fav.png'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Serif+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
     <style>
 
@@ -18,8 +18,13 @@
       }
 
       @font-face { 
-        font-family: 'Noe Display';
-        src: url('noe-display-bold.otf'); 
+        font-family: 'Grad';
+        src: url('grad-bold.otf'); 
+      }
+
+      @font-face { 
+        font-family: 'Akkurat Mono';
+        src: url('akkurat-mono.ttf'); 
       }
 
       *, body { margin: 0; }
@@ -29,440 +34,87 @@
 
       p {
         margin: 0 0 20px;
-        font: normal 0.75em/1.65em "Roboto Mono", monospace;
+        font: normal 1.2em/1.9em "Lora", serif;
       }
 
-      #pink, .pink { background: #e87fa4; }
-      #yellow, .yellow { background: #eaca0c; }
-      #green, .green { background: #69c695; }
+      h1 {
+        margin: 0 0 10px;
+        font: bold 2.2em/1.65em "Grad", serif;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font: normal 0.9em/1.65em "Akkurat Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+      }
 
       .absolute { position: relative; }
 
       .slide {
         position: relative;
         margin: auto;
-        width: 100vw;
-        padding: 20px 0 0;
       }
 
-      .flower, .moon, .earth, .media { display: none; }
-
-      .thing {
-        width: 92%;
-        margin: auto;
-        border-radius: 10px 10px 15px 15px;
-        overflow: hidden;
-        opacity: 0.9;
-      }
-
-        .thing-top {
-          padding: 14px;
-          background: #ededed;
-          border-bottom: 1px solid #ddd;
-        }
-
-        .circle-small, .circle-med {
-          display: inline-block;
-          width: 12px; height: 12px;
-          margin-right: 5px;
-          border-radius: 12px;
-        }
-
-        .circle-med {
-          width: 30px; height: 30px; 
-          margin-right: 18px;
-          border-radius: 30px;
-        }
-
-      .info-window, .info-window:hover {
-        background: url('img/sky.gif');
-        background-size: 100% 100%;
-        opacity: 1;
-      }
-
-        #jenny-info {
-        display: block;
-        margin: auto;
-        width: auto;
-        padding: 20px 30px;
-        color: #54594c;
-        text-align: center;
-      }
-
-        #jenny-info h2 {
-          margin: 15px 0;
-          font: 700 2.05em/1.4em "Noe Display", serif;
-          color: #333;
+        .paragraph {
+          margin: 0 auto;
+          padding: 10vh 5vh 5vh;
           text-align: center;
-          letter-spacing: 0.01em;
         }
-
-      #second-fold {
-        text-align: center;
-        padding: 30px 0;
-      }
-
-        #second-fold p.foot, #second-fold p.foot a {
-          margin: 20px auto 10px;
-          width: 300px;
-          font: normal 0.9em/1.9em "Roboto Mono", monospace;
-          color: #444;
-        }
-
-        .blocky {
-          position: relative;
-          width: 83%;
-          margin: 0 auto 30px auto;
-          padding: 20px;
-          background: #fff;
-          text-align: left;
-          border-radius: 8px;
-          box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
-        }
-
-          .blocky h1 {
-            margin-bottom: 30px;
-            font: normal 1em/3em "Roboto Mono", monospace;
-            color: #000;
-            text-align: center;
-            text-transform: uppercase;
-            border-bottom: 1px solid #ddd;
-          }
-
-          .blocky p {
-            font: normal 0.85em/1.9em "Roboto Mono", monospace;
-            color: #444;
-          }
-
-          #lyric p {
-            font: normal 1em/2em "Source Serif Pro", serif;
-          }
-
-          #toggle-more { display: none; }
-
-          #mud, .blocky img {
-            width: 100%;
-            height: auto;
-            margin: 10px 0;
-            background: #000;
-            border-radius: 10px;
-            opacity: 0.88;
-          }
-
-            #mud:hover { opacity: 1; }
-
-            #mud #mud-content {
-              padding: 40px 20px 0;
-              color: #fff;
-              text-align: center;
-            }
-
-            #mud #mud-content h1 {
-              margin: 0 0 10px;
-              font: 600 2.5em/1.5em "Arnhem Pro", serif;
-              color: #fff;
-              text-transform: none;
-              border: none;
-            }
-
-            #mud #mud-content p { color: #aaa; }
 
       /* MID SCREENS */
       @media screen 
         and (min-device-width: 600px) 
         and (min-width: 600px) {
 
-      .slide {
-        background: #fafafa;
-        padding: 0;
-      }
-
-      #window {
-        position: relative;
-        margin: auto;
-        width: 540px;
-        height: 700px;
-      }
-
-      /*
-      .blink {
-        animation: blink-ani 1.5s linear infinite;
-        -webkit-animation: blink-ani 1.5s linear infinite;
-      }
-
-      @keyframes blink-ani {
-        0% { opacity: 0.0; }
-        30% { opacity: 0.0; }
-        35% { opacity: 1.0; }
-        65% { opacity: 1.0; }
-        70% { opacity: 0.0; }
-        100% { opacity: 0.0; }
-      }
-
-      @-webkit-keyframes blink-ani {
-        0% { opacity: 0.0; }
-        30% { opacity: 0.0; }
-        35% { opacity: 1.0; }
-        65% { opacity: 1.0; }
-        70% { opacity: 0.0; }
-        100% { opacity: 0.0; }
-      }
-
-      #screen {
-        width: 100vw; height: 100vh;
-        position: fixed;
-      }
-      */
-
-      .absolute { position: absolute; }
-      .flower, .moon, .earth, .media { display: block; }
-
-      .flower { width: 120px; top: 150px; left: -70px; }
-      .moon { width: 80px; top: 30px; left: 500px; }
-      .earth { width: 140px; top: 360px; left: 460px; }
-
-      .thing {
-        width: auto;
-        border-radius: 10px 10px 15px 15px;
-        overflow: hidden;
-        box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
-        opacity: 0.9;
-      }
-
-        .thing .thing-desc {
-          display: none;
-          position: absolute;
-          width: 150px;
-          top: 70px;
-          left: 20px;
-          color: #fff;
-        }
-
-        .thing a img { margin: 0 0 -5px 0; }
-
-        .thing:hover .thing-desc { display: block; }
-
-        .thing:hover { cursor: pointer; }
-        .thing:hover a img { opacity: 0.15; }
-
-        .thing:hover {
-          background: #333;
-          opacity: 1;
-        }
-
-      .info-window, .info-window:hover {
-        top: 70px;
-        left: 230px;
-        background: url('img/sky.gif');
-        background-size: 100% 100%;
-        opacity: 1;
-        cursor: default;
-        box-shadow: 2px 2px 60px rgba(0,0,0,0.2);
-      }
-
-      #jenny-info {
-        width: 250px;
-        text-align: left;
-      }
-
-      #second-fold {
-        background: url('img/sky2.gif');
-        background-size: 100% 100%;
-        padding: 10px 0;
-        box-shadow: 0 -5px 50px rgba(0,0,0,0.05);
-      }
-
-        #second-fold p.foot, #second-fold p.foot a {
-          margin: 40px auto;
-          width: auto;
-        }
-
-        .blocky {
-          width: 65vw;
-          margin: 30px auto 60px;
-          padding: 50px 60px;
-          box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-        }
-
-          #manifesto {
-            margin-top: -70px;
+          h1 {
+            font: bold 2.7em/1.65em "Grad", serif;
           }
 
-          p#toggle-more {
-            display: inline-block;
-            width: 110px;
-            padding: 5px 15px;
-            font: normal 1.2em/2em "Roboto Mono", monospace;
-            border-radius: 10px;
-            text-decoration: underline;
+          .slide {
+            background: #fafafa;
+            height: 100vh;
+            padding: 20px;
           }
 
-          #lyric #lyric-more { display: none; }
-
-          #mud #mud-content p {
-            margin: auto;
-            max-width: 310px;
-          }
-
-      }
-
-        /* LARGE SCREENS */
-        @media screen 
-          and (min-device-width: 1200px) 
-          and (min-width: 1200px) {
-
-            .blocky {
-              width: 45vw;
-              max-width: 640px;
+            .paragraph {
+              padding: 25vh 0;
+              max-width: 460px;
+              text-align: center;
             }
+
+          .absolute { position: absolute; }
+
+        }
+      
+      /* LARGE SCREENS */
+      @media screen 
+        and (min-device-width: 1200px) 
+        and (min-width: 1200px) {
+
 
         }
     </style>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://cdn.rawgit.com/konvajs/konva/1.7.2/konva.min.js"></script>
-
-    <script>
-    $( document ).ready(function() {
-      $( "#toggle-more" ).click(function() {
-        $( "#lyric-more" ).slideToggle(500);
-        if ($( "#toggle-more" ).text() == "Read less" ) {
-          $( "#toggle-more" ).text("Read more");
-        }
-        else {
-          $( "#toggle-more" ).text("Read less");
-        }
-      });
-    });
-    </script>
     
   </head>
   <body>
-
-    <!-- <div id="screen"></div> -->
-
-    <a href="http://www.brookeowensfellowship.org/" target="_blank"><img style="position: absolute; width: 160px; top: 10px; left: 10px; z-index: 9999;" src="bof.png" alt=""></a>
-
     <div class="slide">
-      <div id="window">
-        <img class="absolute emoji moon" src="img/moon.png" alt="">
-
-        <div class="absolute thing media" style="top: -7px; left: 0;">
-          <div class="thing-top">
-            <div class="circle-small pink"></div>
-            <div class="circle-small yellow"></div>
-            <div class="circle-small green"></div>
-          </div>
-          <a href="http://instagram.com/jennyliuzhang" target="_blank">
-            <img src="img/drawing.jpg" width="260" alt="">
-            <div class="thing-desc">
-              <p>Check out my Instagram for digital art!</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="absolute thing media" style="top: 240px; left: 60px;">
-          <div class="thing-top">
-            <div class="circle-small pink"></div>
-            <div class="circle-small yellow"></div>
-            <div class="circle-small green"></div>
-          </div>
-          <a href="http://medium.com/@jennyliuzhang" target="_blank">
-            <img src="img/pluto.jpg" width="360" alt="">
-            <div class="thing-desc">
-              <p>Visit my Medium account for some written musings!</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="absolute thing info-window">
-          <div class="thing-top">
-            <div class="circle-small pink"></div>
-            <div class="circle-small yellow"></div>
-            <div class="circle-small green"></div>
-          </div>
-          <div>
-            <div id="jenny-info">
-              <h2>Jenny Liu Zhang</h2>
-              <!-- <div class="blink" style="position: absolute; top: 75px; right: 30px; width: 1px; height: 40px; background: #54594c;"></div> -->
-              <p>One of 100 students in the <a href="http://iovine-young.usc.edu" target="_blank">USC Iovine and Young Academy</a> for The Arts, Technology and Business of Innovation.</p>
-              <p>Excited about design, tech, people, and space.</p>
-              <p style="font-weight: bold; color: #000">Portfolio: <a href="http://www.jennyzhang.me" target="_blank">jennyzhang.me</a><br>
-              Blog: <a href="http://jennytypes.com" target="_blank">jennytypes.com</a></p>
-            </div>
-            
-          </div>
-        </div>
-
-        <img class="absolute emoji flower" src="img/flower.png" alt="">
-
-        <img class="absolute emoji earth" src="img/earth.png" alt="">
-
-        <!-- <div class="absolute circles" style="width: 160px; top: 400px; left: 630px;">
-          <div class="circle-med" id="pink"></div>
-          <div class="circle-med" id="yellow"></div>
-          <div class="circle-med" id="green"></div>
-        </div> -->
+      <div class="paragraph">
+        <p>"A human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyze a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. <strong><span style="border-bottom: 1px solid #000">Specialization is for insects.</span></strong>"</p>
       </div>
     </div>
-
-    <script src="konva.js"></script>
-
-    <div class="slide" id="second-fold">
-      <div class="blocky" id="manifesto">
-        <h1>My Manifesto: Worlds to Imagine</h1>
-        <p><em>The Phantom Tollbooth</em> by Norton Juster is one of my favorite books. I read it the first time when I was nine, and it got me interested in space. The main character, Milo was an average kid with plenty of time, as we all were, until a random turnpike tollbooth, an unfamiliar map, and a car appeared in his bedroom. He paid the fare and I flipped the page. Together, we soon found ourselves  buying synonyms at the Dictionopolis Word Market, jumping to the Island of Conclusions, and meeting all sorts of new characters and concepts.</p>
-        <img style="margin: 5px 0 25px" src="img/phantom.jpg" alt="">
-        <p>Today, I want to make my own tollbooths to new worlds. I'm passionate about design, product strategy, and multimedia journalism. I’m passionate about graphic and product design, entrepreneurship, web development, user experience research, interviewing, and writing. Like a tollbooth, each of these skills expose a topic to someone and encourage them to explore it. There are so many worlds to imagine. From space exploration to international crises, anyone could be the next Milo. All they need is a car, map, and tollbooth.</p>
+    <div class="slide">
+      <div class="paragraph">
+        <h1>Jenny Liu Zhang</h1>
+        <h2>Definitely not an insect</h2>
+        <br><br>
+        <h2>Full website coming soon</h2>
+        <h2>Meanwhile, here are my <a href="http://jennyzhang.me/">projects</a></h2>
+        <h2>And also my <a href="http://jennytypes.com/">long-form musings</a></h2>
       </div>
-
-      <div class="blocky" id="lyric">
-        <h1>Lyric Essay: Future Vignettes</h1>
-        <p style="width: 85%; margin: 0 auto 15px; text-align:center">"What do you do when confronted by a person who doesn’t get why you are so excited about aerospace?"</p>
-        <p>I think,<br>
-        Tell them about the future!</p>
-        <br>
-        <p>I see a future where Earth is one big city.</p>
-        <div id="lyric-more">
-        <p>I see a future where your sky is my sky. You’ll never need to tell me what the sky looks like in India. I’ll be seeing it, because it’s my sky too. I just take the subway and I’m there in a few minutes. A connected world, post-boundaries. Lines don’t mean anything anymore. We forgot division even existed. People aren’t defined by what God gave them on the outside, or where God placed our lives when we were born. We’re all just People. Known for our choices, tastes, and opinions.</p>
-        <p>Today, Space is the empty space around us. Tomorrow, Space will be filled. Have you noticed how People build tall things up from the ground, to fill vertical space? Or how we pad ourselves with cloth-things that sit over our bodies, taking up the space around us? We transport ourselves in cars, machines bigger than we are, shuttling us in bulk through space. Space will be filled by the few belongings we always carry so everywhere can be Home, just in case we didn’t feel like catching a plane from Italy to Indiana that time of night. Space will be filled by our moving bodies, signs for every place, skyscrapers per square foot, subways, things, and us. The other people around us. We’ll know or recognize most of them, like on a college campus. We’ll know them from physical life, or maybe online life.</p>
-        <p>We’ll fill Space with our knowledge. We’ll know what “dark matter” is, we’ll know how air really behaves. In the future, the periodic table of elements will be an insanely colorful document, given to first graders as homework, that iconic, kaleidoscope textbook handout. First graders will be as smart as high school freshmen today, every year getting smarter, earlier. We will all know a bit of everything. Everyone will be multi-literate, no exceptions, by age seven.</p>
-        <p>Every kid’s birth certificate will be a Wi-Fi certificate, and their parents will log them on as soon as they’re home from the hospital. We’ll call it a “baptism,” a word so antiquated we’ll forget the old meaning. It’ll just mean slipping on their first pair of augmented-reality glasses as they lie in their crib. We’ll celebrate! Parents will invite relatives to watch their baby open their eyes to the world.</p>
-        <p>Everyone will wear augmented glasses or contacts. They’ll borrow stylistically from every era of history. Today, those 1960s, tortoise-colored Andy Warhol glasses are back in style. Tomorrow, everything will be back in style. I see a future where everyone’s dressed like time doesn’t exist. Every decade will be found in the now, in our clothes and our attitude. They’ll become genres we associate with, no longer a product of time.</p>
-        <p>And we’ll know more about Time, too. We’ll know that Space and Time are kind of the same thing. Parallel. As Time increases, so does our understanding of Space. And each other. We’ll know so much about the world that we’ll be comfortable, no matter where we go or who we’re with. This is what education does. I hear a future that sings in harmony. Observant, grateful, and happy. A world of mutual understanding.</p>
-        <p>Have you noticed how the paleness of the sky is sometimes the same shade as how you feel? Tired, a little somber, but still bright? Yes. How about how a guitar can sound as wistful as an autumn breeze feels? Do you understand? Yes. We’ll all understand. We will all have beautiful thoughts, together.</p>
-        <p>For now, we’re still piecing together our thoughts about space. We know what Space is, we just haven’t figured it all out. We’re still filling it, studying it, and trying to understand. Reaching, as surely as Time, toward a future where we know better.</p>
-        <p>Knowing it, well. That’s the future.</p>
-        <p>I know we just had an earthquake a few days ago. I know we have them almost every hour here in California. I still have faith. I’m a little scared, but just for myself. For People? Not really. We don’t belong here. Earth raised us, but Space is our Home. We’ll fill it up with our knowledge and newfound empathy for the stars.</p>
-        <p>We’ll think in atoms. Quarks. Even smaller. Whatever’s next. We’ll also think even bigger. Home will be every corner, with friends at every intersection. I see a future where Earth is one big city. Jupiter will be a city, too. Talk about expanding world views! Maybe we’ll study abroad in Andromeda. The Universe is our university. I see a future where Earth is one big city, big enough for everyone to have opportunity, their own space. We’ll know all the different ways Space is. How Time, Today, and Tomorrow exist. How People can be, and how we love and have fun.</p>
-        <p>I see a future where Earth is one big city. City will mean Earth, and Country will mean Solar System. We’ll pledge allegiance to the whole wide world, to the nearest star we came from. In this future, where International will mean a trip to another star, what will Galaxy mean? And what will Cluster mean? Supercluster? Universe? World?</p>
-        <p>World will mean Knowledge.</p>
-        <p>And Knowledge means Future.</p>
-        </div>
-        <p id="toggle-more" class="yellow">Read more</p>
-      </div>
-
-      <div class="blocky">
-        <h1>Visual Essay: God Made Mud.</h1>
-        <a href="mud">
-          <div id="mud">
-            <div id="mud-content">
-              <h1>God made mud.</h1>
-              <p style="text-align: center;">A one-page website on a perspective that inspires me, especially when I struggle or feel lost.</p> 
-              <img src="mud/slides/juliendouvier12.gif" alt="" style="width: 120px">
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <p class="foot">
-        <a href="jennylzh@usc.edu">jennylzh@usc.edu</a>
-        &middot; <a href="http://twitter.com/jennyliuzhang" target="_blank">Twitter</a>
-        &middot; <a href="http://linkedin.com/in/jennyliuzhang" target="_blank">LinkedIn</a>
-        &middot; Los Angeles, CA
-      </p>
-
     </div>
 
   </body>
