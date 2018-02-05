@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Student of the Universe</title>
+    <link rel='shortcut icon' type='image/x-icon' href='img/fav.png'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+    <style>
+
+      @font-face { 
+        font-family: 'Arnhem Pro';
+        src: url('mud/slides/ArnhemPro-SemiBold.ttf'); 
+      }
+
+      @font-face { 
+        font-family: 'Grad';
+        src: url('grad-bold.otf'); 
+      }
+
+      @font-face { 
+        font-family: 'Akkurat Mono';
+        src: url('akkurat-mono.ttf'); 
+      }
+
+      *, body { margin: 0; }
+
+      a, a:visited { color: #000; }
+      p a:hover { background: #fff; }
+
+      p {
+        margin: 0 0 20px;
+        font: normal 1.2em/1.9em "Lora", serif;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font: bold 2.2em/1.65em "Grad", serif;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font: normal 0.9em/1.65em "Akkurat Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+      }
+
+      .absolute { position: relative; }
+
+      .slide {
+        position: relative;
+        margin: auto;
+      }
+
+        .paragraph {
+          margin: 0 auto;
+          padding: 10vh 5vh 5vh;
+          text-align: center;
+        }
+
+      /* MID SCREENS */
+      @media screen 
+        and (min-device-width: 600px) 
+        and (min-width: 600px) {
+
+          h1 {
+            font: bold 2.7em/1.65em "Grad", serif;
+          }
+
+          .slide {
+            background: #fafafa;
+            height: 100vh;
+            padding: 20px;
+          }
+
+            .paragraph {
+              padding: 25vh 0;
+              max-width: 460px;
+              text-align: center;
+            }
+
+          .absolute { position: absolute; }
+
+        }
+      
+      /* LARGE SCREENS */
+      @media screen 
+        and (min-device-width: 1200px) 
+        and (min-width: 1200px) {
+
+
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+  </head>
+  <body>
+    <div class="slide">
+      <div class="paragraph">
+        <p>"A human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyze a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. <strong><span style="border-bottom: 1px solid #000">Specialization is for insects.</span></strong>"</p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="paragraph">
+        <h1>Jenny Liu Zhang</h1>
+        <h2>Definitely not an insect</h2>
+        <br><br>
+        <h2>Full website coming soon</h2>
+        <h2>Meanwhile, here are my <a href="http://jennyzhang.me/">projects</a></h2>
+        <h2>And also my <a href="http://jennytypes.com/">long-form musings</a></h2>
+      </div>
+    </div>
+
+  </body>
+</html>
