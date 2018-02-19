@@ -1,0 +1,248 @@
+@font-face {
+	font-family: 'Nickainley Normal';
+  src: url('Nickainley-Normal.otf');
+}
+
+@font-face {
+	font-family: 'Stanley Poster';
+  src: url('Stanley-Poster.ttf');
+}
+
+body {
+	margin: 0;
+	color: #222;
+	background: #f2f2f2;
+}
+
+nav {
+	position: fixed;
+	width: 96vw;
+	padding: 1em 2vw;
+	background: #fff;
+	text-align: center;
+	border-bottom: 4px double #eee;
+	z-index: 100;
+}
+
+	nav a, nav a:visited {
+		margin-right: 0.5em;
+		font: normal 1.2em/2em "Karla", sans-serif;
+		color: #444;
+		text-decoration: none;
+		letter-spacing: -0.01em;
+	}
+
+	nav a:hover { color: #e86262; }
+
+	nav a:last-child { margin-right: 0; }
+
+.slide {
+	min-height: 94vh;
+	padding: 3em 0 2em;
+}
+
+.wrap {
+	margin: auto;
+	padding: 1em;
+}
+
+a, a:visited {
+	color: inherit;
+	letter-spacing: 0.02em;
+}
+
+p, ol, ul, blockquote {
+	position: relative;
+	font: normal 0.95em/2em "Karla", sans-serif;
+	letter-spacing: -0.01em;
+}
+
+	.big, blockquote { font-size: 1.2em; }
+
+ol, ul { padding: 0 4em; }
+
+	ol li ul li { padding: 0; }
+
+ul li {
+	padding: 0 1em 0.5em;
+	list-style-type: none;
+}
+
+ul li img {
+	position: absolute;
+	left: 3em;
+	width: 25px;
+}
+
+h1 {
+	margin: 0;
+	padding: 1.25em 0em 1em;
+	font: 500 3em "Stanley Poster", serif;
+	color: #e86262;
+	background: #fff;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+h1.title {
+	margin: 0.5em 0 1em;
+	padding: 0;
+	font: 500 4.2em "Stanley Poster", serif;
+	color: #fff;
+	background: none;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+h2 {
+	margin: 0.8em 0 0.5em;
+	font: 500 3em "Nickainley Normal", serif;
+	color: #fff;
+	text-align: center;
+}
+
+h3 {
+	float: left;
+	margin: 0.25em 1.5em 0 0;
+	padding: 2px 4px;
+	font: bold 0.9em "Karla", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+h4 {
+	margin: 1em 0;
+	padding: 0;
+	font: normal 1.2em/1.8em "Karla", sans-serif;
+	color: #666;
+	letter-spacing: 0.04em;
+}
+
+h5 {
+	margin: 0;
+	padding: 0;
+	font: 500 1.8em "Stanley Poster", serif;
+	color: #444;
+	background: none;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+img {
+	max-width: 100%;
+}
+
+.highlight {
+	font-weight: bold;
+	padding: 0 0.25em;
+	background: #fff;
+	border-bottom: 1px solid #79d9f7;
+}
+
+.underline {
+	color: #000;
+	border-bottom: 1px solid #e19c0f;
+}
+
+/* SLIDES */
+.intro {
+	background: #e86262;
+	color: #fff;
+	padding: 5em 0 4em;
+	border-bottom: 1px solid #eee;
+}
+	.intro p {
+		margin: 0 auto 1em;
+		max-width: 490px;
+	}
+
+	.intro h3 { background: #d65858; }
+
+.adobe {
+	background: #f2f2f2;
+	color: #444;
+	padding: 0em 0 2em;
+}
+
+.process {
+	display: none;
+	padding: 0;
+	background: #e86262;
+	color: #fff;
+	border-bottom: 1px solid #d2d9f1;
+}
+
+.inspiration {
+	background: #fff;
+	border-bottom: 1px solid #f0ded3;
+}
+
+.design {
+	background: #bccc95;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+@media screen
+    and (min-device-width: 460px)
+	and (min-width: 460px) {
+		.wrap {
+			width: 80%;
+			max-width: 800px;
+		}
+
+		nav a, nav a:visited {
+			margin-right: 1.5em;
+		}
+}
+
+@media screen
+    and (min-device-width: 720px)
+	and (min-width: 720px) {
+		img.small-left {
+			float: left;
+			margin: 0 40px 10px -20px;
+			max-width: 50%;
+		}
+
+		.process { display: block; }
+
+		h2#projects, h2#explanations {
+			float: left;
+			width: 50%;
+			margin: 0;
+			padding: 1em 0em;
+			background: #fff;
+			color: #e86262;
+			border-bottom: 4px double #eee;
+		}
+
+		.section {
+			clear: both;
+			margin: 0 0 1px;
+			padding: 0;
+			border-bottom: 1px solid #fff;
+		}
+
+		.section h5 {
+			padding: 0.75em 0;
+			color: #e86262;
+		}
+
+			.proj, .proj-ux {
+				float: left;
+				padding: 0 1.5%;
+			}
+
+			.proj {
+				width: 58%;
+				background: #fff;
+				padding-bottom: 1.5em;
+			}
+
+			.proj-ux {
+				width: 36%;
+			}
+
+			.clear { clear:both; }
+}

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+  <head>
+    <title>Jenny Zhang's Summer at ViaSat</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo:800|Permanent+Marker|Overpass+Mono:300,400,700|Open+Sans" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.png" />
+    <style>
+      *, body {
+        margin: 0;
+      }
+
+      a { text-decoration: none; }
+
+      h1 {
+        margin: 0 0 0.5em 0;
+        font: 800 2.1em/1.4em "Exo", monospace;
+      }
+
+      p {
+        margin: 1em auto;
+        font: 300 1.06em/1.6em "Overpass Mono", sans-serif;
+        letter-spacing: -0.04em;
+      }
+
+      ul {
+        margin: 1em auto;
+        font: 700 1em/1.6em "Overpass Mono", sans-serif;
+        list-style-type: square;
+      }
+
+        ul li { color: #70b3c4; margin-bottom: 10px; }
+
+      .written {
+        color: #e0735d;
+        font: normal 1.1em 'Permanent Marker';
+      }
+
+      .ud {
+        font-weight: bold;
+        letter-spacing: 0;
+        border-bottom: 3px solid #70B3C4;
+      }
+
+      .slide {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background: #70B3C4;
+        overflow: hidden;
+      }
+
+        article {
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 625px;
+        }
+
+      nav {
+        display: block;
+        position: absolute;
+        top: 68%;
+        left: 49%;
+        transform: translate(-49%, -68%);
+        width: 610px;
+        height: 95px;
+        padding: 25px 0 0 25px;
+        background: url('nav-border.png');
+        background-size: 100% auto;
+        z-index: 1000;
+      }
+
+      .sticky {
+        position: fixed;
+        top: 20px;
+        left: 49%;
+        transform: translate(-49%, 0);
+      }
+
+        nav a {
+          display: inline-block;
+          width: 115px;
+          height: 60px;
+          font: 700 1em/3.8em "Overpass Mono", sans-serif;
+          text-transform: uppercase;
+          background: #fff;
+          color: #e0735d;
+          text-align: center;
+          border-bottom: 5px solid #2e3235;
+        }
+
+        nav a:hover {
+          background: #e0735d;
+          color: #fff;
+        }
+
+      header {
+        position: relative;
+        width: 100vw;
+        height: 900px;
+        background: #f0f0f0 url('header-bg.jpg');
+        background-size: 100% auto;
+        background-position: center center;
+        display: table;
+      }
+
+        #viasat {
+          display: block;
+          position: absolute;
+          top: 30px;
+          left: 30px;
+          width: 100px;
+          height: 25px;
+          background: url('viasat-logo.png');
+          background-size: 100% auto;
+        }
+
+        #intro {
+          position: absolute;
+          top: 28%;
+          left: 50%;
+          transform: translate(-50%, -28%);
+        }
+
+          #intro h1, #intro p { color: #2e3235; }
+
+      #context {
+        background: #484d51;
+        height: 1980px;
+      }
+
+        #context img, #wireframe {
+          position: absolute;
+          border: 25px solid #35393c;
+        }
+
+        #context img#map {
+          top: 0;
+          left: 50%;
+          transform: translateX(-175%);
+          width: 460px;
+        }
+
+        #context img#myexede {
+          top: 0;
+          left: 50%;
+          transform: translateX(72%);
+          width: 480px;
+          opacity: 0.5;
+        }
+
+        #context img#flows {
+          top: 0;
+          left: 50%; transform:
+          translateX(-85%);
+          width: 750px;
+        }
+
+        /* janky hack to get this image outside... -_- */
+        img#wireframe {
+          top: 2450px;
+          left: 50%;
+          transform: translateX(-20%);
+          width: 800px;
+          z-index: 10;
+        }
+
+        #context h1, #context p, #context ul li span { color: #fff; }
+
+          #intentions { top: 120px; }
+
+            #intentions h1#experience {
+              display: inline-block;
+              position: relative;
+              top: 20px;
+              left: -20px;
+              width: 400px;
+              font: normal 4em/1.1em 'Permanent Marker';
+              color: #70B3C4;
+              text-align: center;
+            }
+
+            #intentions img#experience {
+              position: absolute;
+              margin: 45px 0 0 0;
+              width: 400px;
+              border: none;
+            }
+
+          #expectations { top: 180px; }
+
+          #sketches { top: 220px; }
+
+            #sketches h1 {
+              position: absolute;
+              top: 100px;
+              right: -180px;
+            }
+
+      #testing {
+        background: #35393c;
+        height: 3840px;
+      }
+
+        #testing h1, #testing p, #testing ul li span { color: #fff; }
+
+        #testing img#testers {
+          position: relative;
+          margin: 0 0 0 -150px;
+          width: 920px;
+          border: none;
+        }
+
+          #wireframes { top: 180px; }
+
+          #ui {
+            margin: 260px auto 30px auto;
+            width: 90%;
+            min-width: 1380px;
+          }
+
+          .ui-tile {
+            display: inline-block;
+            margin: 0 40px 45px 0;
+            padding: 15px 30px 15px 10px;
+            width: 45.5%;
+          }
+
+            .ui-tile img {
+              width: 65%;
+            }
+
+            .ui-tile .words {
+              display: block;
+              float: right;
+              width: 33%;
+            }
+
+              .ui-tile p {
+                font: 300 0.95em/1.6em "Overpass Mono", sans-serif;
+              }
+
+              .ui-tile h2 {
+                margin-bottom: -0.5em;
+                font: 300 2em/2.5em "Permanent Marker";
+                color: #fff;
+              }
+
+            #ui-2, #ui-4 { margin-right: 0; }
+
+          #takeaways #inside {
+            width: 1000px;
+            margin: 20px 0 0 -30%;
+          }
+
+            #takeaways #inside .t-row {
+              position: relative;
+            }
+
+            #takeaways #inside h2 {
+              display: inline-block;
+              position: absolute;
+              top: 20px;
+              left: 0;
+              width: 400px;
+              font: normal 4em/1em 'Permanent Marker';
+              color: #f6b29e;
+              text-align: center;
+            }
+
+            #takeaways #inside .t-content {
+              display: inline-block;
+              position: absolute;
+              right: 0;
+              width: 560px;
+            }
+
+        #mvp {
+          padding: 100px 0 0 0;
+          background: #70B3C4;
+          height: 6160px;
+        }
+
+          #mvp h1, #mvp p, #mvp ul li span { color: #2e3235; }
+
+          #mvp img {
+            margin: 0 0 0 -140px;
+            width: 1000px;
+          }
+
+          #mvp .ud, #post-mvp .ud { border-color: #fff; }
+
+          #mvp #trouble-labels {
+            position: absolute;
+            top: 140px;
+            left: -340px;
+            width: 350px;
+            font: 300 0.95em/1.6em "Overpass Mono", sans-serif;
+            text-align: right;
+          }
+
+        #post-mvp {
+          padding: 70px 0 0 0;
+          background: #f6b29e;
+          height: 3650px;
+        }
+
+          #post-mvp h1, #post-mvp p, #post-mvp ul li span { color: #2e3235; }
+
+          #post-mvp img#billing-flows {
+            margin: 20px 0 0 -50px;
+            width: 700px;
+            border: 25px solid #e0735d;
+          }
+
+          #post-mvp img#billing {
+            margin: 0 0 0 -140px;
+            width: 1000px;
+          }
+
+        #future {
+          padding: 100px 0 0 0;
+          height: 7080px;
+          background: #f0f0f0;
+        }
+
+          #future h1, #future p, #future ul li span { color: #484d51; }
+
+          #future img#sketches {
+            margin: 20px 0 50px -200px;
+            width: 900px;
+            border: 25px solid #2e3235;
+          }
+
+          #future img#balancepng {
+            float: left;
+            margin: 0 25px 20px -100px;
+            width: 400px;
+          }
+
+          #future img#village {
+            margin: 0 0 0 105px;
+            width: 700px;
+          }
+
+            #future #descr {
+              position: absolute;
+              top: 1760px;
+              left: -230px;
+              width: 340px;
+              text-align: right;
+            }
+
+              #future #descr #your-networks, #future #descr #balance, #future #descr #billing {
+                position: absolute;
+              }
+
+              #future #descr #your-networks { top: 1550px; }
+              #future #descr #balance { top: 2700px; }
+              #future #descr #billing { top: 3460px; }
+
+            #future #descr h2 {
+              font: 300 2em/1em "Permanent Marker";
+              color: #2e3235;
+            }
+
+          #future img#nav {
+            margin: 0 0 0 0;
+            width: 600px;
+          }
+
+          #future #roles {
+            width: 900px;
+            margin: 40px 0 0 -140px;
+          }
+
+            #future #roles h2 {
+              font: 300 3em/1em "Permanent Marker";
+              text-align: center;
+              color: #70b3c4;
+            }
+
+            #future #roles .role {
+              display: inline-block;
+              vertical-align: top;
+              width: 430px;
+              height: 280px;
+            }
+
+              #future #roles #basic { margin-right: 20px; }
+    </style>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function() {
+
+      var nav = $('nav');
+
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > 510) {
+          nav.addClass("sticky");
+        } else {
+          nav.removeClass("sticky");
+        }
+
+        // 1. nav-border removal
+        if (($(window).scrollTop() > $('#context').position().top-137)) {
+          $('nav').css('background','none');
+        } else {
+          $('nav').css('background',"url('nav-border.png')");
+          $('nav').css('background-size','100% auto');
+        }
+
+        // 2. Context
+        if (($(window).scrollTop() > $('#context').position().top-100) && ($(window).scrollTop() < $('#testing').position().top-100)) {
+          $('#context-nav').css('background','#e0735d');
+          $('#context-nav').css('color','#fff');
+        } else {
+          $('#context-nav').css('background','#fff');
+          $('#context-nav').css('color','#e0735d');
+        }
+
+        // 3. Testing
+        if (($(window).scrollTop() > $('#testing').position().top-101) && ($(window).scrollTop() < $('#mvp').position().top-100)) {
+          $('#testing-nav').css('background','#e0735d');
+          $('#testing-nav').css('color','#fff');
+        } else {
+          $('#testing-nav').css('background','#fff');
+          $('#testing-nav').css('color','#e0735d');
+        }
+
+        // 4. MVP
+        if (($(window).scrollTop() > $('#mvp').position().top-101) && ($(window).scrollTop() < $('#post-mvp').position().top-100)) {
+          $('#mvp-nav').css('background','#e0735d');
+          $('#mvp-nav').css('color','#fff');
+        } else {
+          $('#mvp-nav').css('background','#fff');
+          $('#mvp-nav').css('color','#e0735d');
+        }
+
+        // 5. Post-MVP
+        if (($(window).scrollTop() > $('#post-mvp').position().top-101) && ($(window).scrollTop() < $('#future').position().top-100)) {
+          $('#post-mvp-nav').css('background','#e0735d');
+          $('#post-mvp-nav').css('color','#fff');
+        } else {
+          $('#post-mvp-nav').css('background','#fff');
+          $('#post-mvp-nav').css('color','#e0735d');
+        }
+
+        // 6. Future
+        if (($(window).scrollTop() > $('#future').position().top-101)) {
+          $('#future-nav').css('background','#e0735d');
+          $('#future-nav').css('color','#fff');
+        } else {
+          $('#future-nav').css('background','#fff');
+          $('#future-nav').css('color','#e0735d');
+        }
+
+      });
+    });
+    </script>
+
+  </head>
+  <body>
+
+    <header>
+      <div class="slide" id="viasat"></div>
+      <article id="intro">
+        <h1>I'm <span class="written">Jenny,</span> a Product Innovation Intern. This summer, I worked on the UI/UX of the <span class="written" style="color: #70B3C4;">ViaSat Residential Mobile App.</span></h1>
+        <p>I helped design a modular app UI intended for residential consumers. With the rest of the team, I created use case flows, interviewed test users, and considered the product's potential in the international, in-flight, and maritime contexts.</p>
+        <p><strong>Scroll through my summer below!</strong></p>
+      </article>
+
+      <nav>
+        <a href="#context" id="context-nav">Context</a>
+        <a href="#testing" id="testing-nav">Testing</a>
+        <a href="#mvp" id="mvp-nav">Version 1</a>
+        <a href="#post-mvp" id="post-mvp-nav">1.1</a>
+        <a href="#future" id="future-nav">Future</a>
+      </nav>
+
+    </header>
+
+    <div class="slide" id="context">
+      <article id="intentions">
+        <img id="map" src="context/map.jpg" alt="MyExede">
+        <h1>Context &amp; Intentions</h1>
+        <p>Quite literally, the rebrand and VS2 launch place ViaSat on a new horizon. We have the capacity now to reimagine our product offerings. From plane and yacht Wi-Fi to new internet hubs developing internationally, we can change what the paradigm of internet access looks like in so many markets.</p>
+        <p>If our satellite internet is going to be <span class="ud">universally used</span>, it should also be <span class="ud">universally understood.</span> The product must scale, but the basic use cases are the priority. How can we make the experience easy and accessible?</p>
+        <h1 id="experience">"The ViaSat Internet Experience"</h1>
+        <img id="experience" src="context/experience.png" alt="Core Internet Components">
+      </article>
+
+      <article id="expectations">
+        <img id="myexede" src="context/myexede.png" alt="MyExede">
+        <h1>Exede Expectations</h1>
+        <p>The current "ViaSat Internet Experience" is embodied by our Exede products, which are, in short, highly confusing. MyExede, Exede.com, Exede Customer Central, Exede Tools... there's too much. <span class="ud">It's cognitive overload.</span></p>
+        <p>To start, the UI/UX team and I reduced the information conveyed through these tools into some core user expectations:</p>
+        <ul>
+          <li><span>Check internet status/usage</span></li>
+          <li><span>Pay bills and balance</span></li>
+          <li><span>Troubleshoot internet</span></li>
+          <li><span>Manage account info</span></li>
+        </ul>
+        <p>To accomplish these functions, we created use case flows to map out possible actions of our app users. After identifying these paths and potential painpoints, we brainstormed a preliminary mobile app wireframe.</p>
+      </article>
+      <article id="sketches">
+        <h1>Use Case Flows &amp; <br>Original Wireframes</h1>
+        <img id="flows" src="context/flows.jpg" alt="Use Case Flows">
+      </article>
+    </div>
+    <img id="wireframe" src="context/wireframe.jpg" alt="Original Wireframe">
+
+    <div class="slide" id="testing">
+      <article id="wireframes">
+        <h1>Testing the Wireframes</h1>
+        <p>In Denver, our team developed wireframes and mockups. We worked daily with a software team in Carlsbad, who helped to structure the content and inform our design with what was (and wasn't) possible through eSVT.</p>
+        <p>With each sprint, our design evolved. Through discussion with each other, our daily standups with the software team, and our user testing, the sketched wireframes upgraded eventually into developed interface mockups:</p>
+      </article>
+
+      <div id="ui">
+        <div class="ui-tile" style="background: #3a4347;" id="ui-1">
+          <img src="testing/ui-1.png" alt="">
+          <div class="words">
+            <h2>Sprint 1</h2>
+            <p>Based on our use case flows, we created preliminary wireframes to define the information architecture of the Dashboard, Plan, and Support pages. We also created some basic troubleshooting states.</p>
+          </div>
+        </div>
+
+        <div class="ui-tile" style="background: #405056" id="ui-2">
+          <img src="testing/ui-2.png" alt="">
+          <div class="words">
+            <h2>Sprint 2</h2>
+            <p>To build off our structure, we began identifying the visual hierarchy and playing with color and shape to display the content.</p>
+            <p>The software team relayed to us what information could be displayed, and then organized the UI based on user relevance.</p>
+          </div>
+        </div>
+
+        <div class="ui-tile" style="background: #557c87" id="ui-3">
+          <img src="testing/ui-3.png" alt="">
+          <div class="words">
+            <h2>Sprint 3</h2>
+            <p>We borrowed from iOS and Android interfaces to try to standardize our app and make it easier and more familiar to use. However, we tested this UI and observed people actually <span class="ud">struggling to parse content</span> because of our size, color, and shape decisions (someone called our purple a "death purple").</p>
+            <p>So, we pivoted...</p>
+          </div>
+        </div>
+
+        <div class="ui-tile" style="background: #6297a5" id="ui-4">
+          <img src="testing/ui-4.png" alt="">
+          <div class="words">
+            <h2>Sprint 4</h2>
+            <p>Based on our learnings, we adjusted how we used visual elements and made the UI more friendly, and purposefully used color for links and clickable content.</p>
+            <p>We made troubleshooting more descriptive, reducing the amount of error states and focused more on proper wording of action steps.</p>
+          </div>
+        </div>
+      </div>
+
+      <article id="takeaways">
+        <h1>Tester Pool</h1>
+        <p>During the design process, we interviewed <span class="ud">15 test subjects</span> from a variety of backgrounds. Here's our pool divided into a male and female breakdown, as well as a breakdown based on age younger and older than 35 years old.</p>
+        <img id="testers" src="testing/testers.png" alt="Breakdown of Testers">
+
+        <h1 style="margin-top: 50px;">Top Takeaways</h1>
+        <div id="inside">
+          <div class="t-row" style="height: 470px;">
+            <h2>Billing vs. Account</h2>
+            <div class="t-content">
+              <p>The Billing and Account sections of the app shared much of the same information, and most of our testers got confused between what would belong in each. For example, some expected to see past bills in the Account section. Some of our older testers (60+) expected personal information like service address to also include the billing address.</p>
+              <ul>
+                <li><span>We grouped the ability to manage Account information into Billing for the MVP. Because alpha users would not be allowed to edit from the mobile app due to security issues, the module is uneditable but visible from Billing.</span></li>
+                <li><span>For MVP, we focused on the Payment Method and Current Balance module (free for alpha users).</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="t-row" style="height: 470px;">
+            <h2>Color Confusion</h2>
+            <div class="t-content">
+              <p>We realized the importance of color early on. In our earlier sprints, we implemented a lot of color into our elements but this threw off the visual hierarchy. Across our testing pool we noticed people being unsure what was clickable and what wasn't. For later sprints, we limited the use of color to be indicative of interactive elements.</p>
+              <ul>
+                <li><span>Clickable, non-error state elements are blue.</span></li>
+                <li><span>Green signifies a healthy network state with no action required.</span></li>
+                <li><span>Yellow signifies that action should be taken.</span></li>
+                <li><span>Red signifies an unhealthy network state and necessary further action.</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="t-row" style="height: 200px;">
+              <h2>Power of Language</h2>
+              <div class="t-content">
+                <p>Especially in our troubleshooting flows, wording threw some testers off. For example, many younger testers saw the Soft Reboot flow and assumed immediately that they needed to physically reboot their modem &mdash; a habit many of us learn if we manage internet often. We reworded the troubleshooting states to be more vague and avoid trigger words like "reboot" and "restart" to prevent action when it isn't necessary.</p>
+                <ul>
+                  <li><span>"Click to soft reboot" evolved into "Your internet is acting up. Click to refresh".</span></li>
+                  <li><span>We added the actual phone number and contact information to the support page as some users wanted to contact manually.</span></li>
+                  <li><span>Transitions between refreshing error states were made more clear.</span></li>
+                </ul>
+            </div>
+          </div>
+      </article>
+
+    </div>
+
+    <div class="slide" id="mvp">
+      <article id="v1">
+        <h1>Version 1: The Minimum Viable Product</h1>
+        <p>This is the final UI that the software team is implementing for the alpha users.</p>
+        <img src="mvp/login.png" alt="Login">
+        <img src="mvp/home.png" alt="Login">
+        <img src="mvp/account.png" alt="Login">
+        <img src="mvp/services.png" alt="Login">
+        <img src="mvp/billing.png" alt="Login">
+        <img src="mvp/support.png" alt="Login">
+      </article>
+
+      <article id="troubleshoot">
+        <h1>Troubleshooting</h1>
+        <img style="margin-left: 0" src="mvp/troubleshooting.png" alt="Login">
+        <div id="trouble-labels">
+          <p><span class="ud">Error States</span> include all the possible errors you may be confronted with on opening the app.</p>
+          <p style="margin-top: 840px;"><span class="ud">The Refreshing State</span> will always appear when transitioning between Error States, loading a Result State, and/or when the app is rediagnosing.</p>
+          <p style="margin-top: 400px;"><span class="ud">Result States</span> appear when the troubleshooting flow is over (Error States are resolved), or when the Error States cannot be resolved and require Support.</p>
+          <p><span class="ud">The Hard Reboot State</span> will repeat steps 2 and 3 again until the problem is resolved or requires Support.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="slide" id="post-mvp">
+      <article id="post-brainstorm">
+        <h1>Version 1.1: The Post-MVP Brainstorm</h1>
+        <p>After finalizing the MVP assets, we turned our attention to use cases beyond our alpha users. In other words, we fleshed out more of the expected and ideal app functionalities, specifically in <span class="ud">Billing</span>.</p>
+        <img id="billing-flows" src="post-mvp/billing-flows.jpg" alt="Billing Flows">
+        <img src="post-mvp/billing.png" alt="Login" id="billing">
+      </article>
+    </div>
+
+    <div class="slide" id="future">
+      <article>
+        <h1>Future States: Village Wi-Fi Model</h1>
+        <p>While working on the post-MVP mockups, I was curious to take the design a step further by seeing how modules we created could work in other contexts, including international "Village Wi-Fi" markets. Across contexts, I identified 2 roles:</p>
+        <div id="roles">
+          <div class="role" id="basic">
+            <h2>Basic Users</h2>
+            <p>Basic users, or guests, don’t own their own networks. They can only pay to connect to networks owned by others. They have the ability to open the app and see their current connected network, available networks, balance, and billing options.</p>
+          </div>
+          <div class="role" id="vendors">
+            <h2>Vendors</h2>
+            <p>Vendors can also pay to connect to networks owned by others, but they also own their own Wi-Fi networks and have the option to sell connection to them. They receive a startup kit with their dish setup and a system to deposit and withdraw cash*.</p>
+          </div>
+        </div>
+        <img src="future/sketches.jpg" alt="Future Sketches" id="sketches">
+        <p>Here's a breakdown of a reimagined information architecture for these services:</p>
+        <img src="future/nav.png" alt="Navigation" id="nav">
+        <ul>
+          <li><span>CONNECTION: <span style="font-weight: normal">Current connection, Available  networks</span></span></li>
+          <li><span>YOUR NETWORKS: <span style="font-weight: normal">Current networks you own</span></span></li>
+          <li><span>BALANCE: <span style="font-weight: normal">Balance, Upcoming bills, Past transactions</span></span></li>
+          <li><span>BILLING: <span style="font-weight: normal">Balance, Payment Methods</span></span></li>
+        </ul>
+        <p>Billing would work similarly to how I've imagined it for 1.1. However, the system would borrow from the <span class="ud">Venmo and Uber model</span> where the current balance can be added to and subtracted from in app, allowing users to interact in an internal economy.</p>
+        <img src="future/village.png" alt="Village" id="village">
+        <div id="descr">
+          <div id="connections">
+            <h2>Connections</h2>
+            <p>This homepage will always display two modules: current connection status, and available  networks. If you own your own network, it will display above all other available networks. On this page, you have the option to connecting to any available network, whether you're a basic user or a vendor.</p>
+          </div>
+          <div id="your-networks">
+            <h2>Your Networks</h2>
+            <p>This page displays the networks you own. Ideally, it features all online guests on each network and allow you to toggle settings for each guest. It will also give you more information regarding network management (dish location, network capacity, network hourly rate).</p>
+          </div>
+          <div id="balance">
+            <h2>Balance</h2>
+            <p>In addition to seeing your balance and potential action steps of paying it off or withdrawing, this page displays all interactions with your balance. It will show upcoming bills (what may need to come out of your balance), and past transactions (a history of what has altered your balance).</p>
+          </div>
+          <div id="billing">
+            <h2>Billing</h2>
+            <p>Mainly, I have considered the payment method to be by card, as that is how MVP and 1.1 will be done. In foreign contexts, prepaid solutions (discussed below) might be easier. As an introduction to how that might work, Vendors may also be able to help users deposit and withdraw cash at their physical location.</p>
+          </div>
+        </div>
+
+
+        <h1>*A Prepaid System</h1>
+        <p>My last consideration for the Village Wi-Fi system is how to get money into this internal economy.</p>
+        <img src="future/balance.png" alt="Balance" id="balancepng">
+        <p>In addition to managing their own networks, Vendors could potentially allow users to deposit and withdraw cash from their physical locations. Users can approach any vendor to fill their account with money and use that to pay for network usage in the ViaSat community by the hour. Likewise, users can visit Vendors to withdraw any positive balance they have in their account.</p>
+        <p>We may also consider an in-experience currency too: I thought about using <span class="ud">data</span> itself as the currency. Instead of paying an hourly rate, users would pay for their usage by GB. If they want to deposit into their ViaSat account, they would pay for GB with real money through a Vendor. GB in the app would convert into cash in the case of withdrawal.</p>
+
+        <div style="clear:both;margin-top:40px;"></div>
+        <h1>Conclusion</h1>
+        <p>In every context, including residential, maritime, in-flight, and actual “village” communities, this Village Wi-Fi model can be executed. In homes, the kit user would be whoever typically manages the internet services, and these users can choose to resell or keep their network private. Users in the home, including family and guests, would be the basic users in this situation, having the ability only to hop onto the network. This scenario can be replicated for yachts and planes.</p>
+        <p>An internal community of satellite internet users can flex across many situations with the Village Wi-Fi system. As we enter new markets, this is one internet paradigm we can define.</p>
+      </article>
+    </div>
+
+  </body>
+</html>
