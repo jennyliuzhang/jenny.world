@@ -15,6 +15,7 @@ body {
 }
 
 nav {
+	display: none;
 	position: fixed;
 	width: 96vw;
 	min-width: 1200px;
@@ -84,7 +85,7 @@ h1 {
 	font: 500 3em "Stanley Poster", serif;
 	color: #e86262;
 	background: #fff;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	text-align: center;
 }
@@ -92,11 +93,9 @@ h1 {
 h1.title {
 	margin: 0.5em 0 1em;
 	padding: 0;
-	font: 500 4.2em "Stanley Poster", serif;
+	font: 500 4.7em "Stanley Poster", serif;
 	color: #fff;
 	background: none;
-	letter-spacing: 0.2em;
-	text-transform: uppercase;
 }
 
 h2 {
@@ -124,6 +123,7 @@ h4 {
 }
 
 h5 {
+	position: relative;
 	margin: 0.2em 0 0.8em;
 	padding: 0;
 	font: 500 1.8em "Stanley Poster", serif;
@@ -154,7 +154,8 @@ img {
 .intro {
 	background: #e86262;
 	color: #fff;
-	padding: 5em 0 4em;
+	/* padding: 5em 0 4em; */
+	padding: 1.5em 0 4em;
 	border-bottom: 1px solid #eee;
 }
 	.intro p {
