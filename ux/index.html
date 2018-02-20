@@ -3,11 +3,15 @@
 		<title>Jenny's Experience Design Playbook</title>
 		<link href="https://fonts.googleapis.com/css?family=Karla|Poppins:400,500,600,700" rel="stylesheet">
 		<link href="style.css" rel="stylesheet">
+
+		<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="js.js"></script>
+
 	</head>
 	<body>
 		<nav>
 			<a href="#adobe">Why Adobe?</a>
-			<a href="#process">Process</a>
+			<a href="#process">Projects</a>
 			<a href="#inspiration">Inspiration</a>
 			<a href="#design">Design</a>
 		</nav>
@@ -19,10 +23,10 @@
 
 				<h2>Manifesto</h2>
 				<h3>About Me</h3>
-				<p>I’m a student in the <a href="http://iovine-young.usc.edu/" target="_blank">USC Iovine and Young Academy</a> studying how business and technology intersect with design. My favorite activities are to design brand strategies and product mockups, write essays and stories, conduct interviews, and teach others how to do these things, too.</p>
+				<p>I’m a student in the <a href="http://iovine-young.usc.edu/" target="_blank">USC Iovine and Young Academy</a> studying how business and technology intersect with design. My favorite activities are to design product strategies and mockups, write essays and stories, conduct interviews, and teach others how to do these things, too.</p>
 
 				<h3>Why UX?</h3>
-				<p>UX design excites me because every thing in our lives is a user experience. Mobile apps, classrooms, restaurants, and even entire cities all can tell persuasive narratives. As a designer, technologist, and literature junkie minoring in English, I’m confident in my abilities to craft product narratives&mdash;good user experiences&mdash;in any of these mediums.</p>
+				<p>Every thing in our lives can be thought of as a user experience. Mobile apps, classrooms, restaurants, and even entire cities all can tell persuasive narratives. As a designer, technologist, and literature junkie minoring in English, I’m confident in my abilities to craft product narratives&mdash;good user experiences&mdash;in any of these mediums.</p>
 
 				<h3>A Playbook?</h3>
 				<p>This playbook is a document of my process. I will show you how I follow UX principles and integrate my own insights from asking questions, my own projects and background, and my love for a good story.</p>
@@ -47,22 +51,94 @@
 		</div>
 
 		<div id="process" class="slide process">
-			<h2 id="projects">Projects</h2>
+			<h2 id="projects">Project</h2>
 			<h2 id="explanations">Process</h2>
 
 			<div class="section viasat">
 				<div class="proj">
-					<h5>ViaSat</h5>
-					<img src="img/viasat-1.jpg" alt="">
-					<img src="img/viasat-2.jpg" alt="">
-					<img src="img/viasat-3.jpg" alt="">
-					<img src="img/viasat-4.jpg" alt="">
-					<img src="img/viasat-5.jpg" alt="">
-					<img src="img/viasat-6.jpg" alt="">
+					<h5 onclick="toggleProject(event,'viasat')">ViaSat<div class="arrow-down"></div></h5>
+
+					<div class="section-content" id="section-content-viasat">
+						<p>ViaSat Inc. is a satellite communications company where I was a Product Innovation Intern last summer. I worked on the UI/UX of the ViaSat Residential Mobile App. I helped design a modular app UI intended for residential consumers. With the rest of the team, I created use case flows, interviewed test users, and considered the product's potential in the international, in-flight, and maritime contexts.</p>
+						<img src="img/viasat-1.jpg" alt="">
+						<img src="img/viasat-2.jpg" alt="">
+						<img src="img/viasat-3.jpg" alt="">
+						<img src="img/viasat-4.jpg" alt="">
+						<img src="img/viasat-5.jpg" alt="">
+						<img src="img/viasat-6.jpg" alt="">
+
+						<h4 style="text-align:right;" onclick="toggleProject(event,'viasat')">Collapse ViaSat<div class="arrow-up"></div></h4>
+					</div>
 				</div>
 
-				<div class="proj-ux">
-					<p>Welp</p>
+				<div class="proj-tags" id="proj-tags-viasat">
+					<span>1. Context and Research</span>
+					<span>2. Design and Goals</span>
+					<span>3. Hierarchy Testing</span>
+					<span>4. Implementation</span>
+				</div>
+
+				<div class="proj-ux" id="proj-ux-viasat">
+					<h4 style="margin-top: 140px;">1. Context and Research</h4>
+					<p>ViaSat had a very confusing product line. While their satellite service was called ViaSat, their internet services were called "Exede." Therefore, the existing "ViaSat Internet Experience" was highly confusing. MyExede, Exede.com, Exede Customer Central, Exede Tools... it was too much.</p>
+
+					<p>To start, the UI/UX team and I reduced the information conveyed through these tools into some core user expectations:</p>
+					<ul>
+						<li>Check internet status/usage</li>
+						<li>Pay bills and balance</li>
+						<li>Troubleshoot internet</li>
+						<li>Manage account info</li>
+					</ul>
+					<p>To accomplish these functions, we created use case flows to map out possible actions of our app users. After identifying these paths and potential painpoints, we brainstormed a preliminary mobile app wireframe.</p>
+
+					<h4 style="margin-top: 900px;">2. Design and Goals</h4>
+					<p>Based on our use case flows, we created preliminary wireframes to define the information architecture of the Dashboard, Plan, and Support pages. We also created some basic troubleshooting states.</p>
+					<p>We went through a series of <span class="highlight">four design sprints</span>. At the end of each, we did usability testing with Adobe XD prototypes to keep our design on track.</p>
+					<p style="margin-top: 1500px;">We borrowed from iOS and Android interfaces to standardize our app and make it easier and more familiar to use. However, we tested this UI and observed people actually struggling to parse content because of our size, color, and shape decisions (someone called our purple a "death purple").</p>
+					<p style="margin-top: 700px;">To fix visual confusion, we more purposefully used color and made troubleshooting more descriptive. We reduced the amount of error states and focused on clearer, bigger buttons.</p>
+
+					<h4 style="margin-top: 760px;">3. Hierarchy Testing</h4>
+					<p>We did usability testing of the UI throughout the design sprints with users that fell into ViaSat's current demographic. We interviewed 15 subjects from a variety of backgrounds. Here's our pool divided into a male and female breakdown, as well as a breakdown based on age younger and older than 35 years old.</p>
+					<h2>Biggest Takeaways</h2>
+					<h3>Billing vs. Account!?</h3>
+					<p>The Billing and Account sections of the app shared much of the same information, and most of our testers got confused between what would belong in each. For example, some expected to see past bills in the Account section. Some of our older testers (60+) expected personal information like service address to also include the billing address.</p>
+					<h3>Color Confusion</h3>
+					<p>We realized the importance of color early on. In our earlier sprints, we implemented a lot of color into our elements but this threw off the visual hierarchy. People confused what was and wasn't clickable. We limited the use of color to be indicative of interactive elements.</p>
+					<ul>
+						<li>Clickable, non-error elements are blue.</li>
+						<li>Green means a healthy network. No action.</li>
+						<li>Yellow means that action should be taken.</li>
+						<li>Red means an unhealthy network. Requires action.</li>
+					</ul>
+					<h3>Power of Language</h3>
+					<p>Wording threw some testers off. For example, many younger testers saw the Soft Reboot flow and assumed immediately that they needed to physically reboot their modem — a habit many of us learn if we manage internet often. We reworded the troubleshooting states to be more vague and avoid trigger words like "reboot" and "restart" to prevent action when it isn't necessary.</p>
+					<h4 style="margin-top: 400px;">4. Implementation</h4>
+					<p>We implemented these insights into the interface design. These are our final MVP mockups.</p>
+
+					<h2 style="margin-top: 1250px;">Post-MVP</h4>
+					<p>After designing the MVP, I fleshed out more of the expected and ideal app functionalities, specifically in Billing.</p>
+					<p>I grouped the ability to manage Account information into Billing for the MVP, but ideally, based on our testing, these two capabilities are separate. Billing should have its own navigational tab with many functions, including changing billing info, viewing pending bills, and interacting with payment history.</p>
+
+					<h2 style="margin-top: 700px;">Future of Internet</h4>
+					<p>While working on the post-MVP mockups, I was curious to take the design a step further by seeing how modules we created could work in other contexts, including international "Village Wi-Fi" markets. Across contexts, I identified 2 roles:</p>
+					<h3>Basic Users</h3>
+					<p>Basic users, or guests, don’t own their own networks. They can only pay to connect to networks owned by others. They have the ability to open the app and see their current connected network, available networks, balance, and billing options.</p>
+					<h3>Vendors</h3>
+					<p>Vendors can also pay to connect to networks owned by others, but they also own their own Wi-Fi networks and have the option to sell connection to them. They receive a startup kit with their dish setup and a system to deposit and withdraw cash*.</p>
+					<p style="margin-top: 100px;">Here's a breakdown of a reimagined information architecture for these services:</p>
+					<h3>Connection</h3>
+					<p>This homepage will always display two modules: current connection status, and available networks. If you own your own network, it will display above all other available networks. On this page, you have the option to connecting to any available network, whether you're a basic user or a vendor.</p>
+					<h3>Your Networks</h3>
+					<p>This page displays the networks you own. Ideally, it features all online guests on each network and allow you to toggle settings for each guest. It will also give you more information regarding network management (dish location, network capacity, network hourly rate).</p>
+					<h3>Balance</h3>
+					<p>In addition to seeing your balance and potential action steps of paying it off or withdrawing, this page displays all interactions with your balance. It will show upcoming bills (what may need to come out of your balance), and past transactions (a history of what has altered your balance).</p>
+					<h3>Billing</h3>
+					<p>Mainly, I have considered the payment method to be by card, as that is how MVP and 1.1 will be done. In foreign contexts, prepaid solutions (discussed below) might be easier. As an introduction to how that might work, Vendors may also be able to help users deposit and withdraw cash at their physical location.</p>
+
+					<h2 style="margin-top: 200px;">Prepaid System</h4>
+					<p>My last consideration for the Village Wi-Fi system is how to get money into this internal economy.</p>
+					<p>In addition to managing their own networks, Vendors could potentially allow users to deposit and withdraw cash from their physical locations. Users can approach any vendor to fill their account with money and use that to pay for network usage in the ViaSat community by the hour. Likewise, users can visit Vendors to withdraw any positive balance they have in their account.</p>
+					<p>We may also consider an in-experience currency too: I thought about using data itself as the currency. Instead of paying an hourly rate, users would pay for their usage by GB. If they want to deposit into their ViaSat account, they would pay for GB with real money through a Vendor. GB in the app would convert into cash in the case of withdrawal.</p>
 				</div>
 
 				<div class="clear"></div>
@@ -70,13 +146,48 @@
 
 			<div class="section hult">
 				<div class="proj">
-					<h5>Openhearth</h5>
-					<img src="http://jennytypes.com/wp-content/uploads/2017/03/one-1.jpg" alt="">
-					<img src="http://jennytypes.com/wp-content/uploads/2017/03/two-1.jpg" alt="">
-					<img src="http://jennytypes.com/wp-content/uploads/2017/03/three-1.jpg" alt="">
-					<img src="http://jennytypes.com/wp-content/uploads/2017/03/four-1.jpg" alt="">
-					<img src="http://jennytypes.com/wp-content/uploads/2017/03/five-1.jpg" alt="">
-					<img src="http://jennytypes.com/wp-content/uploads/2017/03/six.jpg" alt="">
+					<h5 onclick="toggleProject(event,'hult')">Openhearth<div class="arrow-down"></div></h5>
+
+					<div class="section-content" id="section-content-hult">
+						<p>For the 2017 Hult Prize, my team pitched Openhearth, a subscription-based, communal cooking space for refugees and city dwellers in Europe. The Hult Prize prompt required a business pitch to support, leverage, and aid the victims of worldwide refugee crises.</p>
+						<p>Openhearth is the cross-section of food, culture, and leveraging the industry of people as resources to help and grow each other. This deck is the visual effort to convey the warmth and community of food.</p>
+						<img src="img/hult-1.jpg" alt="">
+						<img src="http://jennytypes.com/wp-content/uploads/2017/03/one-1.jpg" alt="">
+						<img src="http://jennytypes.com/wp-content/uploads/2017/03/two-1.jpg" alt="">
+						<img src="http://jennytypes.com/wp-content/uploads/2017/03/three-1.jpg" alt="">
+						<img src="http://jennytypes.com/wp-content/uploads/2017/03/four-1.jpg" alt="">
+						<img src="http://jennytypes.com/wp-content/uploads/2017/03/five-1.jpg" alt="">
+						<img src="http://jennytypes.com/wp-content/uploads/2017/03/six.jpg" alt="">
+						<h4 style="text-align:right;" onclick="toggleProject(event,'hult')">Collapse Openhearth<div class="arrow-up"></div></h4>
+					</div>
+				</div>
+
+				<div class="proj-tags" id="proj-tags-hult">
+					<span>1. Context and Research</span>
+					<span>2. Design and Goals</span>
+				</div>
+
+				<div class="proj-ux" id="proj-ux-hult">
+					<h4 style="margin-top: 70px;">1. Context and Research</h4>
+					<p>Based on research given to teams by the Hult Prize Foundation, we honed in on one single problem: many refugees arriving in European countries face problems of readjustment. They are lacking two things: stable access to cooking resources, and a comfortable, welcoming host community.</p>
+
+					<h2 style="margin-top: 300px;">The Status Quo</h2>
+					<p>Many who live in European cities face inconvenience when it comes to cooking. Especially for young urban professionals, working consumes most of their day, and food preparation not only involves the time spent cooking, but also purchasing groceries and cleaning.</p>
+					<p>Those who live in cities are typically more open-minded to learning new things and interested in having their daily lives outsourced or reinvented.</p>
+
+					<h2 style="margin-top: 600px;">The Opportunity</h2>
+					<p>Our idea is a space where those who lead busy lives have access to communal cooking facilities, groceries, and cooking lessons. They pay for a baseline monthly membership and can go in at any time to cook and eat. They pay per grocery item in bulk pricing (following a two-part tariff model), and they don't have to clean up!</p>
+					<p>A monthly membership follows a "one-for-one" model where paying for one membership covers the membership of a refugee (or someone without cooking resources). Cooking lessons can be led by refugees so they get a chance to be employed and share their culture with the people in the host community.</p>
+					<h5>Think: gym meets community kitchen.</h5>
+
+					<h4 style="margin-top: 280px;">2. Design and Goals</h4>
+					<p>Openhearth is the concept of a communal kitchen where customers with means can purchase a “buy one give one” subscription or pay-per-visit. In our building they have full access to all the supplies to cook what they want, and managing equipment, allocating ingredients, and cleaning are all handled for them.</p>
+					<h3>Refugee Employment</h3>
+					<p>Refugees will be employed to manage and clean the facilities and also will have the opportunity to run cooking classes, sharing their skills and values.</p>
+					<h3>"Intramarket"</h3>
+					<p>The Intramarket is a place inside Openhearth where members can sell extra food they made to other members. If there is even more surplus food, refugees may be employed to promote Openhearth and sell the food at local farmer’s markets.</p>
+					<h3>Open Physical Space</h3>
+					<p>The layout of the building will be spacious and logical. When you walk in, there will be tables to sit and eat at on one side, and the Intramarket to buy premade food on the other. Directly behind that are are the cooking facilities. In the back are all the cooking resources.</p>
 
 				</div>
 
@@ -85,7 +196,22 @@
 
 			<div class="section adobe-ed">
 				<div class="proj">
-					<h5>Adobe Education</h5>
+					<h5 onclick="toggleProject(event,'adobe-ed')">Adobe Education<div class="arrow-down"></div></h5>
+
+					<div class="section-content" id="section-content-adobe-ed">
+						<img src="img/adobe-ed-1.jpg" alt="">
+						<img src="img/adobe-ed-2.jpg" alt="">
+						<img src="img/adobe-ed-3.jpg" alt="">
+						<h4 style="text-align:right;" onclick="toggleProject(event,'adobe-ed')">Collapse Adobe Education<div class="arrow-up"></div></h4>
+					</div>
+				</div>
+
+				<div class="proj-tags" id="proj-tags-adobe-ed">
+					<span>1. Context and Research (extensive!)</span>
+				</div>
+
+				<div class="proj-ux" id="proj-ux-adobe-ed">
+					<p style="margin-top: 30vh;">Welp</p>
 				</div>
 
 				<div class="clear"></div>
@@ -93,7 +219,25 @@
 
 			<div class="section aljazeera">
 				<div class="proj">
-					<h5>Al Jazeera VR</h5>
+					<h5 onclick="toggleProject(event,'aljazeera')">Al Jazeera<div class="arrow-down"></div></h5>
+
+					<div class="section-content" id="section-content-aljazeera">
+						<img style="width:49%" src="https://cdn-images-1.medium.com/max/1600/1*j8B-lCSqKpmaWNxegCtMDw.png" alt="">
+						<img style="width:49%" src="https://cdn-images-1.medium.com/max/1600/1*VsZY8_fLcSVZdN1XQTYbjw.png" alt="">
+						<img src="https://cdn-images-1.medium.com/max/1600/1*gdDljJRMNCLknzj8Vfa_lA.png" alt="">
+						<img src="https://cdn-images-1.medium.com/max/2000/1*u0vq77sTTA6-Ueqm5J4pug.png" alt="">
+						<img src="https://cdn-images-1.medium.com/max/2000/1*KobXoJTJKgzJZLl6H0ttdA.png" alt="">
+						<h4 style="text-align:right;" onclick="toggleProject(event,'aljazeera')">Collapse Al Jazeera<div class="arrow-up"></div></h4>
+					</div>
+				</div>
+
+				<div class="proj-tags" id="proj-tags-aljazeera">
+					<span>1. Context and Research</span>
+					<span>2. Design and Goals</span>
+				</div>
+
+				<div class="proj-ux" id="proj-ux-aljazeera">
+					<p style="margin-top: 30vh;">Welp</p>
 				</div>
 
 				<div class="clear"></div>
@@ -101,7 +245,31 @@
 
 			<div class="section cms">
 				<div class="proj">
-					<h5>Slide-based Web Designer</h5>
+					<h5 onclick="toggleProject(event,'cms')">Slide-Based Web Designer<div class="arrow-down"></div></h5>
+
+					<div class="section-content" id="section-content-cms">
+						<img style="display: block; margin: auto; width: 65%;" src="http://www.jenny.world/490/img/styles-settings-interactions.gif" alt="">
+						<img src="http://www.jenny.world/490/img/tumblr-editor2.gif" alt="">
+						<img src="http://www.jenny.world/490/img/cms-collections3.gif" alt="">
+						<img src="http://www.jenny.world/490/img/wordpress-editor.gif" alt="">
+						<img style="display: block; margin: auto; width: 45%;" src="http://www.jenny.world/490/img/tumblr-editor1.gif" alt="">
+						<img style="width:49%" src="http://www.jenny.world/490/img/study1.jpg" alt="">
+						<img style="width:49%" src="http://www.jenny.world/490/img/study2.jpg" alt="">
+						<img style="width:49%" src="http://www.jenny.world/490/img/study6.jpg" alt="">
+						<img style="width:49%" src="http://www.jenny.world/490/img/study7.jpg" alt="">
+
+						<h4 style="text-align:right;" onclick="toggleProject(event,'cms')">Collapse Slide-Based Web Designer<div class="arrow-up"></div></h4>
+					</div>
+				</div>
+
+				<div class="proj-tags" id="proj-tags-cms">
+					<span>1. Context and Research</span>
+					<span>2. Design and Goals</span>
+					<span>3. Hierarchy Testing</span>
+				</div>
+
+				<div class="proj-ux" id="proj-ux-cms">
+					<p style="margin-top: 30vh;">Welp</p>
 				</div>
 
 				<div class="clear"></div>
