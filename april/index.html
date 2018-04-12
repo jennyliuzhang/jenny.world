@@ -111,11 +111,40 @@
         letter-spacing: 0.02em;
       }
 
-      #playlist {
+      #postcard {
         position: relative;
-        display: block;
-        margin: 40px auto;
+        margin: 40px 0;
+        background: #fbf8ee;
+        border: 1px solid #f7eee2;
+        box-shadow: 10px 10px 30px rgba(0,0,0, 0.01);
       }
+
+        #greetings {
+          display: block;
+          margin: 40px auto 20px;
+          width: 80vw;
+          max-width: 400px;
+        }
+
+        #postcard h2 {
+          color: #fd4f00;
+          text-shadow: none;
+        }
+
+        #decor { display: none; }
+
+        #playlist {
+          position: relative;
+          display: block;
+          margin: 40px auto;
+        }
+
+        #footer {
+          margin: -200px 0 0 0;
+          background: url('footer.png') center top no-repeat;
+          background-size: 150% auto;
+          height: 270px;
+        }
 
       @media screen and (min-width: 640px){
         .wrap { width: 60vw; max-width: 630px; }
@@ -137,6 +166,19 @@
 
         #chiclets1 { top: 65%; left: 15%; transform: translate(-15%,-65%); max-height: 400px; }
         #chiclets2 { top: 60%; right: 10%; transform: translate(0%,-60%); max-height: 300px; }
+
+        #postcard {
+          margin-left: -12%;
+          width: 125%;
+          max-width: 780px;
+          -moz-transform:rotate(-3deg);
+          -webkit-transform:rotate(-3deg);
+          -o-transform:rotate(-3deg);
+          -ms-transform:rotate(-3deg);
+          filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=-.03);
+        }
+
+        #footer { background-size: 100% auto; }
       }
 
       @media screen and (min-width: 800px){
@@ -154,6 +196,39 @@
 
         #chiclets1 { top: 75%; left: 15%; transform: translate(-15%,-75%); max-height: 540px; }
         #chiclets2 { top: 65%; left: 90%; transform: translate(-90%,-65%); max-height: 420px; }
+
+        #postcard {
+          margin: 80px 0 50px -12%;
+          min-height: 400px;
+        }
+        #postcard-left {
+          float: left;
+          margin: 10px 0 0 40px;
+        }
+          #greetings { width: 280px; }
+          #decor {
+            display: block;
+            position: absolute;
+            top: 175px;
+            left: -116px;
+            width: 560px;
+          }
+
+        #playlist {
+          float: right;
+          margin-right: 40px;
+          width: 200px;
+        }
+
+        #footer { margin: -300px 0 0 0; height: 400px; }
+      }
+
+      @media screen and (min-width: 860px){
+        #playlist { width: 240px; }
+      }
+
+      @media screen and (min-width: 960px){
+        #playlist { width: 300px; }
       }
 
       @media screen and (min-width: 1280px){
@@ -163,6 +238,10 @@
 
         #chiclets1 { top: 90%; left: 33%; transform: translate(-33%,-90%); }
         #chiclets2 { top: 65%; left: 65%; transform: translate(-65%,-65%); }
+
+        #playlist { width: 340px; }
+
+        #footer { margin: -440px 0 0 0; height: 600px; }
       }
     </style>
 
@@ -187,14 +266,30 @@
       <img class="poppy" id="poppy8" src="poppy8.png" alt="">
       <img class="chiclets" id="chiclets1" src="chiclets1.png" alt="">
       <img class="chiclets" id="chiclets2" src="chiclets2.png" alt="">
-        <!-- <iframe id="playlist" src="https://open.spotify.com/embed?uri=spotify:user:1257176056:playlist:3tU6i5FPChoXOL3C15rjjP&theme=white" width="300" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+
     </div>
 
     <div class="slide">
       <div class="wrap">
         <h1 id="headline">April Gum is cannabis-infused chewing gum.</h1>
-        <p>Between medicine and recreation, April Gum serves as lifestyle supplement. Enjoy a west coast state of mind with gum made from cannabis, herbs, and spices from the California coast. April Gum comes in tins of 50 chiclets, with 5mg THC per chiclet.</p>
+        <p>Enjoy it before a plane ride, after a meal, before the gym, or on the go. April Gum is a lifestyle supplement, between medicine and recreation. Made from cannabis, herbs, and spices from the west coast, April Gum comes in tins of 30 chiclets, with 5mg THC per chiclet.</p>
+
+
+
+
+
+        <div id="postcard">
+          <div id="postcard-left">
+            <img id="greetings" src="greetings.png" alt="">
+            <h2>A state of mind somewhere between<br>San Francisco and Santa Barbara.</h2>
+            <img id="decor" src="postcard.png" alt="">
+          </div>
+          <iframe id="playlist" src="https://open.spotify.com/embed?uri=spotify:user:1257176056:playlist:3tU6i5FPChoXOL3C15rjjP&theme=white" width="300" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+
       </div>
     </div>
+
+    <div id="footer"></div>
   </body>
 </html>
