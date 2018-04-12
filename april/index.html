@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>April Gum - Cannabis-Infused Chewing Gum</title>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.png'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Serif+Pro" rel="stylesheet">
+
+    <style>
+      @font-face {
+        font-family: 'Century Schoolbook';
+        src: url('texgyreschola-regular.otf');
+      }
+
+      @font-face {
+        font-family: 'Century Schoolbook Italic';
+        src: url('texgyreschola-italic.otf');
+      }
+
+      @font-face {
+        font-family: 'Graphik Medium';
+        src: url('Graphik-Medium.otf');
+      }
+
+      *, body { margin: 0 }
+
+      body {
+        background: #fff;
+        overflow-x: hidden;
+      }
+
+      #top {
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        text-align: center;
+        z-index: 1000;
+      }
+
+        #logo {
+          position: relative;
+          display: block;
+          margin: 40px auto 5px;
+          width: 60vw;
+        }
+
+      .slide {
+        margin: auto;
+        width: 100vw;
+      }
+
+        .wrap { margin: auto; padding: 20px; }
+
+      .head {
+        position: relative;
+        background: #fff url('bg.jpg') center bottom no-repeat;
+        background-size: 215% 100%;
+        height: 100vh;
+      }
+
+        #tin {
+          position: absolute;
+          width: 75vw;
+          max-width: 360px;
+          top: 55%;
+          left: 50%;
+          transform: translate(-50%,-55%);
+        }
+
+        .poppy {
+          position: absolute;
+          height: 32vw;
+          max-height: 150px;
+        }
+
+        #poppy1 { top: 27%; left: 20%; transform: translate(-20%,-27%); }
+        #poppy2 { top: 105%; right: 0%; transform: translate(0%,-105%); height: 160px; }
+        #poppy3 { top: 35%; left: 65%; transform: translate(-65%,-35%); }
+        #poppy4 { top: 80%; left: 80%; transform: translate(-80%,-80%); }
+        #poppy5 { top: 50%; left: -5%; transform: translate(0%,-50%); }
+        #poppy6 { top: 0%; left: 0%; transform: translate(0%,0%); height: 160px; }
+        #poppy7 { top: 55%; right: -5%; transform: translate(0%,-55%); height: 160px; }
+        #poppy8 { top: 70%; left: 15%; transform: translate(-15%,-70%); }
+
+        .chiclets { position: absolute; }
+
+        #chiclets1 { top: 60%; left: 5%; transform: translate(-5%,-60%); height: 90vw; max-height: 400px; }
+        #chiclets2 { top: 50%; right: 0%; transform: translate(0%,-50%); height: 75vw; max-height: 300px; }
+
+      p {
+        font: normal 1.2em/1.6em 'Century Schoolbook', serif;
+        color: #295676;
+      }
+
+      h1 {
+        margin: 0 0 1em 0;
+        font: normal 1.8em/1.3em 'Graphik Medium', sans-serif;
+        color: #295676;
+      }
+
+        h1#headline { max-width: 360px; }
+
+      h2 {
+        font: normal 1.1em/1.6em 'Century Schoolbook Italic', serif;
+        color: #fff;
+        text-shadow: 1px 1px 3px rgba(0,0,0, 0.1);
+        text-align: center;
+        letter-spacing: 0.02em;
+      }
+
+      #playlist {
+        position: relative;
+        display: block;
+        margin: 40px auto;
+      }
+
+      @media screen and (min-width: 640px){
+        .wrap { width: 60vw; max-width: 630px; }
+
+        #logo { max-width: 360px; }
+
+        .head { background-size: 100% 100%; }
+
+        #tin { top: 65%; left: 50%; transform: translate(-50%,-65%); max-width: 400px; }
+
+        .poppy { max-height: 160px; }
+        #poppy2 { top: 85%; right: 0%; transform: translate(0%,-85%); }
+        #poppy3 { top: 50%; left: 80%; transform: translate(-80%,-50%); }
+        #poppy4 { top: 90%; left: 80%; transform: translate(-80%,-90%); }
+        #poppy5 { top: 55%; left: 5%; transform: translate(-5%,-55%); }
+        #poppy6 { top: 25%; left: 0%; transform: translate(0%,-25%); }
+        #poppy7 { top: 65%; right: 5%; transform: translate(0%,-65%); }
+        #poppy8 { top: 76%; left: 15%; transform: translate(-15%,-76%); }
+
+        #chiclets1 { top: 65%; left: 15%; transform: translate(-15%,-65%); max-height: 400px; }
+        #chiclets2 { top: 60%; right: 10%; transform: translate(0%,-60%); max-height: 300px; }
+      }
+
+      @media screen and (min-width: 800px){
+        #tin { max-width: 460px; }
+
+        .poppy { max-height: 200px; }
+        #poppy1 { top: 30%; left: 30%; transform: translate(-30%,-30%); }
+        #poppy2 { top: 85%; right: 0%; transform: translate(0%,-85%); height: 240px; }
+        #poppy3 { top: 50%; left: 70%; transform: translate(-70%,-50%); }
+        #poppy4 { top: 105%; left: 60%; transform: translate(-60%,-105%); }
+        #poppy5 { top: 60%; left: 15%; transform: translate(-15%,-60%); }
+        #poppy6 { top: 25%; left: 0%; transform: translate(0%,-25%); height: 240px; }
+        #poppy7 { top: 75%; right: 15%; transform: translate(0%,-75%); height: 240px; }
+        #poppy8 { top: 85%; left: 30%; transform: translate(-30%,-85%); }
+
+        #chiclets1 { top: 75%; left: 15%; transform: translate(-15%,-75%); max-height: 540px; }
+        #chiclets2 { top: 65%; left: 90%; transform: translate(-90%,-65%); max-height: 420px; }
+      }
+
+      @media screen and (min-width: 1280px){
+        #logo { max-width: 300px; }
+
+        .poppy { max-height: 250px; }
+
+        #chiclets1 { top: 90%; left: 33%; transform: translate(-33%,-90%); }
+        #chiclets2 { top: 65%; left: 65%; transform: translate(-65%,-65%); }
+      }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  </head>
+  <body>
+    <div id="top">
+      <img id="logo" src="logo.png" alt="">
+      <h2>Infused with Californian Cannabis</h2>
+    </div>
+    <div class="slide head">
+      <img class="poppy" id="poppy1" src="poppy1.png" alt="">
+      <img class="poppy" id="poppy2" src="poppy2.png" alt="">
+      <img class="poppy" id="poppy3" src="poppy3.png" alt="">
+      <img class="poppy" id="poppy4" src="poppy4.png" alt="">
+      <img class="poppy" id="poppy5" src="poppy5.png" alt="">
+      <img class="poppy" id="poppy6" src="poppy6.png" alt="">
+      <img class="poppy" id="poppy7" src="poppy7.png" alt="">
+      <img id="tin" src="tin.png" alt="">
+      <img class="poppy" id="poppy8" src="poppy8.png" alt="">
+      <img class="chiclets" id="chiclets1" src="chiclets1.png" alt="">
+      <img class="chiclets" id="chiclets2" src="chiclets2.png" alt="">
+        <!-- <iframe id="playlist" src="https://open.spotify.com/embed?uri=spotify:user:1257176056:playlist:3tU6i5FPChoXOL3C15rjjP&theme=white" width="300" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+    </div>
+
+    <div class="slide">
+      <div class="wrap">
+        <h1 id="headline">April Gum is cannabis-infused chewing gum.</h1>
+        <p>Between medicine and recreation, April Gum serves as lifestyle supplement. Enjoy a west coast state of mind with gum made from cannabis, herbs, and spices from the California coast. April Gum comes in tins of 50 chiclets, with 5mg THC per chiclet.</p>
+      </div>
+    </div>
+  </body>
+</html>
