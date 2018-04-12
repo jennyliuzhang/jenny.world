@@ -10,6 +10,29 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Serif+Pro" rel="stylesheet">
 
     <style>
+    /*
+      A Sonnet About This Website Design
+      By Jenny Liu Zhang
+
+      To whom it may concern, page source viewer:
+      Pay attention to the responsiveness.
+      Media queries are a pain, for sure,
+      I spent many hours making them the best.
+      Admire the poppies as they resize,
+      Fluid design principles are at work.
+      At 10 in the morn I started the site,
+      Right now it's 1am and my eyes hurt.
+      Do you see every flower and that gif?
+      How it swaps images for smaller screens?
+      How about every line around each chiclet?
+      Do you notice all six shades of light green?
+      Mailchimp is a real pain in the poppy.
+      This design here is my pride, don't copy!
+
+      http://www.jennyzhang.me/
+      http://www.jenny.world/
+    */
+
       @font-face {
         font-family: 'Century Schoolbook';
         src: url('texgyreschola-regular.otf');
@@ -57,7 +80,7 @@
         width: 100vw;
       }
 
-        .wrap { margin: auto; padding: 20px; }
+        .wrap { margin: auto; padding: 30px; }
 
       .head {
         position: relative;
@@ -125,11 +148,18 @@
           text-shadow: none;
         }
 
+        #mce-responses, #mce-responses a {
+          margin: 10px 0;
+          font: normal 0.9em/1.2em 'Graphik Regular', sans-serif;
+          color: #295676;
+          text-align: center;
+        }
+
         input#mce-EMAIL, input#mc-embedded-subscribe {
           -webkit-appearance: none;
           display: block;
-          margin: 0 auto 10px;
-          padding: 20px;
+          margin: 0 auto 5px;
+          padding: 15px 20px;
           width: 320px;
           font: normal 1em/1.2em 'Graphik Regular', sans-serif;
           border: #9bd8a5 2px solid;
@@ -172,6 +202,7 @@
 
         #footer {
           margin: -200px 0 0 0;
+          width: 110%;
           background: url('footer.png') center top no-repeat;
           background-size: 150% auto;
           height: 270px;
@@ -300,6 +331,17 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <script>
+      $(document).ready(function(){
+          $("#tin").css("display", "none");
+          $("#tin").fadeIn(1000);
+          $(".chiclets").css("display", "none");
+          $(".chiclets").fadeIn(2000);
+          $(".poppy").css("display", "none");
+          $(".poppy").fadeIn(3000);
+      });
+    </script>
+
   </head>
   <body>
     <div id="top">
@@ -324,7 +366,7 @@
     <div class="slide">
       <div class="wrap">
         <h1 id="headline">April Gum is cannabis-infused chewing gum.</h1>
-        <p>Treat it like a lifestyle supplement, between medicine and recreation. Enjoy it before a plane ride, after a meal, before the gym, or on the go. Made from cannabis, herbs, and spices from the west coast, April Gum comes in tins of 30 pieces, with 5mg THC per piece.</p>
+        <p>Treat it like a lifestyle supplement, between medicine and recreation. Enjoy it before a plane ride, after a meal, before the gym, or on the go. Made from cannabis, herbs, and spices from the west coast, April Gum comes in tins of 20 pieces, with 5mg THC per piece.</p>
 
         <!-- Begin MailChimp Signup Form -->
         <div id="mc_embed_signup">
