@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 	<head>
-		<title>Jan 27 Test</title>
+		<title>Prototype</title>
 		<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 		<link href="style.css" rel="stylesheet">
 
@@ -10,16 +10,19 @@
 		<link href="contextmenu/contextMenu.css" rel="stylesheet">
 		<script src="contextmenu/contextMenu.js"></script>
 
+		<script>
+		var currentSlide;
+		var nextSlide;
+		</script>
+
 		<script src="js/currentSlide.js"></script>
 		<script src="js/addText.js"></script>
 	</head>
 	<body>
 		<h2 id="editor-slides-h2">Slides</h2>
     <div id="editor-slides">
-      <div class="slide" style="background: lightpink"></div>
-      <div class="slide" style="background: salmon"></div>
-      <div class="slide" style="background: lightsteelblue"></div>
-      <div class="slide" style="background: steelblue"></div>
+      <div class="slide" id="s1" style="background: lightpink"></div>
+      <div class="slide" id="s2" style="background: lightsteelblue"></div>
     </div>
 
 		<h2 id="editor-object-h2">Editor</h2>
@@ -27,10 +30,10 @@
     </div>
 
     <div id="content">
-      <div class="slide" style="background: lightpink"></div>
-      <div class="slide" style="background: salmon"></div>
-      <div class="slide" style="background: lightsteelblue"></div>
-      <div class="slide" style="background: steelblue"></div>
+      <div class="slide" id="s1" style="background: lightpink"></div>
+			<div class="resizeBar"></div>
+      <div class="slide" id="s2" style="background: lightsteelblue"></div>
+			<div class="resizeBar"></div>
     </div>
 
 
@@ -40,7 +43,7 @@
         title: 'Add a text box',
         fun: function () {
 					console.log($('.highlight'));
-            addText($('.highlight'));
+          addText(currentSlide);
         }
     }, {
         name: 'Add an image',
@@ -50,7 +53,7 @@
         }
     }];
 
-		//Calling context menu
+		// calling context menu
  		$('.slide').contextMenu(menu);
 		</script>
   </body>

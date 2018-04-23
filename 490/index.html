@@ -3,20 +3,48 @@
 		<title>ACAD 490</title>
 		<link href="https://fonts.googleapis.com/css?family=Heebo|Poppins:400,500" rel="stylesheet">
 		<link href="style.css" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+		$(document).ready(function() {
+			$("#expandSem1").click(function() {
+			  $(".semester1").slideToggle();
+			});
+			$("#semester1 a").click(function() {
+			  $(".semester1").css('display','block');
+			});
+			$("#expandSem2").click(function() {
+			  $(".semester2").slideToggle();
+			});
+			$("#semester2 a").click(function() {
+			  $(".semester2").css('display','block');
+			});
+		});
+		</script>
 	</head>
 	<body>
 		<nav>
-			<a href="#original">Original Plan</a>
-			<a href="#research">Research</a>
-			<a href="#studies">Studies</a>
-			<a href="#pivot">The Pivot</a>
+			<div id="semester1">
+				<h3>Semester 1</h3><br>
+				<a href="#original">Plan</a>
+				<a href="#research">Research</a>
+				<a href="#studies">Studies</a>
+				<a href="#pivot">Concept Pivot</a>
+			</div>
+
+			<div id="semester2">
+				<h3>Semester 2</h3><br>
+				<a href="#development">Development</a>
+				<a href="#testing">Testing</a>
+				<a href="#takeaways">Takeaways</a>
+			</div>
 		</nav>
 
 		<div class="slide intro">
 			<div class="wrap">
 				<h1>Jenny Zhang<br>
 					ACAD 490 with Patrick Dent<br>
-					Fall 2017 Summary</h1>
+					Spring 2017 Summary</h1>
 				<h2>Jenny's Directed Research Project, featuring all her pitfalls, pivots, and progress.</h2>
 				<p>I began the semester with the goal to create a fully functioning CMS platform, but soon realized just how ambitious such a project was. As someone who has had splotchy experience developing a full-stack program, I was an eager, naive child.</p>
 				<p>I determined a goal without being completely aware of all of its moving parts. Thus, this story of my Fall 2017 research outlines my web development attempts and experiences this semester, and how they contribute to my product moving forward.</p>
@@ -42,7 +70,11 @@
 			</div>
 		</div>
 
-		<div id="original" class="slide original">
+		<div class="slide divider" id="expandSem1">
+			<h1>Semester 1</h1>
+		</div>
+
+		<div id="original" class="slide original semester1">
 			<div class="wrap">
 				<h1>Original Plan</h1>
 				<h2>My old concept way back when... ah, what a different, nostalgic time.</h2>
@@ -82,7 +114,7 @@
 			</div>
 		</div>
 
-		<div id="research" class="slide research">
+		<div id="research" class="slide research semester1">
 			<div class="wrap">
 				<h1>Dashboard Research</h1>
 				<h2>My interactions with the existing web design tools of Webflow, WordPress, and Tumblr.</h2>
@@ -140,7 +172,7 @@
 			</div>
 		</div>
 
-		<div id="studies" class="slide studies">
+		<div id="studies" class="slide studies semester1">
 			<div class="wrap">
 				<h1>One Pager Studies</h1>
 				<h2>My takeaways from exposure to hundreds of one page/simple websites.</h2>
@@ -175,7 +207,7 @@
 		</div>
 
 
-		<div id="pivot" class="slide pivot">
+		<div id="pivot" class="slide pivot semester1">
 			<div class="wrap">
 				<h1>The Pivot</h1>
 				<p>Through my research and studies, I began to identify the key components of an effective editor interface, and a simple website with a collection item. <span class="highlight">These apply across all website genres and aesthetic styles.</span></p>
@@ -215,6 +247,114 @@
 					<li>Once collection items are created, they are saved to a database. You can populate elements with a collection item's fields and design its modules, as detailed above.</li>
 					<li>After the user is done designing, they can save their pages and export their entire website, including the database, HTML files, and Sass stylesheet.</li>
 				</ol>
+			</div>
+		</div>
+
+		<div class="slide divider" id="expandSem2">
+			<h1>Semester 2</h1>
+		</div>
+
+		<div id="development" class="slide development semester2">
+			<div class="wrap">
+				<h1>App Development</h1>
+				<h2>React App</h2>
+				<p>I began developing the application this semester within the <a href="https://github.com/jennyliuzhang/silogram/tree/master/silogram-frontend" target="_blank">same repository</a> as the previous content. This is what it looks like so far:</p>
+				<img src="img/screenshot.gif" alt="">
+				<p>With the help of my developer friends <a href="http://andrewjiang.com" target="_blank"> Andrew</a> and <a href="https://www.lucasmcgartland.com/" target="_blank">Luke</a>, they were able to walk me through some of the loftier concepts of my program. Below is the overall structure of my React app components:
+				<ul>
+					<li><img src="img/checkbox-checked.png" alt="">App Container</li>
+					<li><img src="img/checkbox-checked.png" alt="">Content Container</li>
+					<li><img src="img/checkbox-open.png" alt="">Slide Manager Container</li>
+					<li><img src="img/checkbox-open.png" alt="">Object Editor Container</li>
+					<li><img src="img/checkbox-checked.png" alt="">Slide Objects</li>
+					<li><img src="img/checkbox-checked.png" alt="">Boxes Objects</li>
+					<li><img src="img/checkbox-checked.png" alt="">Box Editor Objects</li>
+					<li><img src="img/checkbox-checked.png" alt="">Context Menu Objects</li>
+				</ul>
+				<p>The content container holds all the objects on a page. Slides are the biggest objects the content container can have, and slides contain box and context menus. Boxes are elements like text and images, and they have their own box editors. I had yet to create the slide manager and object editor containers because they would contain elements from the content container.</p>
+				<p>I ran into issues with hierarchy. Passing back and forth information from the box objects to the slide was confusing: I wasn't sure whether to make the box editor belong to the box or belong to the slide. If the editor belonged to the box, which makes the most sense, the parent slide or object editor container would not be able to access it. If the editor belonged to the slide, the slide would need to actively keep track of every objects' properties.</p>
+				<p>This was as far as I got with the implementation of the React app. My callback functions were erroneous because I didn't think about the scope of each box object, and what attributes should be editable.</p>
+				<p>You can look at the repository for the unfinished React frontend <a href="https://github.com/jennyliuzhang/silogram/tree/master/silogram-frontend" taret="_blank">here</a>.</p>
+
+				<h2>Hard-coded Prototype</h2>
+				<p>I decided to focus on a hard-coded version because manipulating the front-end with my own JavaScript and helper functions made more sense to me than developing components within a hierarchy. Especially for a lo-fi prototype, I just needed elements to behave as they should.</p>
+				<p>Below is the hard-coded prototype. Double-click activates the context menu.</p>
+				<iframe width="100%" height="600px" src="file:///Users/jenny/Desktop/jenny.world/jenny.world/490/prototypes/index.html"></iframe>
+				<p>You can look at this in its own window <a href="file:///Users/jenny/Desktop/jenny.world/jenny.world/490/prototypes/index.html" target="_blank">here</a>.</p>
+			</div>
+		</div>
+
+		<div id="testing" class="slide testing semester2">
+			<div class="wrap">
+				<h1>Testing</h1>
+				<p>For the testing of this project, I first asked each of my testers what their experience was with making websites. I chose people I thought fit the prospective market for this tool: <span class="highlight">young adults who are technically skilled but not quite advanced.</span> I first asked them what their experiences were with making websites. All testers:</p>
+					<ol>
+						<li>Have never developed a website on their own</li>
+						<li>Tried template tools like WordPress or Wix at some point</li>
+						<li>Found almost each of these tools disorienting at first, or gave up</li>
+						<li>Found tutorials unclear; tools expected users to know <em>something</em> about creating a website</li>
+					</ol>
+				<p>After these preliminary questions, I walked through the screenshots of my mockups together with each tester to understand their natural user flow. At each stage, I asked the following questions:
+					<ol>
+						<li>Tell me what you see on this slide.</li>
+						<li>What would you do next?</li>
+						<li>Is this what you expected to happen? If not, why and what would you change?</li>
+					</ol>
+				<p>I circled the click-through action items for each slide in yellow. For each prompt, I observed the users locate and find these prompts in the UI.</p>
+
+				<h2>Introduction and creating a slide</h2>
+				<img src="img/giffy-1.gif" alt="">
+				<p>The mockups opened with an intro modal, and a blank interface. I prompted them to start a website by creating a new slide.</p>
+				<h3>New Slide</h3>
+				<p>This was a pretty straightforward task. Everyone clicked on the New Slide button, because on the blank interface it directed them to do so.</p>
+				<p>I did get feedback that the concept of slides was confusing, though, which goes against my hypothesis that it would be easier to understand. This specific feedback surfaced a few questions:</p>
+					<ol>
+						<li>Are slides stacked on one page vertically or horizontally?</li>
+						<li>Can each slide be its own page instead?</li>
+						<li>Do slides behave like a photo gallery? Can I use my arrow keys?</li>
+						<li>Does it even make sense to scroll through slides vertically?</li>
+					</ol>
+				<p>Though I envisioned the application to be a single-page scrolling website, with slides as stacked vertical blocks, testing made me realize that <span class="highlight">"slides" is a misleading word.</span> Even for an MVP, the functionality I prototyped may not actually make sense to many users.</p>
+
+				<h2>Editing objects</h2>
+				<img src="img/giffy-2.gif" alt="">
+				<p>This step in the prototype let me observe how users interacted with the other editor modules on the screen: the controller at the top, and the Objects Editor on the right. I got insights about their expectations and how these modules might be changed.</p>
+				<h3>Controller</h3>
+				<p>The controller at the top of the screen made sense to my users, but I did get feedback to make it more icon-based or toolbar-like, and perhaps to move "Export Website" into its own section as a standalone button.</p>
+				<p>Something interesting one of my testers said something insightful about exporting:</p>
+				<blockquote>"[The  Export button] could go in the bottom right corner, or top right corner, because it makes sense for the next step to move you from left to right... In video games, 'next' prompts are usually on the right."</blockquote>
+				<p>In my front-end coded prototype, I hid all of these controller items in a double-click context menu, but this proved inaccessible. For testing, I decided to put controller items in te controller panel.</p>
+				<p>However, having this controller also seemed to <span class="highlight">clutter the workspace</span>. Another tester didn't understand what the functional difference between the controller and the slide editor was, and believed they could be combined or reorganized.</p>
+
+				<h3>Object Editor</h3>
+				<p>This prototype tested how users edited slide objects and text objects. For slides, editing attributes made sense in this distinct module. For text, however, it was a little more confusing.</p>
+				<p>This was my initial idea: an interface where the object editor was connected to each object, and any and all attributes can be edited in this module.</p>
+				<img src="img/object-editor2.jpg" alt="">
+				<p>Because I was unsure how to develop this, I decided to avoid it for the prototype. Luke also advised against this interface because the editor would not be fixed to the screen, so for large objects that could potentially span larger than one fold of a screen, the placement of the editor would be a challenge. So, I divided object editing options this way:</p>
+				<img src="img/object-editor1.jpg" alt="">
+				<p>For editing text, my prototype split up the Object Editor from the text editor attributes, notwithstanding the text alignment, which I put in the Object Editor. Though it was straightforward, the testers were almost <span class="highlight">unanimously confused</span> by the contents of the Object Editor. Upon examination, it made sense that the position-based attributes (the characteristics of the textbox that weren't related to the look of the actual text) were in their own dialog. However, these functions weren't immediately obvious&mdash;especially the positioning function.</p>
+
+				<h2>Adding slides</h2>
+				<img src="img/giffy-3.gif" alt="">
+				<p>This is when the slides-based capability became more obvious to most testers. They could visually see that the page would scroll, and the slides would be stacked. I asked them make a new slide, add an image to it, and tell me how they would make the image fill the slide.</p>
+				<p>Everyone preferred to drag the corners of the image to fill the screen. They expected a "snap-to-grid" behavior. <span class="highlight">No one understood the Object Editor width function.</span> This validated my hypothesis that drag and drop is necessary, and why tools like WordPress and Webflow that do not allow positioning and resizing happen via drag and drop have such huge learning curves.</p>
+
+				<h2>Post-test</h2>
+				<p>After playing around with the prototypes, I asked each tester what they enjoyed, what they didn't, and what they would change about the process. Here are the most actionable steps:</p>
+				<ol>
+					<li>Templatize some image and textbox size settings. Drag-and-drop gives users a lot of leeway to just "eyeball" and mess up. By letting them choose from a set of options, it makes it easier to make a well-designed website.</li>
+					<li>Slides concept and interface needs to be rethought, or renamed. Especially navigating between slides, which was ignored by the prototype.</li>
+					<li>Highlight color of active objects is good, but needs to be less jarring.</li>
+					<li>Look to Microsoft Word, Publisher, Pages, and Keynote for object editing ideas. How do they organize their hierarchy, and what can be replicated? How can it serve as a model?</li>
+					<li>Advanced object and text editing could be contained within the Object Editor, but obvious things like font and size should be apparent.</li>
+				</ol>
+			</div>
+		</div>
+
+		<div id="takeaways" class="slide takeaways semester2">
+			<div class="wrap">
+				<h1>Takeaways</h1>
+				<p></p>
 			</div>
 		</div>
 	</body>

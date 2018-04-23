@@ -54,7 +54,7 @@
         return this;
     };
     $.fn.contextMenu.defaults = {
-        triggerOn: 'click', //avaliable options are all event related mouse plus enter option
+        triggerOn: 'dblclick', //avaliable options are all event related mouse plus enter option
         subMenuTriggerOn: 'hover click',
         displayAround: 'cursor', // cursor or trigger
         mouseClick: 'left',
