@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<head>
 		<title>Prototype</title>
-		<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lora|Heebo" rel="stylesheet">
 		<link href="style.css" rel="stylesheet">
 
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -11,6 +11,7 @@
 		<script src="contextmenu/contextMenu.js"></script>
 
 		<script>
+		var currentlySelected = false;
 		var currentSlide;
 		var nextSlide;
 		</script>
@@ -39,17 +40,17 @@
 
 		<script>
 		var menu = [{
-        name: 'Add a text box',
-        title: 'Add a text box',
+        name: 'Add a heading',
+        title: 'Add a heading',
         fun: function () {
 					console.log($('.highlight'));
           addText(currentSlide);
         }
     }, {
-        name: 'Add an image',
-        title: 'Add an image',
+        name: 'Add a paragraph',
+        title: 'Add a paragraph',
         fun: function () {
-            alert('Under construction')
+            addText(currentSlide);
         }
     }];
 

@@ -45,10 +45,13 @@
 				<h1>Jenny Zhang<br>
 					ACAD 490 with Patrick Dent<br>
 					Spring 2017 Summary</h1>
-				<h2>Jenny's Directed Research Project, featuring all her pitfalls, pivots, and progress.</h2>
-				<p>I began the semester with the goal to create a fully functioning CMS platform, but soon realized just how ambitious such a project was. As someone who has had splotchy experience developing a full-stack program, I was an eager, naive child.</p>
-				<p>I determined a goal without being completely aware of all of its moving parts. Thus, this story of my Fall 2017 research outlines my web development attempts and experiences this semester, and how they contribute to my product moving forward.</p>
-				<h2>Table of Contents</h2>
+				<h2>Jenny's Directed Research Project Write-up</h2>
+				<p>Last semester, I started a project, didn't flesh it out enough, and ended up doing a lot of research on how to build a technically better product.</p>
+				<p>This semester, I attempted to build a technically better product. Though I did make more progress, the development was not successful because the information hierarchy became convoluted. I did not attack the project right and was misguided in my approach. I should have put more time into the beginning wireframing.</p>
+				<p>I was discouraged by my progress. I decided to move on with my schedule, though, and interrupt my process with testing. I further fleshed out mockups (not wireframes) with click-through functionality, created a simple and imperatively coded JavaScript app, and sat with 5 people to qualitatively interview. This was the best decision during this rollercoaster of a project, and gave me much more clarity on my product hunches and my own role in digital product development.</p>
+				<p>Overall, I bit off more than I could chew. I struggled a lot and have a lot of self-doubt about my value as a designer. I wish I pursued a different kind of project that focused more explicitly on user research and market research&mdash;that was the part of this project that I enjoyed most.</p>
+
+				<!-- <h2>Table of Contents</h2>
 				<ol>
 					<li><a href="#original">Original Plan</a></li>
 					<li><a href="http://github.com/jennyliuzhang/silogram" target="_blank">Link to Silogram testbed (abandoned)</a></li>
@@ -66,7 +69,7 @@
 							<li><a href="#flow">Product Flow Outline</a></li>
 						</ul>
 					</li>
-				</ol>
+				</ol> -->
 			</div>
 		</div>
 
@@ -258,9 +261,9 @@
 			<div class="wrap">
 				<h1>App Development</h1>
 				<h2>React App</h2>
-				<p>I began developing the application this semester within the <a href="https://github.com/jennyliuzhang/silogram/tree/master/silogram-frontend" target="_blank">same repository</a> as the previous content. This is what it looks like so far:</p>
+				<p>I began developing the application this semester within the <a href="https://github.com/jennyliuzhang/silogram/tree/master/silogram-frontend" target="_blank">same repository</a> as the previous content. This is what the basic text-editor in React looks like:</p>
 				<img src="img/screenshot.gif" alt="">
-				<p>With the help of my developer friends <a href="http://andrewjiang.com" target="_blank"> Andrew</a> and <a href="https://www.lucasmcgartland.com/" target="_blank">Luke</a>, they were able to walk me through some of the loftier concepts of my program. Below is the overall structure of my React app components:
+				<p>With the help of my developer friends <a href="http://andrewjiang.com" target="_blank"> Andrew</a> and <a href="https://www.lucasmcgartland.com/" target="_blank">Luke</a>, they were able to walk me through some of the loftier concepts of my program. I don't have visual representations, of each of these things because I couldn't implement the editor interface. Below is the overall structure of my React app components:
 				<ul>
 					<li><img src="img/checkbox-checked.png" alt="">App Container</li>
 					<li><img src="img/checkbox-checked.png" alt="">Content Container</li>
@@ -272,8 +275,9 @@
 					<li><img src="img/checkbox-checked.png" alt="">Context Menu Objects</li>
 				</ul>
 				<p>The content container holds all the objects on a page. Slides are the biggest objects the content container can have, and slides contain box and context menus. Boxes are elements like text and images, and they have their own box editors. I had yet to create the slide manager and object editor containers because they would contain elements from the content container.</p>
-				<p>I ran into issues with hierarchy. Passing back and forth information from the box objects to the slide was confusing: I wasn't sure whether to make the box editor belong to the box or belong to the slide. If the editor belonged to the box, which makes the most sense, the parent slide or object editor container would not be able to access it. If the editor belonged to the slide, the slide would need to actively keep track of every objects' properties.</p>
-				<p>This was as far as I got with the implementation of the React app. My callback functions were erroneous because I didn't think about the scope of each box object, and what attributes should be editable.</p>
+				<p>I ran into issues with hierarchy. This halted my development. Passing back and forth information from the box objects to the slide was confusing to me. I got lost in all of the different ways the objects would interact&mdash;I wasn't even sure myself.</p>
+				<p>I wasn't sure whether to make the box editor belong to the box or belong to the slide. If the editor belonged to the box, which makes the most sense, the parent slide or object editor container would not be able to access it. If the editor belonged to the slide, the slide would need to actively keep track of every objects' properties.</p>
+				<p>This was as far as I got with the implementation of the React app. My callback functions were erroneous because I didn't think about the scope of each box object, and what attributes should be editable. I tackled the coding before the blueprint was really determined, and though I reached a certain point where this was fine, it ultimately stopped my entire development because I didn't know how to use React for more complex object relationships.</p>
 				<p>You can look at the repository for the unfinished React frontend <a href="https://github.com/jennyliuzhang/silogram/tree/master/silogram-frontend" taret="_blank">here</a>.</p>
 
 				<h2>Hard-coded Prototype</h2>
@@ -287,7 +291,7 @@
 		<div id="testing" class="slide testing semester2">
 			<div class="wrap">
 				<h1>Testing</h1>
-				<p>For the testing of this project, I first asked each of my testers what their experience was with making websites. I chose people I thought fit the prospective market for this tool: <span class="highlight">young adults who are technically skilled but not quite advanced.</span> I first asked them what their experiences were with making websites. All testers:</p>
+				<p>For the testing of this project, I chose 5 people I thought fit the prospective market for this tool: <span class="highlight">young adults who are technically skilled but not quite advanced.</span> I first asked them what their experiences were with making websites. All testers:</p>
 					<ol>
 						<li>Have never developed a website on their own</li>
 						<li>Tried template tools like WordPress or Wix at some point</li>
@@ -307,7 +311,7 @@
 				<p>The mockups opened with an intro modal, and a blank interface. I prompted them to start a website by creating a new slide.</p>
 				<h3>New Slide</h3>
 				<p>This was a pretty straightforward task. Everyone clicked on the New Slide button, because on the blank interface it directed them to do so.</p>
-				<p>I did get feedback that the concept of slides was confusing, though, which goes against my hypothesis that it would be easier to understand. This specific feedback surfaced a few questions:</p>
+				<p>I did get feedback that the concept of slides was confusing, though, which goes against my hypothesis that it would be easier to understand. This specific feedback surfaced a few questions from testers:</p>
 					<ol>
 						<li>Are slides stacked on one page vertically or horizontally?</li>
 						<li>Can each slide be its own page instead?</li>
@@ -348,13 +352,44 @@
 					<li>Look to Microsoft Word, Publisher, Pages, and Keynote for object editing ideas. How do they organize their hierarchy, and what can be replicated? How can it serve as a model?</li>
 					<li>Advanced object and text editing could be contained within the Object Editor, but obvious things like font and size should be apparent.</li>
 				</ol>
+
+				<p>Alternatively, these are steps I'd want to take to rework the entire application completely:</p>
+				<ol>
+					<li>Write down how App, Content, Slides, Boxes, Box Editors, and Context Menus relate to each other. Create a relationship map.</li>
+					<li>Iterate on the relationship map based on the expectations learned from testing. Place all box-specific editing in the local box editor module. Place all functions associated with positioning/size/etc. (do research on what should definitely be included) in object editor.</li>
+					<li>Do <strong>DUE DILIGENCE</strong>! Figure out what functions are least used in Microsoft Word regarding all their different objects (slides, textboxes). I wish I watched more users play around in <em>existing</em> applications instead of spending so much time trying to hack my own.</li>
+				</ol>
 			</div>
 		</div>
 
 		<div id="takeaways" class="slide takeaways semester2">
 			<div class="wrap">
 				<h1>Takeaways</h1>
-				<p></p>
+				<p>Overall, I did not meet my goal with my development progress. I realized that it was difficult for me to determine the information architecture. Diagnosing all the different use cases for every single object was not clear.</p>
+				<p>My directed research project can technically be examined through the lens of human-centered design:</p>
+				<img src="img/hcd-process.png" alt="">
+				<p>But really, this is what the whole process felt like through my own lens of hindsight:</p>
+				<img src="img/hindsight.png" alt="">
+				<p>In deep reflection, I made a lot of mistakes from this process. This was my first time attempting to build something like this, and I ignored the warnings I kept receiving about overwhelming this idea could be, especially because I didn't have the time or preparation to take on something of this scope.</p>
+				<h2>Personally...</h2>
+				<p>I've been thinking a lot about what my skill set is. The Academy has let me explore deeply my skills and my natural aptitude at them. I think I like front-end development and UI development for the same reason I like to write: I enjoy designing a story. In writing, the medium is words. In digital products, the mediums are interfaces and visual interactions. When it came to attempting the development, I thought too heavily on trying to map things out visually, or understand specific interactions, while I was developing. I complicated my entire process because I hedged on certain design decisions. I did not mesh design and development in an organized way.</p>
+				<p>My biggest regrets for this project was starting so stubbornly in a direction where I had very spotty amateur understanding. I thought I could do it, but my ego was tricked by my skills. I spent too much time on this project doing little things in the code and changing my product. Many results of this time spent didn't even make it into the prototypes or deliverables. I should have focused most heavily on the design and research, where I'm more well-versed, and less on development.</p>
+				<p>Development requires design because design is the instruction. Developing is just finding the right tools to accomplish the directions. I was so transfixed by a certain tool and its architecture that I failed to create a comprehensive design to follow.</p>
+				<p>I <em>am</em> glad I tested what I was working on. I'm glad I interrupted my development because I realized just how much time I had wasted on functions that would not contribute to a prototype. At this point, I wished I better fleshed out a prototype (mapped it out visually) so I could break down the product into something much smaller to attempt. Especially in a new language and type of thinking, React was not an intuitive experience for me to try something so big in.</p>
+				<h2>After testing...</h2>
+				<p>The testing recalibrated my entire idea that made me decide to embark on this convoluted adventure in the first place. I learned so many flaws in what I was thinking, and holes in my thinking altogether. It also got me to think much more large scale. Going into my Garage Experience, this was an experiment in how I should deal with projects and hunches. I've learned that because of my stubborn tendencies to brute force my way into projects and ideas, I need to focus on clarity.</p>
+				<p>Overall, this whole year has been a strange, multi-disciplinary experience for me. I balanced D&M with an English minor and a more academic research project. It's the first time I've attempted to get things done on my own, and I've learned a lot about my habits. My design and development habits aren't perfect, and because tech is evolving so quickly, there were so many frameworks of thought I didn't understand when it came to development.</p>
+				<p>Also, in all honesty, because I didn't understand these topics intuitively, I tended to focus on other parts of this process, other work, and other subjects in my life with more passion because I did understand them intuitively. I enjoyed the conversations with testers and recording their insights with my own. I learned a whole lot about people's tendencies with interfaces, and different, specific preferences they had. Everyone interprets websites differently from me based on the things they've seen before.</p>
+				<p>I had a hunch that made sense and I tested it, with mostly positive results. I still think there's a lot to think through regarding the admin side of website design, but before I make anything, I should sit down and do more research on the processes website generation based on intent.</p>
+
+
+
+				<h2>What now?</h2>
+				<p>Based on this experience, I understand better my role in tech. This is an illustration of my strengths. Size of circle indicates aptitude.</p>
+				<img src="img/skills.png" alt="">
+				<p>While I have an understanding of development, I certainly do not easily work with the nuances of technical product development. I'm better suited at noticing insights&mdash;what kicked off this entire project in the first place&mdash;and fleshing them out on the people side of the design. I've noticed that my strengths lie in testing, talking to others, and being observant. I don't follow directions well in the coding context.</p>
+				<p>Moving forward, I think it's going to be a while before I attempt to code something like this again. I have to really flesh out an insight I want to develop for first, and design for the insight in a very specific way. Alternatively, I should take my skills into a team and focus on doing the design and research.</p>
+				<embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=/proposal1.pdf" width="500" height="375">
 			</div>
 		</div>
 	</body>

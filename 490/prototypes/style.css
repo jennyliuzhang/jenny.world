@@ -18,7 +18,8 @@ h2#editor-slides-h2, h2#editor-object-h2 {
   background: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 0 10px 0 0;
-  font: normal 1.2em/1.5em "Lora", serif; }
+  font: normal 1.2em/1.5em "Lora", serif;
+}
 
 #editor-slides, #editor-object {
   position: fixed;
@@ -103,13 +104,21 @@ h2#editor-slides-h2, h2#editor-object-h2 {
 input, textarea {
   width: 300px;
   background: none;
+  font: normal 1.2em/1.5em "Heebo", serif;
+  color: #000;
   border: none;
 }
 
+  .input:focus { outline: none }
+
 .textbox {
   display: inline-block;
-  border: 1px dotted rgba(0,0,0,0.5);
-  border-bottom: 6px solid rgba(0,0,0,0.5);
+  border: 3px dotted rgba(0,0,0,0.5);
   cursor: move;
+}
+
+/* ACTIVE */
+.currentlySelected {
+  border: 3px dotted rgba(0,0,0,0.5);
 }
 /*# sourceMappingURL=style.css.map */
