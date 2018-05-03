@@ -1,3 +1,11 @@
+
+
+function textboxOnClick(textBoxName) {
+  console.log('help');
+  console.log(textBoxName);
+  $('#'+textBoxName).css('border','3px dotted rgba(0,0,0,0.5)');
+}
+
 function addText(currentSlide) {
 
   // counts # of children
@@ -9,7 +17,7 @@ function addText(currentSlide) {
   // adds the div, name based on #
   // currentSlide.append("<div class='"+textBoxName+"'>What's up! Drag me</div>");
 
-  $(currentSlide).append("<div class='textbox' id='"+textBoxName+"'><textarea placeholder='Type your content here'></textarea></div>");
+  $(currentSlide).append("<div class='textbox' id='"+textBoxName+"' onclick='textboxOnClick("+textBoxName+")'><textarea placeholder='Type your content here'></textarea></div>");
 
   // <div className="toolbox">
   //   <div className="icon bold" onClick={this._onBoldClick.bind(this)}>B</div>

@@ -1,12 +1,8 @@
 // what happens when u click a slide
 $(document).ready(function() {
 
-  function onclick() {
-    currentlySelected = $(this);
-    $(this).css('border','3px dotted rgba(0,0,0,0.5)');
-  }
-
   $('#editor-slides div').click(function(event) {
+    // updates active editor slide
     $(this).addClass('highlight').siblings().removeClass('highlight');
 
     // allows actual slide to also be highlighted
@@ -20,6 +16,8 @@ $(document).ready(function() {
 
   //adding border to highlighted stuffs
   $('#content div').click(function(event) {
+    // removes selection from existing text Objects
+    $('.textbox').css('border','none');
 
     // allows slide editor thumbnail to also be highlighted
     var currentSlideID = $(this).attr('id');

@@ -39,7 +39,9 @@ h2#editor-slides-h2, h2#editor-object-h2 {
 #editor-object, h2#editor-object-h2 {
   right: 0;
   width: 220px;
-  border-radius: 10px 0 0 0; }
+  border-radius: 10px 0 0 0;
+  display: none;
+}
 
 #editor-object {
   border-radius: 0 0 0 10px; }

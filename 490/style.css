@@ -134,6 +134,15 @@ img {
 	border-bottom: 1px solid #f8d802;
 }
 
+table, th, td {	border: 1px solid #000; }
+table {
+	font: normal 0.9em "Heebo", sans-serif;
+	margin: auto;
+}
+
+th { padding: 10px 5px; width: 120px; }
+td { padding: 10px; width: 520px; }
+
 /* SLIDES */
 .intro {
 	background: #fcfcfc;
