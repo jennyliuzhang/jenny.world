@@ -41,8 +41,12 @@
         margin: 2px 0 -2px 0;
       }
 
+    a, a:visited {
+      color: #000;
+    }
+
     h1 {
-      font: bold 1.6em/1.2em "Grad", serif;
+      font: bold 2em/1.2em "Grad", serif;
       color: #7962cc;
       text-align: center;
     }
@@ -53,14 +57,20 @@
       }
 
     h2 {
-      font: normal 0.9em/1.35em "Maison Neue Demi", sans-serif;
+      font: normal 0.85em/1.35em "Maison Neue Demi", sans-serif;
       color: #505050;
       letter-spacing: 0.05em;
     }
 
       h2.basic-intro {
         margin: 0.6em auto;
-        text-align: center;
+        text-align: left;
+      }
+
+      .highlight {
+        padding: 4px 2px;
+        background: #fff;
+        color: #7962cc;
       }
 
     h3 {
@@ -88,7 +98,6 @@
 
       table.basic-focuses {
         text-align: left;
-
       }
 
         table.basic-focuses th {
@@ -116,6 +125,10 @@
             align-items: center;
           }
 
+          h1.basic-title {
+            font-size: 1.6em;
+          }
+
           .mobile-jacaranda {
             float: left;
             margin-right: 40px;
@@ -127,7 +140,6 @@
             margin: auto;
             float: right;
           }
-
     }
 
     @media screen
@@ -147,38 +159,42 @@
       <img class="mobile-jacaranda" src="img/mobile-gif.gif" alt="">
       <div class="card">
         <img class="basic-name" src="img/name.png" alt="">
-        <h1 class="basic-title">Design technologist, artist, and writer.</h1>
-        <h2 class="basic-intro">I use my skills to understand and reveal technology’s role in human relationships and culture in the 21st century.</h2>
+        <h1 class="basic-title">Designer, technologist, artist, and writer.</h1>
+        <h2 class="basic-intro">
+        I'm one of 100 students in the <a href="http://iovine-young.usc.edu/" target="_blank">USC Iovine and Young Academy</a> for art, technology, and entrepreneurship. I like connecting dots and dreaming about the future.
+        <!-- I use my skills to explore how technology influences education, relationships, and culture in the 21st century. -->
+        <br><br>
+        Right now, I'm especially excited by the future of <span class="highlight">K-6 education</span> + world-building.</h2>
 
         <h3>Current Focuses</h3>
         <table class="basic-focuses">
           <tr>
-            <th>USC&nbsp;&nbsp;&nbsp;<img class="icon" src="img/icon-grad.png" alt=""></th>
-            <td>Digital interfaces, narrative structure</td>
+            <th><a href="http://iovine-young.usc.edu/" target="_blank">USC</a>&nbsp;&nbsp;&nbsp;<img class="icon" src="img/icon-grad.png" alt=""></th>
+            <td>Digital interfaces, UX research, narrative structure</td>
           </tr>
           <tr>
-            <th>Adobe</th>
+            <th><a href="http://adobe.com" target="_blank">Adobe</a></th>
             <td>User experience design</td>
           </tr>
           <tr>
-            <th>Al Jazeera</th>
+            <th><a href="http://contrastvr.com" target="_blank">Al Jazeera</a></th>
             <td>Web and digital design</td>
           </tr>
           <tr>
-            <th>Mars City Design</th>
+            <th><a href="http://marscitydesign.com" target="_blank">Mars City Design</a></th>
             <td>Visual design</td>
           </tr>
           <tr>
-            <th>JOVRNALISM</th>
+            <th><a href="http://jovrnalism.io" target="_blank">JOVRNALISM</a></th>
             <td>Journalism, illustration</td>
           </tr>
-          <tr>
+          <!-- <tr>
             <th>Gridflower</th>
             <td>Design consulting</td>
-          </tr>
+          </tr> -->
         </table>
 
-        <h3>Past Focuses</h3>
+        <!-- <h3>Past Focuses</h3>
         <table class="basic-focuses">
           <tr>
             <th>Adobe</th>
@@ -196,7 +212,19 @@
             <th>Daily Trojan</th>
             <td>Journalism, opinion writing</td>
           </tr>
+        </table> -->
+
+        <h3>Elsewhere</h3>
+        <table class="basic-focuses">
+          <tr>
+            <th><a href="http://www.jennyzhang.me/" target="_blank">Work Portfolio</a></th>
+            <th><a href="http://www.jennytypes.com/" target="_blank">Personal Blog</a></th>
+            <th><a href="jennylzh@usc.edu" target="_blank">Email</a></th>
+          </tr>
         </table>
+        <h2 class="basic-intro" style="margin:15px 0 0;">
+          @jennyliuzhang everywhere else!
+        </h2>
       </div>
 
     </div>
