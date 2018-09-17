@@ -23,210 +23,78 @@
       background: #f7f7f7;
     }
 
-    #wrap {
-      padding: 10px;
+    #jennys_world {
+      position: absolute;
+      top: 3vw;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 55vw;
     }
 
-    img { width: 100%; }
-
-      img.basic-name {
-        display: block;
-        margin: auto;
-        max-width: 70%;
-      }
-
-      img.icon {
-        width: auto;
-        height: 12px;
-        margin: 2px 0 -2px 0;
-      }
-
-    a, a:visited {
-      color: #000;
+    #update {
+      width: 100%;
     }
 
-    h1 {
-      font: bold 2em/1.2em "Grad", serif;
-      color: #7962cc;
-      text-align: center;
-    }
+    /*Links*/
 
-      h1.basic-title {
-        margin: 0.8em auto;
-        max-width: 280px;
-      }
-
-    h2 {
-      font: normal 0.85em/1.35em "Maison Neue Demi", sans-serif;
-      color: #505050;
-      letter-spacing: 0.05em;
-    }
-
-      h2.basic-intro {
-        margin: 0.6em auto;
-        text-align: left;
-      }
-
-      .highlight {
-        padding: 4px 2px;
-        background: #fff;
-        color: #7962cc;
-      }
-
-    h3 {
-      display: inline-block;
-      font: normal 0.9em/1.4em "Maison Neue Demi", sans-serif;
-      color: #888;
-      letter-spacing: 0.05em;
-      border-bottom: 2px solid #888;
-    }
-
-    .mobile-jacaranda {
+    a {
       display: block;
-      margin: auto;
-      width: 70%;
-      max-width: 360px;
+      position: absolute;
+      background: none;
+      z-index: 100;
     }
 
-    .card {
-      margin: 40px auto;
-      padding: 30px 20px;
-      max-width: 330px;
-      background: #f9ede8;
-      border: 1px solid #000;
+    a:hover {
+      cursor: url(cursor.png), auto !important;
     }
 
-      table.basic-focuses {
-        text-align: left;
-      }
-
-        table.basic-focuses th {
-          vertical-align: top;
-          /* padding: 0 0 10px 0; */
-          font: normal 0.8em/1.4em "Maison Neue Demi", sans-serif;
-          min-width: 130px;
-          letter-spacing: 0.03em;
-        }
-
-        table.basic-focuses td {
-          vertical-align: top;
-          font: normal 0.8em/1.4em "Lora", serif;
-        }
-
-
-    @media screen
-        and (min-device-width: 840px)
-        and (min-width: 840px) {
-
-          #wrap {
-            width: 800px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-          }
-
-          h1.basic-title {
-            font-size: 1.6em;
-          }
-
-          .mobile-jacaranda {
-            float: left;
-            margin-right: 40px;
-            width: 380px;
-            max-width: none;
-          }
-
-          .card {
-            margin: auto;
-            float: right;
-          }
+    #email {
+      width: 16vw;
+      height: 10vw;
+      top: 30vw;
+      left: 14vw;
     }
 
-    @media screen
-        and (min-device-width: 1000px)
-        and (min-width: 1000px) {
+    #edu_map1 {
+      width: 20vw;
+      height: 29vw;
+      top: 57vw;
+      left: 31vw;
+    }
 
-          #wrap { width: 960px; }
+    #email2 {
+      width: 22vw;
+      height: 5vw;
+      top: 130vw;
+      left: 27vw;
+    }
 
-          .mobile-jacaranda { width: 440px; }
+    #email3 {
+      width: 8vw;
+      height: 5vw;
+      top: 435vw;
+      left: 29vw;
+    }
 
+    #twitter {
+      width: 20vw;
+      height: 5vw;
+      top: 435vw;
+      left: 41vw;
     }
     </style>
   </head>
 
   <body>
-    <div id="wrap">
-      <img class="mobile-jacaranda" src="img/mobile-gif.gif" alt="">
-      <div class="card">
-        <img class="basic-name" src="img/name.png" alt="">
-        <h1 class="basic-title">Designer, technologist, artist, and writer.</h1>
-        <h2 class="basic-intro">
-        I'm one of 100 students in the <a href="http://iovine-young.usc.edu/" target="_blank">USC Iovine and Young Academy</a> for art, technology, and entrepreneurship. I like connecting dots and dreaming about the future.
-        <!-- I use my skills to explore how technology influences education, relationships, and culture in the 21st century. -->
-        <br><br>
-        Right now, I'm especially excited by the future of <span class="highlight">K-6 education</span> + world-building.</h2>
+    <img id="jennys_world" src="jennys_world.gif" alt="">
+    <img id="update" src="fall2018.jpg" alt="">
 
-        <h3>Current Focuses</h3>
-        <table class="basic-focuses">
-          <tr>
-            <th><a href="http://iovine-young.usc.edu/" target="_blank">USC</a>&nbsp;&nbsp;&nbsp;<img class="icon" src="img/icon-grad.png" alt=""></th>
-            <td>Digital interfaces, UX research, narrative structure</td>
-          </tr>
-          <tr>
-            <th><a href="http://adobe.com" target="_blank">Adobe</a></th>
-            <td>User experience design</td>
-          </tr>
-          <tr>
-            <th><a href="http://contrastvr.com" target="_blank">Al Jazeera</a></th>
-            <td>Web and digital design</td>
-          </tr>
-          <tr>
-            <th><a href="http://marscitydesign.com" target="_blank">Mars City Design</a></th>
-            <td>Visual design</td>
-          </tr>
-          <tr>
-            <th><a href="http://jovrnalism.io" target="_blank">JOVRNALISM</a></th>
-            <td>Journalism, illustration</td>
-          </tr>
-          <!-- <tr>
-            <th>Gridflower</th>
-            <td>Design consulting</td>
-          </tr> -->
-        </table>
+    <!--Links-->
+    <a id="email" href="mailto:jenliuzhang@gmail.com"></a>
+    <a id="edu_map1" href="report-out1.jpg" target="_blank"></a>
+    <a id="email2" href="mailto:jenliuzhang@gmail.com"></a>
+    <a id="email3" href="mailto:jenliuzhang@gmail.com"></a>
+    <a id="twitter" href="http://twitter.com/jennyliuzhang" target="_blank"></a>
 
-        <!-- <h3>Past Focuses</h3>
-        <table class="basic-focuses">
-          <tr>
-            <th>Adobe</th>
-            <td>Creative consulting</td>
-          </tr>
-          <tr>
-            <th>ViaSat</th>
-            <td>Product design</td>
-          </tr>
-          <tr>
-            <th>Spark SC</th>
-            <td>Graphic design, mentorship</td>
-          </tr>
-          <tr>
-            <th>Daily Trojan</th>
-            <td>Journalism, opinion writing</td>
-          </tr>
-        </table> -->
-
-        <h3>Elsewhere</h3>
-        <table class="basic-focuses">
-          <tr>
-            <th><a href="http://www.jennyzhang.me/" target="_blank">Work Portfolio</a></th>
-            <th><a href="http://www.jennytypes.com/" target="_blank">Personal Blog</a></th>
-            <th><a href="jennylzh@usc.edu" target="_blank">Email</a></th>
-          </tr>
-        </table>
-        <h2 class="basic-intro" style="margin:15px 0 0;">
-          @jennyliuzhang everywhere else!
-        </h2>
-      </div>
-
-    </div>
   </body>
 </html>
