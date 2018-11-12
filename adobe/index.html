@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Adobe Photoshop</title>
+    <style>
+        @font-face {
+            font-family: 'Adobe Clean';
+            src: url('adobeclean/AdobeClean-Regular.otf');
+        }
+
+        @font-face {
+            font-family: 'Adobe Clean Black';
+            src: url('adobeclean/AdobeClean-Black.otf');
+        }
+
+        body {
+            margin: 0;
+            background: #f2f2f2;
+            font: normal 1em/1.2em "Adobe Clean", sans-serif;
+        }
+
+        a, a:active, a:visited {
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav {
+            position: relative;
+            width: 100%;
+            z-index: 100;
+        }
+
+            #gnav {
+                position: relative;
+                padding: 20px 10px 0;
+                height: 45px;
+                background: #fff;
+                text-align: center;
+                z-index: 200;
+            }
+
+                .Gnav-logo-image {
+                    margin: 0 5px -2px 0;
+                }
+
+                .Gnav-logotype {
+                    font-weight: 500;
+                }
+
+            #snav {
+                margin-top: -4px;
+                height: 73px;
+                background: rgba(0,0,0,0.8);
+                font: 400 0.85em/1em "Adobe Clean", sans-serif;
+                letter-spacing: 0.025em;
+                text-align: center;
+            }
+
+                #snav .logo {
+                    padding: 25px 5px 20px 0;
+                    margin-bottom: -28px;
+                    width: 25px;
+                }
+
+                #snav span {
+                    padding: 25px 20px 20px 5px;
+                    color: #fff;
+                    font: 700 0.9em/1em "Adobe Clean", sans-serif;
+                    text-transform: uppercase;
+                }
+
+                #snav a, #snav button {
+                    display: none;
+                }
+
+            .back-to-cc {
+                display: none;
+            }
+
+            #hero {
+                position: relative;
+                margin-top: -65px; 
+                height: 92vh;
+                z-index: 90;
+                background: #00395a;
+                /*background-image: url('sky.jpg');*/
+                /*background-size: 100% auto;*/
+                background-attachment: fixed;
+                overflow: hidden;
+                box-shadow: 0 0 100px rgba(0,0,0,0.2);
+            }
+
+                /*#intro {
+                    margin-top: -65px;
+                    background: url(ps.jpg) no-repeat center 15vh;
+                    background-size: 20vh auto;
+                }*/
+
+                #hero-icon {
+                    position: absolute;
+                    width: 50px;
+                    top: 30%;
+                    left: 50%;
+                    transform: translate(-50%,-30%);
+                    z-index: 91;
+                }
+
+                #hero-h1 {
+                    position: absolute;
+                    font: 600 2em/1.2em "Adobe Clean Black", sans-serif;
+                    color: #fff;
+                    text-align: center;
+                    top: 44%;
+                    left: 50%;
+                    transform: translate(-50%,-44%);
+                    z-index: 91;
+                }
+
+                #hero-h3 {
+                    position: absolute;
+                    font: 200 1.4em/1.5em "Adobe Clean", sans-serif;
+                    color: #fff;
+                    text-align: center;
+                    letter-spacing: 0.02em;
+                    top: 66%;
+                    left: 50%;
+                    transform: translate(-50%,-66%);
+                    z-index: 91;
+                }
+
+            #main-video {
+                opacity: 0.2;
+                min-width: 100%; 
+                min-height: 100%;
+                z-index: 90;
+            }
+
+            .slide {
+                position: relative;
+                min-height: 80vh;
+            }
+
+                #logo {
+                    background: #fff url(ps.jpg) no-repeat center 7vh;
+                    background-size: 20vh auto;
+                    min-height: 660px;
+                }
+
+                #design {
+                    background: #262626 url(ps-design-w.jpg) no-repeat center 7vh;
+                    background-size: 20vh auto;
+                    min-height: 700px;
+                }
+
+                    #design h3.tagline { color: #fff; }
+                    #design h3.tagline .highlight { color: #0a3858; }
+
+                #photo {
+                    background: #8de6ff url(ps-photo.jpg) no-repeat center 7vh;
+                    background-size: 20vh auto;
+                    min-height: 700px;
+                }
+
+                    #photo h3.tagline .highlight { background: #fff; }
+
+                #video {
+                    background: #00c7ff url(ps-video-w.jpg) no-repeat center 7vh;
+                    background-size: 20vh auto;
+                }
+
+                #ux {
+                    background: #d4f5ff url(ps-ux.jpg) no-repeat center 7vh;
+                    background-size: 20vh auto;
+                }
+
+                h3.tagline {
+                    display: block;
+                    margin: auto;
+                    padding: 235px 0 0;
+                    width: 50%;
+                    font: 300 1.3em/1.4em "Adobe Clean", sans-serif;
+                    text-align: center;
+                }
+
+                    h3.tagline .highlight {
+                        background: #8de6ff;
+                    }
+
+                h3.tagline.intro { display: none; }
+
+            .content {
+                position: absolute;
+                margin: 27vh auto 0;
+                padding: 20px 0;
+                top: 0%;
+                right: 50%;
+                transform: translate(50%,0%);
+                width: 98%;
+            }
+
+                .content-intro {
+                    padding: 40px 0;
+                    background: #fff;
+                }
+
+                    .intro-vid1 {
+                        margin: 0 0 0 7%;
+                        width: 93%;
+                        max-height: 500px;
+                    }
+
+                    .intro-vid1-wide { display: none; }
+
+                    .intro-vid2 {
+                        display: block;
+                        margin: auto;
+                        width: 80%;
+                        max-height: 300px;
+                    }
+
+
+                .content-design { 
+                    background: #262626;
+                }
+
+                    .design-vid1 {
+                        position: absolute;
+                        top: 160px;
+                        right: 0;
+                        width: 90%;
+                        max-height: 500px;
+                    }
+
+                    .design-toolbox {
+                        position: absolute;
+                        width: 70px;
+                        top: 120px;
+                        left: 0;
+                    }
+
+
+
+
+                    .photo-curves {
+                        position: absolute;
+                        top: 150px;
+                        right: 10px;
+                        width: 200px;
+                        z-index: 40;
+                        border-radius: 3px;
+                        box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+                    }
+
+                    .photo-effect {
+                        position: absolute;
+                        top: 180px;
+                        left: 0;
+                        width: 96%;
+                        max-height: 500px;
+                    }
+
+                .content h1 {
+                    font: 600 1.4em/1.3em "Adobe Clean Black", sans-serif;
+                    text-align: center;
+                }
+
+                    .content-intro h1 { color: #0a3858; }
+                    .content-photo h1 { color: #fff; }
+
+            #trial {
+                position: relative;
+                background: #f2f8fa;
+                height: 120vh;
+                border-top: 1px solid #fff;
+                box-shadow: 0 0 100px rgba(0,0,0,0.1);
+                z-index: 90;
+            }
+
+                .contents {
+                    position: absolute;
+                    width: 90%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+
+                #trial-h1 {
+                    font: 600 2.4em/1.2em "Adobe Clean Black", sans-serif;
+                    color: #002e5e;
+                    text-align: center;
+                    z-index: 91;
+                }
+
+                .trial-option {
+                    margin: 20px 0;
+                    padding: 10px 30px 40px;
+                }
+
+                    .trial-option h4 {
+                        padding: 0 0 20px;
+                        font: 200 1.6em/1.2em "Adobe Clean", sans-serif;
+                        letter-spacing: 0.02em;
+                        border-bottom: 2px solid #00c7ff;
+                    }
+
+                    .trial-option.cc h4 {
+                        font-weight: 500;
+                        border-bottom: 3px solid #0082a6;
+                    }
+
+                    .trial-option:hover {
+                        background: #fff;
+                    }
+
+                    .trial-option button {
+                        -webkit-appearance: none;
+                        display: inline-block;
+                        margin-top: 10px;
+                        padding: 10px 12px 12px;
+                        background: #1472e6;
+                        color: #fff;
+                        font: 500 1em/1em "Adobe Clean", sans-serif;
+                        letter-spacing: 0.035em;
+                        border: none;
+                        border-radius: 20px;
+                    }
+
+                    #trial button:hover {
+                        background: #045abf;
+                    }
+
+            #buy {
+                background: #1472e6;
+            }
+
+            footer {
+                position: relative;
+                height: 300px;
+                background: #000;
+                z-index: 100;
+            }
+
+            @media only screen and (min-width: 470px)  {
+
+                #logo { min-height: 700px; }
+                
+            }
+
+            @media only screen and (min-width: 520px)  {
+
+                #hero-h1 {
+                    font: 900 2.6em/1.2em "Adobe Clean", sans-serif;
+                    top: 44%;
+                    left: 50%;
+                    transform: translate(-50%,-44%);
+                }
+
+                #logo { min-height: 760px; }
+
+            }
+
+            @media only screen and (min-width: 540px)  {
+                #logo { min-height: 880px; }
+
+                #design { min-height: 740px; }
+
+                    .design-vid1 { top: 130px; }
+
+                    .design-toolbox {
+                        width: 100px;
+                        top: 30px;
+                    }
+
+
+                #photo { min-height: 740px; }
+
+                    .photo-curves {
+                        top: 130px;
+                        width: 260px;
+                    }
+
+                    .photo-effect {
+                        top: 150px;
+                    }
+            }
+
+            @media only screen and (min-width: 700px)  {
+
+                .sticky, .sticky-cc {
+                    position: fixed;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                }
+
+                #hero {
+                    margin-top: -65px;
+                }
+
+                    .hero-0 {
+                        margin-top: 65px;
+                        padding-top: 130px;
+                    }
+
+                    .hero-65 {
+                        margin-top: -65px;
+                        padding-top: 0;
+                    }
+
+                    /*#intro {
+                        margin-top: -65px;
+                        background: url(ps.jpg) no-repeat 120px 50%;
+                        background-size: 30vh auto;
+                    }*/
+
+                    #hero-icon {
+                        width: 50px;
+                        top: 30%;
+                        left: 50%;
+                        transform: translate(-50%,-30%);
+                    }
+
+                    #hero-h1 {
+                        width: 80%;
+                        max-width: 800px;
+                        font: 900 3.5em/1em "Adobe Clean", sans-serif;
+                        top: 43%;
+                        left: 50%;
+                        transform: translate(-50%,-43%);
+                    }
+
+                    #hero-h3 {
+                        position: absolute;
+                        font: 200 1.6em/1.5em "Adobe Clean", sans-serif;
+                        color: #fff;
+                        text-align: center;
+                        letter-spacing: 0.02em;
+                        top: 65%;
+                        left: 50%;
+                        transform: translate(-50%,-65%);
+                        z-index: 91;
+                    }
+
+                #snav a {
+                    margin: 0 -2px 0 -1px;
+                    color: #fff;
+                    display: inline-block;
+                    padding: 25px 20px 18px;
+                    height: 25px;
+                }
+
+                #snav a:hover, #snav a.active {
+                    background: rgba(140,225,255,0.1);
+                }
+
+                #snav button {
+                    -webkit-appearance: none;
+                    display: inline-block;
+                    margin: 20px 20px 25px;
+                    padding: 10px 12px 12px;
+                    background: #1472e6;
+                    color: #fff;
+                    font: 500 1em/1em "Adobe Clean", sans-serif;
+                    letter-spacing: 0.035em;
+                    border: none;
+                    border-radius: 20px;
+                }
+
+                    #snav button:hover {
+                        background: #045abf;
+                    }
+
+               /* #hero #intro.getFixed {
+                    margin-top: 0;
+                    background: url(ps.jpg) fixed no-repeat 120px 50%;
+                    background-size: 30vh auto;
+                }*/
+
+                h3.tagline {
+                    display: block;
+                    position: fixed;
+                    padding: 20px 0 0;
+                    top: 55%;
+                    left: 77px;
+                    width: 22vh;
+                    font: normal 1em/1.4em "Adobe Clean", sans-serif;
+                    text-align: left;
+                }
+
+                    h3.tagline .highlight {
+                        background: #8de6ff;
+                    }
+
+                    #logo {
+                        background: #d3f5ff url(ps.jpg) fixed no-repeat 80px 45%;
+                        background-size: 20vh auto;
+                        min-height: 80vh;
+                    }
+
+                    #design {
+                        background: #fff url(ps-design-w.jpg) fixed no-repeat 80px 45%;
+                        background-size: 20vh auto;
+                        min-height: 75vh;
+                    }
+
+                    #photo {
+                        background: #8de6ff url(ps-photo.jpg) fixed no-repeat 80px 45%;
+                        background-size: 20vh auto;
+                        min-height: 75vh;
+                    }
+
+                    #video {
+                        background: #00c7ff url(ps-video-w.jpg) fixed no-repeat 80px 45%;
+                        background-size: 20vh auto;
+                    }
+
+                    #ux {
+                        background: #d4f5ff url(ps-ux.jpg) fixed no-repeat 80px 45%;
+                        background-size: 20vh auto;
+                    }
+
+                .content {
+                    position: absolute;
+                    margin: 0;
+                    padding: 20px 40px;
+                    right: 0;
+                    transform: translate(0%,0%);
+                    width: 50vw;
+                    min-height: 80vh;
+                }
+
+                    .intro-vid1 { margin-top: 10vh; }
+
+                    .content-intro, .content-design, .content-photo { 
+                        height: 100%;
+                    }
+
+                    .design-vid1 {
+                        top: 120px;
+                        right: 0;
+                        width: 98%;
+                        max-height: 500px;
+                    }
+
+                    .design-toolbox {
+                        position: absolute;
+                        width: 90px;
+                        top: 70px;
+                        left: 0px;
+                    }
+
+                .content-photo { 
+                    background: url('transparency.jpg') repeat;
+                    background-size: 19px auto;
+                }
+
+                    .photo-curves {
+                        top: 80px;
+                        right: 40px;
+                        width: 240px;
+                    }
+
+                    .photo-effect {
+                        top: 150px;
+                        left: 20px;
+                        max-width: 840px;
+                    }
+
+                    .content h1 {
+                        margin-top: 30px;
+                        font: 600 1.4em/1.3em "Adobe Clean", sans-serif;
+                        text-align: left;
+                    }
+
+                    .content-intro { border-left: 2px solid #c0f0fe; }
+                    .content-design { border-left: 2px solid #efefef; }
+                    .content-photo { border-left: 2px solid #70dfff; }
+
+                #trial {
+                    height: 90vh;
+                }
+
+                    .contents {
+                        max-width: 800px;
+                    }
+
+                    #trial-h1 {
+                        font: 900 4.5em/1em "Adobe Clean", sans-serif;
+                    }
+
+                    .trial-option {
+                        display: inline-block;
+                        width: 40%;
+                        margin: 0;
+                        padding: 10px 30px 40px;
+                    }
+
+            }
+
+            @media only screen and (min-width: 860px) {
+                .content {
+                    width: 58vw;
+                }
+
+                    .intro-vid1 { margin-top: 0; }
+
+                .content h1 {
+                    margin-top: 50px;
+                    font: 600 1.8em/1.3em "Adobe Clean", sans-serif;
+                    max-width: 700px;
+                }
+            }
+
+            @media only screen and (min-width: 1000px)  {
+                /*#intro {
+                    margin-top: -65px;
+                    background: url(ps.jpg) no-repeat 120px 50%;
+                    background-size: 60vh auto;
+                }*/
+
+                /*#hero #intro.getFixed {
+                    margin-top: 0;
+                    background: url(ps.jpg) fixed no-repeat 120px 50%;
+                    background-size: 60vh auto;
+                }*/
+
+                .back-to-cc {
+                    display: block;
+                    position: absolute;
+                    top: 90px;
+                    left: 30px;
+                    width: 110px;
+                }
+
+                    .sticky-cc {
+                        position: fixed;
+                        display: block;
+                        top: 90px;
+                        left: 30px;
+                        width: 110px;
+                    }
+
+                h3.tagline {
+                    top: 61%;
+                    left: 100px;
+                    width: 30vh;
+                    font: 300 1.3em/1.4em "Adobe Clean", sans-serif;
+                }
+
+                    #logo {
+                        background: #d3f5ff url(ps.jpg) fixed no-repeat 100px 45%;
+                        background-size: 30vh auto;
+                        min-height: 680px;
+                    }
+
+                    #design {
+                        background: #fff url(ps-design-w.jpg) fixed no-repeat 100px 45%;
+                        background-size: 30vh auto;
+                        min-height: 620px;
+                    }
+
+                    #photo {
+                        background: #8de6ff url(ps-photo.jpg) fixed no-repeat 100px 45%;
+                        background-size: 30vh auto;
+                        min-height: 620px;
+                    }
+
+                    #video {
+                        background: #00c7ff url(ps-video-w.jpg) fixed no-repeat 100px 45%;
+                        background-size: 30vh auto;
+                    }
+
+                    #ux {
+                        background: #d4f5ff url(ps-ux.jpg) fixed no-repeat 100px 45%;
+                        background-size: 30vh auto;
+                    }
+
+                .content {
+                    width: 55vw;
+                }
+
+                    .intro-vid1 { display: none; }
+
+                    .intro-vid1-wide { 
+                        display: block;
+                        margin: 50px 0 0 2%;
+                        width: 98%;
+                        max-height: 500px;
+                    }
+
+                    .design-vid1 {
+                        top: 120px;
+                        right: 0;
+                        width: 90%;
+                        max-height: 500px;
+                    }
+
+                    .design-toolbox {
+                        position: absolute;
+                        width: 110px;
+                        top: 60px;
+                        left: 30px;
+                    }
+
+
+                #trial-h1 {
+                    font-size: 4em;
+                    line-height: 0.7em;
+                }
+            }
+
+            @media only screen and (min-width: 1240px)  {
+
+                /*.slide {
+                    height: 130vh;
+                }*/
+
+                    #logo { min-height: 950px; }
+
+                .content {
+                    width: 64vw;
+                    max-width: 940px;
+                }
+
+                    .content-intro {
+                        height: 100%;
+                    }
+
+                        .intro-vid1-wide { margin-top: 0; }
+
+                        .paper0 {
+                            position: absolute;
+                            display: block;
+                            top: -30px;
+                            right: 20px;
+                            width: 800px;
+                            height: 610px;
+                            background: url('intro-paper.png');
+                            background-size: 100% auto;
+                            opacity: 0.6;
+                        }
+
+                        .paper1 {
+                            position: relative;
+                            display: block;
+                            margin: 140px 0;
+                            padding: 30px 0 100px 0;
+                            width: 87%;
+                            height: auto;
+                            background: #fff url('blob1.png') no-repeat;
+                            background-size: 95% auto;
+                            background-position: 50% 100%;
+                            box-shadow: 2px 2px 12px rgba(0,0,0,0.15);
+                        }
+
+                    .content h1 {
+                        margin-top: 50px;
+                        font: 600 2.2em/1.3em "Adobe Clean", sans-serif;
+                        max-width: 660px;
+                    }
+
+                .photo-curves {
+                    top: 80px;
+                    right: 40px;
+                    width: 270px;
+                }
+
+                .photo-effect {
+                    left: 60px;
+                }
+
+            }
+
+    </style>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script>
+    $(document).ready(function() {
+
+        var snav = $('#snav');
+        var hero = $('#hero');
+        var intro = $('#intro');
+        var footer = $('footer');
+        var cc = $('.back-to-cc');
+        var ccB = $('#cc-b');
+
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 65) {
+                snav.addClass("sticky");
+                hero.addClass("hero-0");
+                cc.addClass("sticky-cc");
+            } else {
+                snav.removeClass("sticky");
+                hero.addClass("hero-65");
+                cc.removeClass("sticky-cc");
+            }
+
+            if ($(window).scrollTop() > 65) {
+                intro.addClass("getFixed");
+            } else {
+                intro.removeClass("getFixed");
+            }
+
+            if ($(window).scrollTop() < $(document).height()) {
+                $('#photo').css('background-attachment', 'none');
+                console.log($(document).height());
+            }
+
+            // get height of hero
+            // var heroHeight = hero.height();
+
+            // if ($(window).scrollTop() > heroHeight) {
+            //     ccB.css('z-index','200');
+            // } else {
+            //     ccB.css('display','none');
+            // }
+        });
+
+    });
+    </script>
+
+</head>
+
+<body>
+    <nav>
+        <div id="gnav">
+            <a href="#"><div class="Gnav-logo">
+                <svg class="Gnav-logo-image" xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 24 20" focusable="false">
+                    <path fill="#FF0000" d="M15.1,0H24v20L15.1,0z M8.9,0H0v20L8.9,0z M12,7.4L17.6,20h-3.8l-1.6-4H8.1L12,7.4z"></path>
+                </svg>
+                <span class="Gnav-logotype">Adobe</span>
+            </div></a>
+        </div>
+        <div id="snav">
+            <img class="logo" src="ps-sm.jpg" alt="">
+            <span>Adobe Photoshop</span>
+            <a href="#" class="active">What is Photoshop?</a>
+            <a href="#">Learn &amp; Support &nbsp;<!-- <i class="fa fa-external-link" style="font-size: 12px"> --></i></a>
+            <a href="#">Free Trial</a>
+            <button>Buy now</button>
+        </div>
+    </nav>
+    
+
+    <div id="hero">
+
+        <a href="#"><img class="back-to-cc" src="back-to-b.png" alt=""></a>
+
+        <img id="hero-icon" src="ps.jpg" alt="">
+        <h1 id="hero-h1">The creative world runs on Photoshop.</h1>
+        <h3 id="hero-h3">Photoshop is the world's best design and imaging app.</h3>
+
+        <video id="main-video" class="background-video" autoplay loop muted playsinline poster="http://adobe.saintmonday.com/xd/images/xd-marquee.jpg">
+        <source src="http://adobe.saintmonday.com/xd/video/xdxdxd.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+
+        <!-- <div id="intro" class="slide">
+        
+        </div> -->
+
+    </div>
+
+    <!-- <a href="#"><img class="back-to-cc" id="cc-b" src="back-to-b.png" alt=""></a> -->
+
+    <div id="logo" class="slide slide-intro">
+        <h3 class="tagline intro">The world's best design and imaging app.</h3>
+
+        <div class="content content-intro">
+            <!-- <h1>The go-to for posters, packaging, banners, websites, illustrations, photo manipulation, and 3D artwork since 1990.</h1> -->
+
+            <div class="paper0"></div>
+
+            <div class="paper1">
+
+                <video class="intro-vid1" autoplay loop muted playsinline>
+                <source src="intro2-2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+
+                <video class="intro-vid1-wide" autoplay loop muted playsinline>
+                <source src="intro-2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+
+                <a href="#"><video class="intro-vid2" autoplay loop muted playsinline>
+                <source src="intro-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></a>
+
+            </div>
+        </div>
+        
+    </div>    
+
+    <div id="design" class="slide">
+        <h3 class="tagline">The world's best <span class="highlight">design</span> and imaging app.</h3>
+
+        <div class="content content-design">
+            <!-- <h1>Photo manipulation made easy.</h1> -->
+
+            <video class="design-vid1" autoplay loop muted playsinline>
+            <source src="design-vid-looped2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+
+            <img class="design-toolbox" src="toolbox.png" alt="">
+
+        </div>
+        
+    </div>
+
+    <div id="photo" class="slide">
+        <h3 class="tagline">The world's best design and <span class="highlight">imaging</span> app.</h3>
+
+        <div class="content content-photo">
+            <!-- <h1>Photoshop has been the go-to for posters, packaging, banners, websites, illustrations, photo manipulation, and 3D artwork since 1990.</h1> -->
+
+            <video class="photo-curves" autoplay loop muted playsinline>
+            <source src="photo-curves-1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+
+            <video class="photo-effect" autoplay loop muted playsinline>
+            <source src="photo-effect.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+
+        </div>
+        
+    </div>
+
+    <!-- <div id="video" class="slide">
+        
+    </div>
+
+    <div id="ux" class="slide">
+        
+    </div> -->
+
+    <div id="trial">
+        <div class="contents">
+            <h1 id="trial-h1">Get Photoshop.</h1>
+            <div class="trial-option">
+                <h4>Photoshop</h4>
+                <p>Just Photoshop, with access to cloud storage, fonts, and tutorials.</p>
+                <p>7 days free, then $20.99/mo.</p>
+                <button>Start trial</button>
+            </div>
+            <div class="trial-option cc">
+                <h4>Creative Cloud</h4>
+                <p>Photoshop, plus all the other Creative Cloud apps and perks.</p>
+                <p>7 days free, then $52.99/mo.</p>
+                <button>Start trial</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="buy"></div>
+
+    <footer>
+    </footer>
+
+
+
+</body>
+
+</html>
