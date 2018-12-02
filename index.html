@@ -1,39 +1,521 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+
+<head>
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Jenny Liu Zhang - Coming Soon</title>
+    <title>Jenny Liu Zhang</title>
     <link rel='shortcut icon' type='image/x-icon' href='img/butterflyfav.png'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
-    <meta name="Description" content="A peek into the world of Jenny Liu Zhang." />
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script type='text/javascript' src='http://d3js.org/d3.v3.min.js'></script>
+  	<script type='text/javascript' src='http://d3js.org/topojson.v1.min.js'></script>
+  	<script type='text/javascript' src='planetaryjs.min.js'></script>	
 
-    <style>
+  	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,500,500i,600,600i,700,700i|IBM+Plex+Serif:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-      body {
-        overflow: hidden;
-      }
+  	<style>
 
-      #cookie {
-        display: block;
-        margin: 160px auto 0;
-        width: 90px;
-      }
+  	body {
+  		margin: 0;
+  		background: #fff;
+  		overflow-x: hidden;
+  	}
 
-      #logo {
-        display: block;
-        margin: 100px auto 0;
-        transform: translateX(-45px);
-        width: 250px;
-      }
-    
-    </style>
-  </head>
+  	header {
+  		position: relative;
+  		display: block;
+  		height: 80vh;
+  	}
 
-  <body>
-    <a href="/cookietrail"><img id="cookie" src="cookielogo.png" alt=""></a>
-    <img id="logo" src="logo.png" alt="">
-  </body>
+  	#seal {
+  		position: absolute;
+  		display: block;
+  		background: url('img/seal-bg.png') no-repeat;
+  		background-size: 100% auto;
+  		transform: translate(-50%,-50%);
+  		top: 50%;
+  		left: 50%;
+  		width: 278px;
+  		height: 278px;
+  		z-index: 9;
+  	}
+
+  	#seal-ribbon {
+  		position: absolute;
+  		display: block;
+  		background: url('img/seal-ribbon.png') no-repeat;
+  		background-size: 100% auto;
+  		transform: translate(-50%,-67%);
+  		top: 67%;
+  		left: 50%;
+  		width: 360px;
+  		height: 76px;
+  		z-index: 11;
+  	}
+
+
+  	#rotatingGlobe {
+  		position: absolute;
+  		display: block;
+  		margin: 4px 0 0 4px;
+  		transform: translate(-50%,-50%);
+  		top: 50%;
+  		left: 50%;
+  		width: 305px;
+  		height: 305px;
+  		cursor: move;
+  		z-index: 10;
+  	}
+
+  	.deco {
+  		display: none;
+  	}
+
+  	h2 {
+  		margin: 0.8em 0 2em;
+  		font: 600 italic 1.2em 'IBM Plex Serif', serif;
+  	}
+
+  	p {
+  		font: 400 normal 1em/1.5em 'IBM Plex Sans', sans-serif;
+  	}
+
+  	a {
+  		color: #000;
+  		font-weight: 500;
+  	}
+
+  	a:hover {
+  		background: #fff;
+  	}
+
+  	.wrap {
+  		margin: 0 auto 100px;
+  		width: 75vw;
+  	}
+
+  	#status {
+  		position: relative;
+  		padding: 10px 20px;
+  		border: 1px solid black;
+  		border-radius: 6px;
+  		z-index: 10;
+  	}
+
+  		.location {
+  			display: inline-block;
+  			padding: 0 5px;
+  			background: #fff000;
+  			border-bottom: 2px solid #ffdf7e;
+  		}
+
+  		@media screen
+			and (min-device-width: 600px)
+			and (min-width: 600px) {
+
+				#seal {
+			  		width: 363px;
+			  		height: 363px;
+				}
+
+				#seal-ribbon {
+					transform: translate(-50%,-74%);
+			  		top: 74%;
+			  		left: 50%;
+			  		width: 468px;
+			  		height: 98px;
+			  	}
+
+				#rotatingGlobe {
+					margin: 6px 0 0 6px;
+			  		width: 400px;
+			  		height: 400px;
+				}
+
+				/* Deco */
+
+				.deco { display: block; }
+
+				.deco img {
+					display: none;
+					position: fixed;
+				}
+
+				#morning-glory {
+					display: block;
+					top: -20px;
+					left: -50px;
+					width: 140px;
+				}
+
+				#rhododendron {
+					display: block;
+					bottom: 130px;
+					right: -50px;
+					width: 150px;
+				}
+
+				#stars-left {
+					display: block;
+					top: 200px;
+					left: -40px;
+					width: 120px;
+				}
+
+				#brush-1 {
+					display: block;
+					bottom: 100px;
+					left: -10px;
+					width: 80px;
+				}
+
+				#stars-right-1 {
+					display: block;
+					top: -4px;
+					right: 10px;
+					width: 80px;
+				}
+
+				#brush-2 {
+					display: block;
+					top: 100px;
+					right: 20px;
+					width: 90px;
+				}
+
+				#stars-right-2 {
+					display: block;
+					top: 230px;
+					right: 10px;
+					width: 50px;
+				}
+
+				#wave {
+					display: block;
+					bottom: 50px;
+					right: -10px;
+					width: 70px;
+				}
+
+
+				/* End Deco */
+
+				.wrap {
+			  		margin: 0 auto 80px;
+			  		width: 50vw;
+			  		max-width: 500px;
+			  	}
+		}
+
+		@media screen
+			and (min-device-width: 1000px)
+			and (min-width: 1000px) {
+
+				body {
+			  		background: #f6f6f6;
+			  	}
+
+			  	#seal, #rotatingGlobe {
+			  		transform: translate(-50%,-40%);
+			  		top: 40%;
+			  		left: 50%;
+				}
+
+				#seal-ribbon {
+					transform: translate(-50%,-64%);
+			  		top: 64%;
+			  		left: 50%;
+			  	}
+
+			  	#rotatingGlobe {
+			  		margin: 2px 0 0 6px;
+			  	}
+
+				header {
+			  		margin: 2vh auto 0;
+			  		width: 96vw;
+			  		height: 95vh;
+			  		background: #fff;
+			  		border: 3px solid #f4f4f4;
+			  		border-radius: 10px;
+			  	}
+
+			  	/* Deco */
+
+				.deco img {
+					display: block;
+				}
+
+				#morning-glory {
+					transform: translate(2%,5%);
+					top: -5%;
+					left: -2%;
+					width: 180px;
+				}
+
+				#rhododendron {
+					transform: translate(4%,-20%);
+					bottom: 20%;
+					right: -4%;
+					width: 240px;
+				}
+
+				#stars-left {
+					transform: translate(-5%,-50%);
+					top: 50%;
+					left: 5%;
+					width: 160px;
+				}
+
+				#brush-1 {
+					transform: translate(4%,-8%);
+					bottom: 8%;
+					left: -4%;
+					width: 220px;
+				}
+
+				#stars-right-1 {
+					transform: translate(-4%,1%);
+					top: -1%;
+					right: 4%;
+					width: 180px;
+				}
+
+				#brush-2 {
+					transform: translate(-10%,-22%);
+					top: 22%;
+					right: 10%;
+					width: 120px;
+				}
+
+				#stars-right-2 {
+					transform: translate(-14%,-75%);
+					top: 75%;
+					right: 14%;
+					width: 50px;
+				}
+
+				#wave {
+					transform: translate(1%,1%);
+					bottom: -1%;
+					right: -1%;
+					width: 130px;
+				}
+
+				#doodle-wave {
+					transform: translate(-16%,-2%);
+					top: 2%;
+					left: 16%;
+					width: 50px;
+				}
+
+				#two-leaf {
+					position: absolute;
+					transform: translate(-28%,-20%);
+					top: 20%;
+					left: 28%;
+					width: 30px;
+				}
+
+				#one-leaf {
+					position: absolute;
+					transform: translate(-23%,-12%);
+					top: 12%;
+					right: 23%;
+					width: 30px;
+				}
+
+				#sparkle {
+					position: absolute;
+					transform: translate(-28%,-24%);
+					bottom: 24%;
+					right: 28%;
+					width: 22px;
+				}
+
+
+				/* End Deco */
+
+			  	#status {
+			  		margin-top: -4.5em;
+			  	}
+
+		}
+
+  	</style>
+
+</head>
+
+<body>
+	<header>
+
+		<div id="seal"></div>
+
+		<canvas id="rotatingGlobe"></canvas>
+
+		<div id="seal-ribbon"></div>
+
+		<script>
+			(function() {
+			  var globe = planetaryjs.planet();
+			  // Load our custom `autorotate` plugin; see below.
+			  globe.loadPlugin(autorotate(5));
+			  // The `earth` plugin draws the oceans and the land; it's actually
+			  // a combination of several separate built-in plugins.
+			  //
+			  // Note that we're loading a special TopoJSON file
+			  // (world-110m-withlakes.json) so we can render lakes.
+			  globe.loadPlugin(planetaryjs.plugins.earth({
+			    topojson: { file:   'http://planetaryjs.com/world-110m-withlakes.json' },
+			    oceans:   { fill:   '#fff' },
+			    land:     { fill:   '#000' },
+			    borders:  { stroke: '#666' }
+			  }));
+			  // Load our custom `lakes` plugin to draw lakes; see below.
+			  globe.loadPlugin(lakes({
+			    fill: '#fff'
+			  }));
+			  // The `pings` plugin draws animated pings on the globe.
+
+			  globe.loadPlugin(planetaryjs.plugins.pings());
+
+			  // The `zoom` and `drag` plugins enable
+			  // manipulating the globe with the mouse.
+			  // globe.loadPlugin(planetaryjs.plugins.zoom({
+			  //   scaleExtent: [120, 140]
+			  // }));
+
+			  globe.loadPlugin(planetaryjs.plugins.drag({
+			    // Dragging the globe should pause the
+			    // automatic rotation until we release the mouse.
+			    onDragStart: function() {
+			      this.plugins.autorotate.pause();
+			    },
+			    onDragEnd: function() {
+			      this.plugins.autorotate.resume();
+			    }
+			  }));
+			  // Set up the globe's initial scale, offset, and rotation.
+			  globe.projection.scale(120).translate([175, 175]).rotate([60, -20, 0]);
+
+			  // Every few hundred milliseconds, we'll draw another random ping.
+			  var colors = ['#ffb29e', '#e4ff00', '#ffb85b', '#ffe65b', '#a5d34b', '#ffa800'];
+			  setInterval(function() {
+			    var lat = 146;
+			    var lng = 63;
+			    var color = colors[Math.floor(Math.random() * colors.length)];
+			    globe.plugins.pings.add(lng, lat, { color: color, ttl: 6000, angle: 10});
+			  }, 150);
+
+			  setInterval(function() {
+			    var lat = 146;
+			    var lng = 63;
+			    var color2 = '#fff';
+			    globe.plugins.pings.add(lng, lat, { color: color2, ttl: 2000, angle: 10});
+			  }, 1500);
+
+			  var canvas = document.getElementById('rotatingGlobe');
+			  // Special code to handle high-density displays (e.g. retina, some phones)
+			  // In the future, Planetary.js will handle this by itself (or via a plugin).
+			  if (window.devicePixelRatio == 2) {
+			    canvas.width = 720;
+			    canvas.height = 720;
+			    context = canvas.getContext('2d');
+			    context.scale(2, 2);
+			  }
+			  // Draw that globe!
+			  globe.draw(canvas);
+
+			  // This plugin will automatically rotate the globe around its vertical
+			  // axis a configured number of degrees every second.
+			  function autorotate(degPerSec) {
+			    // Planetary.js plugins are functions that take a `planet` instance
+			    // as an argument...
+			    return function(planet) {
+			      var lastTick = null;
+			      var paused = false;
+			      planet.plugins.autorotate = {
+			        pause:  function() { paused = true;  },
+			        resume: function() { paused = false; }
+			      };
+			      // ...and configure hooks into certain pieces of its lifecycle.
+			      planet.onDraw(function() {
+			        if (paused || !lastTick) {
+			          lastTick = new Date();
+			        } else {
+			          var now = new Date();
+			          var delta = now - lastTick;
+			          // This plugin uses the built-in projection (provided by D3)
+			          // to rotate the globe each time we draw it.
+			          var rotation = planet.projection.rotate();
+			          rotation[0] += degPerSec * delta / 1000;
+			          if (rotation[0] >= 180) rotation[0] -= 360;
+			          planet.projection.rotate(rotation);
+			          lastTick = now;
+			        }
+			      });
+			    };
+			  };
+
+			  // This plugin takes lake data from the special
+			  // TopoJSON we're loading and draws them on the map.
+			  function lakes(options) {
+			    options = options || {};
+			    var lakes = null;
+
+			    return function(planet) {
+			      planet.onInit(function() {
+			        // We can access the data loaded from the TopoJSON plugin
+			        // on its namespace on `planet.plugins`. We're loading a custom
+			        // TopoJSON file with an object called "ne_110m_lakes".
+			        var world = planet.plugins.topojson.world;
+			        lakes = topojson.feature(world, world.objects.ne_110m_lakes);
+			      });
+
+			      planet.onDraw(function() {
+			        planet.withSavedContext(function(context) {
+			          context.beginPath();
+			          planet.path.context(context)(lakes);
+			          context.fillStyle = options.fill || 'black';
+			          context.fill();
+			        });
+			      });
+			    };
+			  };
+			})();
+		</script>
+
+	</header>
+
+	<div class="deco">
+		
+		<img id="morning-glory" src="img/morning-glory.png" alt="">
+		<img id="rhododendron" src="img/rhododendron.png" alt="">
+		<img id="stars-left" src="img/stars-left.png" alt="">
+		<img id="brush-1" src="img/brush-1.png" alt="">
+		<img id="stars-right-1" src="img/stars-right-1.png" alt="">
+		<img id="brush-2" src="img/brush-2.png" alt="">
+		<img id="stars-right-2" src="img/stars-right-2.png" alt="">
+		<img id="wave" src="img/wave.png" alt="">
+
+		<img id="doodle-wave" src="img/doodle-wave.png" alt="">
+		<img id="two-leaf" src="img/two-leaf.png" alt="">
+		<img id="one-leaf" src="img/one-leaf.png" alt="">
+		<img id="sparkle" src="img/sparkle.png" alt="">
+
+	</div>
+
+	<div id="status" class="wrap">
+		<h2>As of December 2, 2018...</h2>
+		<p>Jenny is in <span class="location">Los Angeles, CA</span> in the U.S.</p>
+		<p>She is finishing final exams at the <a href="http://iovine-young.usc.edu/" target="_blank">Iovine and Young Academy</a> and designing for some freelance projects. She is not looking for work.</p>
+
+		<p>This website is under construction, check back mid-December.</p>
+
+		<p style="text-align: center"><a href="http://jennyzhang.me/" target="_blank">Old Portfolio</a> &nbsp; &middot; &nbsp; <a href="http://jennytypes.com/" target="_blank">Jenny Types (blog)</a></p>
+	</div>
+
+</body>
+
 </html>
