@@ -1,0 +1,107 @@
+/* ---------- MODULES ---------- */
+
+		.modules {
+			display: block;
+			width: 94%;
+			margin: 0 auto 0;
+			box-sizing: border-box;
+			text-align: center;
+			/* border: 1px solid black; */
+		}
+
+		/* all */
+		.modules .block {
+			position: relative;
+			display: inline-block;
+			margin-right: 1vw;
+			width: 29.4vw;
+			height: 190px !important;
+			padding: 10px 5px 5px;
+			background: url('../img/grid.png') repeat;
+			background-size: 16px auto;
+			border: 0.09em solid black;
+			border-bottom: 0.1em solid black;
+			box-sizing: border-box;
+		}
+
+			.modules .block:hover {
+				background: rgba(255,255,255,0.5) url('../img/grid.png') repeat;
+				background-size: 16px auto;
+			}
+
+				.modules .block:hover a { color: black; }
+
+			.block:last-child { margin-right: 0; }
+
+			.block h2 {
+				margin: 10px 0 3px;
+				font-size: 1.1em;
+				line-height: 1em;
+				text-align: center;
+			}
+
+			.block p {
+				margin: 0 auto 10px;
+				font-size: 0.9em;
+				line-height: 1.2em;
+				max-width: 120px;
+				text-align: center;
+			}
+
+			.block img {
+				height: 50px;
+			}
+
+			.block .a {
+				font-size: 0.9em;
+				text-transform: uppercase;
+				letter-spacing: 0.01em;
+				font-weight: 600;
+				font-family: benton-sans-compressed, sans-serif;
+			}
+
+			/* .modules .block.plottwisters:hover {
+				background: rgba(244,209,86,0.5) url('../img/grid.png') repeat;
+				background-size: 16px auto;
+			} */
+
+			.cookietrail, .earthstodo {
+				opacity: 0.5;
+			}
+
+
+@media screen
+			and (min-device-width: 605px)
+			and (min-width: 605px) {
+
+        /* ---------- MODULES ---------- */
+
+        				.modules {
+									margin: 10px auto;
+									width: 100%;
+									/* border: 1px solid black; */
+        				}
+
+        				/* all */
+        				.modules .block {
+        					border: 0.1em solid black;
+									margin-right: 5px;
+									width: 194px;
+        					height: 180px !important;
+        				}
+
+								.block:last-child { margin-right: 0; }
+
+								.block h2 {
+									font-size: 1.4em;
+								}
+
+								.block p {
+									max-width: none;
+								}
+
+								.block .a {
+									font-size: 1em;
+								}
+
+				}

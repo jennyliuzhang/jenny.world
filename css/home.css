@@ -1,0 +1,93 @@
+.wrap {
+  position: relative;
+  width: 100vw;
+  max-width: 800px;
+  margin: 2vw auto;
+  padding: 20px 0 20px; /* 50px when language bar avail */
+  z-index: 100;
+  /* overflow: hidden; */
+}
+
+.hero {
+  position: relative;
+  margin: 0 auto;
+  background: url('../img/hero.gif') no-repeat top;
+  background-size: 100% auto;
+  width: 92%;
+  padding-bottom: 60%;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+  #floats {
+    position: relative;
+    width: 100%;
+    padding-bottom: 67%;
+    margin-bottom: -67%;
+    transform-style: preserve-3d;
+    z-index: 9;
+  }
+
+  .blur1, .blur2, .blur3 {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    transform-style: preserve-3d;
+  }
+
+  .blur1 { transform: translateZ(50px); }
+  .blur2 { transform: translateZ(15px); }
+  .blur3 { transform: translateZ(80px); }
+
+  .intro {
+    margin: 0px 0 40px 0;
+    padding: 20px;
+    border-bottom: 0.1em solid black;
+    box-sizing: border-box;
+    text-align: right;
+  }
+
+    .intro p {
+      text-align: left;
+    }
+
+@media screen
+    and (min-device-width: 605px)
+    and (min-width: 605px) {
+
+      .wrap {
+        padding: 40px 0 20px;
+        max-width: 600px;
+      }
+
+      .hero {
+        width: 100%;
+        padding-bottom: 63.2%;
+      }
+
+      .intro {
+        padding: 20px 40px;
+        border: 0.1em solid black;
+      }
+
+    }
+
+
+  @media screen
+      and (min-device-width: 860px)
+      and (min-width: 860px) {
+
+        .wrap {
+          padding: 20px 0;
+        }
+
+      }
+
+  @media screen
+      and (min-device-width: 960px)
+      and (min-width: 960px) {
+
+      }
+
+}

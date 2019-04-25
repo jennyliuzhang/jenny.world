@@ -1,117 +1,221 @@
 <!DOCTYPE html>
 
 <head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Jenny Liu Zhang</title>
-    <link rel='shortcut icon' type='image/x-icon' href='img/butterflyfav.png'>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The World of Jenny Liu Zhang</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.png'>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-  	<style>
-		/* @font-face {
-			src: url('fonts/Big_Caslon_FB_Roman.otf')
-			font-family: 'Big Caslon FB', serif;
-		}
+	<link rel="stylesheet" href="https://use.typekit.net/vbx0ney.css">
 
-		@font-face {
-			src: url('fonts/Big_Caslon_FB_Bold.otf')
-			font-family: 'Big Caslon FB', serif;
-		} */
+	<link rel="stylesheet" href="css/basics.css">
+	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" href="css/home-modules.css">
 
-		@font-face {
-			src: url('fonts/big-caslon-medium.woff')
-			font-family: 'Big Caslon', serif;
-		}
-
-			body {
-				margin: 0;
-				background: #f3d8bd;
-				color: #ea5342;
-				font: normal 1.2em 'Big Caslon', serif;
-				overflow-x: hidden;
-			}
-
-			.wrap {
-				margin: 100px auto 0;
-				width: 360px;
-			}
-
-			header {
-				width: 100vw;
-				height: 80vh;
-				text-align: center;
-			}
-
-				#name {
-					width: 300px;
-				}
-
-			#readings {
-				width: 100vw;
-				max-width: 600px;
-				margin: 0 auto 100px;
-			}
-
-			.row { display: flex; }
-			.column { width: 50%; }
-			.column a { display: block; margin-bottom: 10px; }
-
-			h1 {
-				margin: 10px 0;
-				font: normal 1.6em 'Big Caslon', serif;
-				text-transform: lowercase;
-				text-align: center;
-			}
-
-			h2 {
-				margin: 25px 0;
-				font: normal 1.25em 'Big Caslon', serif;
-				text-transform: lowercase;
-				text-align: center;
-			}
-
-			a {
-				/* font-weight: bold; */
-				/* color: #303c4c; */
-				color: #ea5342;
-				text-transform: lowercase;
-			}
-
-			a:hover { color: #303c4c; }
-    </style>
+	<script>
+	$(document).ready(function() {
+    $('a[href^="#"]').click(function() {
+        var target = $(this.hash);
+        var hash = this.hash;
+        if (target.length == 0) target = $('a[name="' + this.hash.substr(1) + '"]');
+        if (target.length == 0) target = $('html');
+        $('html, body').animate({ scrollTop: target.offset().top }, 500, function (){
+            location.hash = hash;
+        });
+        return false;
+    });
+	});
+	</script>
 
 </head>
 
 <body>
-	<header>
-		<div class="wrap">
-			<h1>welcome to the world of</h1>
-			<img id="name" src="title.gif" alt="">
-			<p><a href="http://jennyzhang.me" target="_blank">Work Portfolio</a> &middot; <a href="http://jennytypes.com/" target="_blank">Personal Blog</a> &middot; <a href="http://twitter.com/jennyliuzhang" target="_blank">Twitter</a></p>
-			<h2>new year moodboard</h2>
+
+	<!-- <select id="language">
+	  <option selected="selected" value="english">English</option>
+	  <option value="spanish">Spanish</option>
+	  <option value="mandarin">Mandarin</option>
+	  <option value="french">French</option>
+	</select> -->
+
+	<div id="version-id">
+		Updated April 22, 2019
+	</div>
+
+	<div class="wrap">
+		<div class="hero">
+			<!-- <div id="floats" data-tilt>
+				<img data-tilt class="blur1" src="img/blur1.png" alt="">
+				<img data-tilt class="blur2" src="img/blur2.png" alt="">
+				<img data-tilt class="blur3" src="img/blur3.png" alt="">
+			</div> -->
 		</div>
-	</header>
 
-	<img style="margin: 0 0 100px 0; width: 100%;" src="img/moodboard.jpg" alt="">
+		<div class="modules">
+				<a href="http://plottwisters.org/" target="_blank">
+					<div class="block plottwisters">
+						<img src="img/plottwisters.png" alt="">
+						<h2>Plot Twisters</h2>
+						<p>Reflection activities to open the story of your life.</p>
+						<a class="a" href="http://plottwisters.org/" target="_blank">Plottwisters.org</a>
+					</div>
+				</a>
+				<!-- <a href="http://cookietrails.org/" target="_blank"> -->
+					<div class="block cookietrail">
+						<img src="img/cookietrail.png" alt="">
+						<h2>Cookie Trails</h2>
+						<p>Visualizing the stories of you and your role models.</p>
+						<span class="a">Coming Soon</span>
+						<!-- <a class="a" href="http://cookietrails.org/" target="_blank">Cookietrails.org</a> -->
+					</div>
+				<!-- </a> -->
+				<!-- <a href="http://earthstodolist.org/" target="_blank"> -->
+					<div class="block earthstodo">
+						<img src="img/earthstodo.png" alt="">
+						<h2>Earth's To-Do List</h2>
+						<p>Career projects to support human flourishing.</p>
+						<span class="a">Coming Soon</span>
+						<!-- <a class="a" href="http://earthstodolist.org/" target="_blank">Earthstodolist.org</a> -->
+					</div>
+				<!-- </a> -->
+		</div>
 
-	<div id="readings">
-		<h2>reads on my mind</h2>
-		<div class="row">
-			<div class="column">
-				<a href="http://www.iupui.edu/~l105onln/docs/The_Lesson.pdf" target="_blank">The Lesson by Toni Cade Bambara</a>
-				<a href="https://www.brainpickings.org/2013/11/11/kurt-vonnegut-advice-to-children/" target="_blank">Letters by Kurt Vonnegut</a>
-				<a href="https://armenian-poetry.blogspot.com/2009/07/maxine-kumin-magellan-street-1974.html" target="_blank">Magellan Street, 1974 by <br>Maxine Kumin</a>
+
+		<div class="intro">
+			<h3>Dear visitor,</h3>
+			<p>I'm so glad you stopped by! My name is Jenny. On this website, I keep a public, running dissertation of my research and goals as an entrepreneur in education.</p>
+			<p>Every day I think about the future of learning and work. Seeking and applying knowledge should be a step in satisfying our curiosities about the world, but that's not exactly what "getting an education" looks like today. Play and imagination are missing because of social and systemic barriers.</p>
+			<p>I propose the concept of <em>journey learning</em>, which basically means we should be learning things for a reason, and those reasons come from understanding our personal journeys. My product ecosystem &mdash; <a href="http://plottwisters.org/" target="_blank">Plot Twisters</a>, Cookie Trails, and Earth's To-Do List &mdash; puts journey learning into action.</p>
+			<p>Here is where I compile research on emotions, social structures, and creativity with my own insights as a designer, student, and teacher. You can keep up with my business vision as I develop it. Welcome to my world!</p>
+			<img src="img/signature.png" alt="" width="120">
+		</div>
+
+		<div class="content">
+			<article id="toc">
+				<h2>Table of Contents</h2>
+				<ol>
+					<li><a href="#begin">Introduction<a>
+						<ol type="a">
+							<li><a href="#howto">How to Read This Website<a></li>
+								<li><a href="#jenny1">Who is Jenny Liu Zhang?<a></li>
+							<li><a href="#definitions">Definitions and Key<a></li>
+						</ol>
+					</li>
+
+					<li><a href="#journey">Journey Learning<a>
+						<ol type="a">
+							<li><a href="#biological">Affective Imperative<a></li>
+							<li><a href="#technological">Technological Imperative<a></li>
+							<li><a href="#edtech">Cause and Effect</a></li>
+							<li><a href="#hindsight">Hindsight and Foresight<a></li>
+							<li><a href="#electracy">Electracy<a></li>
+						</ol>
+					</li>
+
+					<li><a href="#homograph">Homograph Theories<a>
+						<ol type="a">
+							<li><a href="#examples">Examples in Technology<a></li>
+							<li><a href="#edtech">Visual Metaphors</a></li>
+							<li><a href="#examples">Connection to Journey Learning<a></li>
+						</ol>
+					</li>
+
+					<li><a href="#plottwisters">Plot Twisters</a>
+						<ol type="a">
+							<li><a href="#examples">Five Axes<a></li>
+							<li><a href="#examples">Feelings Designer<a></li>
+							<li><a href="#examples">Five Second Futures<a></li>
+							<li><a href="#examples">Lemonade Mixer<a></li>
+							<li><a href="#examples">Busy Bee Exercises<a></li>
+							<li><a href="#examples">Protagonist Pages<a></li>
+							<li><a href="#examples">Homework Plot Twister<a></li>
+						</ol>
+					</li>
+
+					<li><a href="#cookietrails">Cookie Trails<a>
+						<ol type="a">
+							<li><a href="#examples">Cookie Trail Files<a></li>
+							<li><a href="#examples">Role Model Trails<a></li>
+						</ol>
+					</li>
+					<li><a href="#earthstodo">Earth's To-Do List</a></li>
+					<li><a href="#water">Water Operating System</a></li>
+					<li><a href="#edtech">A New Kind of EdTech Startup</a></li>
+					<li><a href="#bib">Bibliography</a></li>
+					<li><a href="#thanks">Big Thanks</a></li>
+				</ol>
+			</article>
+
+			<article id="begin">
+				<h2>Introduction</h2>
+				<p></p>
+			</article>
+
+			<article id="journey" class="section">
+				<h2>Journey Learning</h2>
+				<p>How does a bird fly? Why do we dream? What is anger? Does the sun have a birthday? As kids, we’re full of curious questions. In fact, following these curiosities led to the progress of many domains and disciplines, from physics to poetry.</p>
+				<p>Yet today, seeking knowledge has lost its goal of understanding and progressing ourselves and our worlds. Instead, education is often a hurdle to making money, filling a resume, or achieving status—not a journey for a sense of purpose. Without that goal-oriented curiosity, school, work, and life can feel unfulfilling and useless.</p>
+				<p>Journey learning reframes education as studying for a goal, especially to follow our natural curiosities. By seeing our education and life experiences like a journey, we can better understand every up, down, test, and wisdom. With new skills, we earn a sense of purpose and stability: healthy aspirations, especially in a world of so many questions.</p>
+			</article>
+
+			<article id="homograph">
+				<h2>Homograph Theories</h2>
+				<p></p>
+			</article>
+
+			<article id="plottwisters">
+				<h2>Plot Twisters</h2>
+				<p></p>
+			</article>
+
+			<article id="cookietrails">
+				<h2>Cookie Trails</h2>
+				<p></p>
+			</article>
+
+			<article id="earthstodo">
+				<h2>Earth's To-Do List</h2>
+				<p></p>
+			</article>
+
+			<article id="water">
+				<h2>Water Operating System</h2>
+				<p></p>
+			</article>
+
+			<article id="edtech">
+				<h2>A New Kind of EdTech Startup</h2>
+				<p></p>
+			</article>
+
+			<article id="bib">
+				<h2>Bibliography</h2>
+				<p></p>
+			</article>
+
+			<article id="homograph">
+				<h2>Big Thanks</h2>
+				<p></p>
+			</article>
+		</div>
+
+	</div>
+
+	<div id="footer">
+		<div class="footer-wrap">
+			<div class="email-signup">
+					<input type="email" value="" placeholder="Your email address" class="email">
+					<input type="submit" value="Get occasional updates!" name="subscribe" class="submit">
 			</div>
-			<div class="column">
-				<a href="https://biblioklept.org/2014/03/08/wants-grace-paley/" target="_blank">Wants by Grace Paley</a>
 
-				<a href="https://www.nytimes.com/2018/03/30/opinion/some-reflections-on-journalism.html" target="_blank">Some Reflections on Journalism by Roger Cohen</a>
-				<a href="https://www.theatlantic.com/magazine/archive/2003/10/ghost-birds/302804/" target="_blank">Ghost-Birds by Nicolas Pizzolatto</a>
-			</div>
+
+			<span class="copy">&#169; Jenny Liu Zhang, 2019.</span>
 		</div>
 	</div>
+
+<script src="js/tilt.js"></script>
+<script src="js/quotes.js"></script>
 </body>
 
 </html>
