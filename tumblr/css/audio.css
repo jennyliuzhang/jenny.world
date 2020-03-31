@@ -1,0 +1,146 @@
+#audio { display: none; }
+
+.audio {
+  display: block;
+  position: relative;
+  margin: -10px 0 0 0;
+  background: #eee;
+  box-shadow: 5px 5px 40px rgba(0,0,0,0.1);
+  border-bottom: 1px solid #fff;
+}
+
+#playAudio.inactive, #playAudio.active {
+  -webkit-appearance: none !important;
+  display: block;
+  width: 100%;
+  height: 80px;
+  background: url('../play.png') no-repeat;
+  background-size: 20px 22px;
+  background-position: left 15px top 42px;
+  border: none;
+  outline: none;
+}
+
+#playAudio.active {
+  display: block;
+  background: url('../pause.png'), #e6f0f2 url('../sky.gif');
+  background-repeat: no-repeat, no-repeat;
+  background-size: 20px 22px, 70% auto;
+  background-position: left 15px top 42px, left top;
+}
+
+#playAudio h3 {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  margin: 0;
+  font: normal 1.4em "Jenmanship 2020", system-ui;
+}
+
+#playAudio span {
+  display: none;
+}
+
+#timeline {
+  display: block;
+  position: absolute;
+  top: 32px;
+  left: 45px;
+  width: 83%;
+  height: 2px;
+  background: #222325;
+  margin-top: 20px;
+  float: left;
+  border-radius: 15px;
+}
+
+#playhead {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 20px;
+  margin-top: -8px;
+  background: #fff;
+  border: 1px solid #000;
+}
+
+@media screen
+    and (min-device-width: 700px)
+    and (min-width: 700px) {
+
+  .audio {
+    display: block;
+    position: absolute;
+    top: 28%;
+    right: -120px;
+    margin: 15px 0;
+    width: 200px;    
+    background: #eee;
+    box-shadow: 5px 5px 40px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    border: 1px solid #fff;
+  }
+
+  #playAudio.inactive, #playAudio.active {
+    -webkit-appearance: none !important;
+    display: block;
+    width: 100%;
+    height: 90px;
+    padding: 6px 0 4px 9px;
+    background: url('../play.png') no-repeat;
+    background-size: 16px 17px;
+    background-position: left 11px top 39px;
+    font-family: system-ui;
+    font-size: 1em;
+    text-align: left;
+  }
+
+  #playAudio.active {
+    display: block;
+    background: none;
+    background: url('../pause.png'), #e6f0f2 url('../sky.gif');
+    background-repeat: no-repeat, no-repeat;
+    background-size: 16px 17px, 70% auto;
+    background-position: left 11px top 39px, left top;
+  }
+
+    #playAudio h3 {
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      margin: 0;
+      font: normal 1em "Jenmanship 2020", system-ui;
+    }
+
+    #playAudio span {
+      display: block;
+      position: absolute;
+      bottom: 10px;
+      left: 12px;
+      font-size: 0.9em;
+    }
+
+  #timeline {
+    display: block;
+    position: absolute;
+    top: 26px;
+    left: 36px;
+    width: 150px;
+    height: 2px;
+    background: #222325;
+    margin-top: 20px;
+    float: left;
+    border-radius: 15px;
+  }
+
+  #playhead {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 20px;
+    margin-top: -6px;
+    background: #fff;
+    border: 1px solid #000;
+  }
+
+}
